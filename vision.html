@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Vision & Leadership — Hermela's philosophy on strategic innovation and influence.">
+    <title>VISION — HERMELA</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,700&family=Inter:wght@300;400;500;600&family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/globals.css">
+</head>
+<body class="bg-white-primary text-dark-foundation antialiased">
+    <div id="grain-overlay" class="fixed inset-0 pointer-events-none opacity-5 mix-blend-multiply" style="background-image: url('data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 width=%22100%22 height=%22100%22><filter id=%22noise%22><feTurbulence type=%22fractalNoise%22 baseFrequency=%220.9%22 numOctaves=%224%22 result=%22noise%22 /></filter><rect width=%22100%22 height=%22100%22 fill=%22%23000%22 filter=%22url(%23noise)%22 /></svg>'); background-size: 200px 200px; animation: grainDrift 20s linear infinite;"></div>
+    <div id="custom-cursor" class="fixed w-4 h-4 border-2 border-dark-foundation pointer-events-none z-50" style="display: none; mix-blend-mode: difference;"></div>
+
+    <nav class="fixed top-0 left-0 right-0 z-40 bg-white-primary/95 backdrop-blur-sm border-b border-linen">
+        <div class="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
+            <a href="index.html" class="text-2xl font-bold tracking-widest" style="font-family: 'Cinzel', serif; letter-spacing: 0.15em;">HERMELA</a>
+            <div class="hidden md:flex gap-8 items-center">
+                <a href="about.html" class="nav-link text-sm font-medium hover:text-accent transition-colors">ABOUT</a>
+                <a href="vision.html" class="nav-link text-sm font-medium text-accent">VISION</a>
+                <a href="crown-jewel.html" class="nav-link text-sm font-medium hover:text-accent transition-colors">CROWN JEWEL</a>
+                <a href="portfolio.html" class="nav-link text-sm font-medium hover:text-accent transition-colors">PORTFOLIO</a>
+                <a href="philosophy.html" class="nav-link text-sm font-medium hover:text-accent transition-colors">PHILOSOPHY</a>
+                <a href="connect.html" class="nav-link text-sm font-medium hover:text-accent transition-colors cta-button">CONNECT</a>
+            </div>
+            <button id="mobile-menu-toggle" class="md:hidden flex flex-col gap-1.5">
+                <span class="w-6 h-0.5 bg-dark-foundation block"></span>
+                <span class="w-6 h-0.5 bg-dark-foundation block"></span>
+                <span class="w-6 h-0.5 bg-dark-foundation block"></span>
+            </button>
+        </div>
+    </nav>
+
+    <main id="main" class="pt-20">
+        <!-- INTRO SECTION -->
+        <section class="min-h-screen flex items-center justify-center px-6 py-24">
+            <div class="max-w-4xl mx-auto text-center">
+                <h1 class="text-8xl md:text-9xl font-bold mb-8" style="font-family: 'Cinzel Decorative', serif; letter-spacing: 0.08em; opacity: 0;" id="vision-title">VISION</h1>
+                <p class="text-xl md:text-2xl font-light" style="letter-spacing: 0.08em; opacity: 0;" id="vision-subtitle">Strategic Innovation. Humanistic Empowerment. Intentional Impact.</p>
+            </div>
+        </section>
+
+        <!-- STICKY STACKING SECTIONS -->
+        <div id="sticky-container" class="relative">
+            <!-- SECTION 1: STRATEGIC INNOVATION -->
+            <section id="stack-1" class="min-h-screen flex items-center justify-center px-6 py-24 sticky top-0 bg-white-primary">
+                <div class="max-w-4xl mx-auto">
+                    <h2 class="text-6xl md:text-7xl font-bold mb-8" style="font-family: 'Cinzel Decorative', serif; letter-spacing: 0.08em;">Strategic Innovation</h2>
+                    <p class="text-lg font-light leading-relaxed mb-6" style="letter-spacing: 0.02em;">Hermela's approach to leadership rejects incremental thinking. <span style="color: var(--accent-gold);">She disrupts standard patterns, introduces novel concepts, and challenges assumptions.</span></p>
+                    <p class="text-lg font-light leading-relaxed" style="letter-spacing: 0.02em;">Innovation, in her framework, is not about being first—it's about being intentional. Every decision, every strategy, every action serves a purpose larger than efficiency metrics.</p>
+                </div>
+            </section>
+
+            <!-- SECTION 2: HUMANISTIC VISIONARY -->
+            <section id="stack-2" class="min-h-screen flex items-center justify-center px-6 py-24 sticky top-0 bg-linen/10">
+                <div class="max-w-4xl mx-auto">
+                    <h2 class="text-6xl md:text-7xl font-bold mb-8" style="font-family: 'Cinzel Decorative', serif; letter-spacing: 0.08em;">Humanistic Visionary</h2>
+                    <p class="text-lg font-light leading-relaxed mb-6" style="letter-spacing: 0.02em;">Behind every system, every project, every initiative is a human story. Hermela leads with this core conviction: <span style="color: var(--accent-gold);">"Influence is a tool best used to empower others, challenge perspectives, and create meaningful change."</span></p>
+                    <p class="text-lg font-light leading-relaxed" style="letter-spacing: 0.02em;">She prioritizes human connection, mentorship, and impactful storytelling. Technology and fashion are tools—the real work is building people.</p>
+                </div>
+            </section>
+
+            <!-- SECTION 3: CHALLENGING NARRATIVES -->
+            <section id="stack-3" class="min-h-screen flex items-center justify-center px-6 py-24 sticky top-0 bg-graphite text-white-primary">
+                <div class="max-w-4xl mx-auto">
+                    <h2 class="text-6xl md:text-7xl font-bold mb-8" style="font-family: 'Cinzel Decorative', serif; letter-spacing: 0.08em;">Challenging Narratives</h2>
+                    <div class="mb-8">
+                        <h3 class="text-2xl font-bold mb-4" style="font-family: 'Cinzel', serif;">ON BEAUTY</h3>
+                        <p class="text-lg font-light leading-relaxed" style="letter-spacing: 0.02em;">"A widely accepted belief I challenge is that beauty has a fixed standard that people must follow. True beauty is not about becoming someone else's idea of perfection; it is about embracing who you are and having the courage to define your own."</p>
+                    </div>
+                    <div>
+                        <h3 class="text-2xl font-bold mb-4" style="font-family: 'Cinzel', serif;">ON TECHNOLOGY</h3>
+                        <p class="text-lg font-light leading-relaxed" style="letter-spacing: 0.02em;">"The future of technology should not be measured only by how intelligent our machines become, but by how wisely we use that intelligence. True innovation respects human values and solves problems that truly matter."</p>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <div id="mobile-menu" class="fixed inset-0 bg-white-primary z-30 hidden flex flex-col pt-24 gap-4 px-6" style="display: none;">
+        <a href="about.html" class="text-lg font-medium py-3 border-b border-linen">ABOUT</a>
+        <a href="vision.html" class="text-lg font-medium py-3 border-b border-linen">VISION</a>
+        <a href="crown-jewel.html" class="text-lg font-medium py-3 border-b border-linen">CROWN JEWEL</a>
+        <a href="portfolio.html" class="text-lg font-medium py-3 border-b border-linen">PORTFOLIO</a>
+        <a href="philosophy.html" class="text-lg font-medium py-3 border-b border-linen">PHILOSOPHY</a>
+        <a href="connect.html" class="text-lg font-medium py-3">CONNECT</a>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/gh/studio-freight/lenis@1/dist/lenis.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/split-type@0.3.2/dist/index.min.js"></script>
+    <script src="js/main.js"></script>
+    <script src="js/cursor.js"></script>
+    <script src="js/animations.js"></script>
+    <script src="js/vision.js"></script>
+</body>
+</html>
