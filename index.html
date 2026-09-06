@@ -3,39 +3,34 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Hermela Ashenafi — Miss Tourism Ethiopia</title>
-<meta name="description" content="Hermela Ashenafi Assefa. Computer scientist, project manager, model. Reigning Miss Tourism Ethiopia, representing Ethiopia at Miss Tourism Africa." />
+<title>Contact — Hermela Ashenafi</title>
+<meta name="description" content="Begin something with Hermela — bookings, partnerships, and press." />
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,400&family=Fraunces:opsz,wght@9..144,300..700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
 <script src="https://cdn.tailwindcss.com"></script>
 <script>
-  tailwind.config = {
-    theme: {
-      extend: {
-        colors: { alabaster:"#F6F3EC", linen:"#EEE7D9", paper:"#FBFAF6", ink:"#161513", graphite:"#3A362F", umber:"#8B6F4E", sovereign:"#5B4636" },
-        fontFamily: { wordmark:["Cormorant Garamond","serif"], display:["Fraunces","serif"], body:["Inter","sans-serif"] },
-      }
-    }
-  }
+  tailwind.config = { theme: { extend: {
+    colors: { alabaster:"#F6F3EC", linen:"#EEE7D9", paper:"#FBFAF6", ink:"#161513", graphite:"#3A362F", umber:"#8B6F4E", sovereign:"#5B4636" },
+    fontFamily: { wordmark:["Cormorant Garamond","serif"], display:["Fraunces","serif"], body:["Inter","sans-serif"] },
+  } } }
 </script>
 <link rel="stylesheet" href="assets/css/tokens.css">
+<style>
+  .field { background: transparent; border: none; border-bottom: 1px solid var(--hairline); width: 100%; padding: 0.9rem 0; font-family: var(--font-body); font-size: 1rem; color: var(--ink); }
+  .field:focus { outline: none; border-color: var(--ink); }
+  .field::placeholder { color: rgba(22,21,19,0.38); }
+</style>
 </head>
 <body data-nav-state="closed">
 
-<!-- ============ COMPONENT: FilmGrain ============ -->
 <div id="film-grain" aria-hidden="true"></div>
-<!-- ============ COMPONENT: CustomCursor ============ -->
 <div id="custom-cursor" data-state="default" aria-hidden="true"></div>
-<!-- ============ COMPONENT: CurtainTransition ============ -->
 <div id="curtain" aria-hidden="true"></div>
 
-<!-- ============ COMPONENT: Navigation ============ -->
 <header id="site-nav">
-  <a href="index.html" class="nav-word" data-magnetic data-cursor="link">Hermela</a>
-  <button id="nav-toggle" aria-label="Open menu" data-cursor="link">
-    <span></span><span></span><span></span>
-  </button>
+  <a href="index.html" data-transition class="nav-word" data-magnetic data-cursor="link">Hermela</a>
+  <button id="nav-toggle" aria-label="Open menu" data-cursor="link"><span></span><span></span><span></span></button>
 </header>
 
 <nav id="nav-overlay" aria-hidden="true">
@@ -51,102 +46,75 @@
 
 <main>
 
-  <!-- ============ COMPONENT: Hero ============ -->
-  <section id="hero" data-component="Hero" class="relative min-h-[100svh] flex items-end overflow-hidden bg-alabaster">
-    <div data-parallax-scene class="absolute inset-0">
-      <div data-parallax-layer="0.15" class="absolute inset-0">
-        <img src="https://images.unsplash.com/photo-1483985988355-763728e1935b?q=80&w=1600&auto=format&fit=crop"
-             alt="" class="w-full h-[130%] object-cover object-top opacity-[0.14]" style="filter: blur(6px) grayscale(0.3);" />
-      </div>
-      <div data-parallax-layer="0.4" class="absolute inset-0 flex items-center justify-center">
-        <img data-cursor="view" data-cursor-label="HERMELA"
-             src="https://images.unsplash.com/photo-1509967419530-da38b4704bc6?q=80&w=1400&auto=format&fit=crop"
-             alt="Editorial portrait, dark high-fashion portraiture" class="h-[78vh] md:h-[86vh] object-cover object-top grayscale-[0.15]" style="mask-image: linear-gradient(to bottom, black 78%, transparent 100%);" />
-      </div>
-    </div>
-
-    <div class="relative z-10 w-full px-5 md:px-14 pb-14 md:pb-20">
-      <p class="eyebrow mb-4" data-fade>Miss Tourism Ethiopia · 2026</p>
-      <h1 class="font-wordmark text-ink leading-[0.92]" style="font-size:clamp(3.2rem,13vw,10.5rem);">
-        <span class="reveal-line block" data-reveal="chars">Hermela</span>
-        <span class="reveal-line block italic font-light" data-reveal="chars" style="color:var(--umber);">Ashenafi</span>
+  <!-- ============ COMPONENT: ContactHero ============ -->
+  <section id="contact-hero" data-component="ContactHero" class="min-h-[60svh] flex items-end px-5 md:px-14 pt-32 pb-16 bg-alabaster">
+    <div class="max-w-3xl">
+      <p class="eyebrow mb-5" data-fade>07 — Contact</p>
+      <h1 class="h-display font-display" style="font-size:clamp(2.6rem,7vw,5.5rem);">
+        <span class="reveal-line block" data-reveal="words">Begin something</span>
+        <span class="reveal-line block italic" data-reveal="words" style="color:var(--umber);">meaningful.</span>
       </h1>
-      <div class="mt-8 md:mt-10 flex flex-col md:flex-row md:items-end md:justify-between gap-6 border-t border-ink/10 pt-6">
-        <p class="copy text-base md:text-lg" data-fade>
-          I want them to feel curiosity first — the sense that there is more to discover
-          beyond the first impression. A story of continuous evolution.
-        </p>
-        <a href="mind.html" data-transition data-magnetic data-cursor="link" class="btn-primary shrink-0">Enter Her World</a>
-      </div>
+      <p class="copy mt-8 text-lg" data-fade>
+        Influence is a tool best used to empower others, challenge perspectives, and
+        create meaningful change. If that's the work you're building too, this is where
+        it starts.
+      </p>
     </div>
   </section>
 
-  <!-- ============ COMPONENT: MilestoneStrip ============ -->
-  <section id="milestones" data-component="MilestoneStrip" class="bg-ink text-paper py-16 md:py-20 px-5 md:px-14">
-    <div class="grid grid-cols-2 md:grid-cols-4 gap-10 md:gap-6 max-w-6xl mx-auto">
-      <div data-fade>
-        <div class="font-display text-4xl md:text-6xl" data-odometer="0004">0000</div>
-        <p class="eyebrow mt-3" style="color:rgba(251,250,246,0.6);">4th Runner-Up<br/>Miss Ethiopia</p>
-      </div>
-      <div data-fade>
-        <div class="font-display text-4xl md:text-6xl" data-odometer="2026">0000</div>
-        <p class="eyebrow mt-3" style="color:rgba(251,250,246,0.6);">Miss Tourism<br/>Ethiopia, Reigning</p>
-      </div>
-      <div data-fade>
-        <div class="font-display text-4xl md:text-6xl" data-odometer="0009">0000</div>
-        <p class="eyebrow mt-3" style="color:rgba(251,250,246,0.6);">September<br/>Nigeria Bound</p>
-      </div>
-      <div data-fade>
-        <div class="font-display text-4xl md:text-6xl" data-odometer="0001">0000</div>
-        <p class="eyebrow mt-3" style="color:rgba(251,250,246,0.6);">Nation<br/>Represented</p>
-      </div>
+  <!-- ============ COMPONENT: ContactForm ============ -->
+  <section id="contact-form" data-component="ContactForm" class="px-5 md:px-14 pb-24 md:pb-32 bg-alabaster">
+    <div class="max-w-2xl mx-auto">
+      <form id="hermela-contact-form" class="space-y-8" data-fade>
+        <div class="grid md:grid-cols-2 gap-8">
+          <div>
+            <label for="cf-name" class="eyebrow block mb-2">Name</label>
+            <input id="cf-name" name="name" type="text" class="field" placeholder="Your full name" required />
+          </div>
+          <div>
+            <label for="cf-org" class="eyebrow block mb-2">Organization</label>
+            <input id="cf-org" name="org" type="text" class="field" placeholder="Brand, publication, or agency" />
+          </div>
+        </div>
+        <div class="grid md:grid-cols-2 gap-8">
+          <div>
+            <label for="cf-email" class="eyebrow block mb-2">Email</label>
+            <input id="cf-email" name="email" type="email" class="field" placeholder="you@company.com" required />
+          </div>
+          <div>
+            <label for="cf-type" class="eyebrow block mb-2">Inquiry Type</label>
+            <select id="cf-type" name="type" class="field">
+              <option>Brand Partnership</option>
+              <option>Press & Media</option>
+              <option>Speaking / Appearance</option>
+              <option>Modeling Booking</option>
+              <option>Other</option>
+            </select>
+          </div>
+        </div>
+        <div>
+          <label for="cf-message" class="eyebrow block mb-2">Message</label>
+          <textarea id="cf-message" name="message" rows="4" class="field" placeholder="Tell her about the opportunity" required></textarea>
+        </div>
+        <button type="submit" data-magnetic data-cursor="link" class="btn-primary">Send Inquiry</button>
+        <p id="cf-status" class="text-sm mt-4" style="color:var(--graphite);" role="status"></p>
+      </form>
     </div>
   </section>
 
-  <!-- ============ COMPONENT: ThresholdStatement ============ -->
-  <section id="statement" data-component="ThresholdStatement" class="px-5 md:px-14 py-28 md:py-40 bg-alabaster">
-    <div class="max-w-4xl mx-auto text-center">
-      <p class="eyebrow mb-6" data-fade>On Influence</p>
-      <h2 class="h-display font-display" style="font-size:clamp(1.9rem,4.6vw,3.4rem);">
-        <span class="reveal-line block" data-reveal="words">Influence is a tool best used to empower others,</span>
-        <span class="reveal-line block" data-reveal="words">challenge perspectives, and create meaningful change.</span>
-      </h2>
-    </div>
-  </section>
-
-  <!-- ============ COMPONENT: PillarTeaser (Mind / Form / Reign) ============ -->
-  <section id="pillars" data-component="PillarTeaser" class="px-5 md:px-14 pb-28 md:pb-40 bg-alabaster">
-    <div class="max-w-6xl mx-auto grid md:grid-cols-3 gap-px bg-ink/10">
-      <a href="mind.html" data-transition data-cursor="view" data-cursor-label="READ" class="group bg-alabaster p-10 md:p-12 flex flex-col justify-between min-h-[380px] hover:bg-linen transition-colors duration-300" data-fade>
-        <span class="eyebrow">I — The Mind</span>
-        <div>
-          <h3 class="font-display text-3xl md:text-4xl mb-4">A field still<br/>evolving.</h3>
-          <p class="copy text-sm">Philosophy, neuroscience, and a definition of beauty she refuses to borrow.</p>
-        </div>
-      </a>
-      <a href="portfolio.html" data-transition data-cursor="view" data-cursor-label="VIEW" class="group bg-alabaster p-10 md:p-12 flex flex-col justify-between min-h-[380px] hover:bg-linen transition-colors duration-300" data-fade>
-        <span class="eyebrow">II — The Form</span>
-        <div>
-          <h3 class="font-display text-3xl md:text-4xl mb-4">Sovereign<br/>structure.</h3>
-          <p class="copy text-sm">A visual grammar built on architectural silhouettes and quiet intention.</p>
-        </div>
-      </a>
-      <a href="reign.html" data-transition data-cursor="view" data-cursor-label="ENTER" class="group bg-alabaster p-10 md:p-12 flex flex-col justify-between min-h-[380px] hover:bg-linen transition-colors duration-300" data-fade>
-        <span class="eyebrow">III — The Reign</span>
-        <div>
-          <h3 class="font-display text-3xl md:text-4xl mb-4">Ethiopia,<br/>carried forward.</h3>
-          <p class="copy text-sm">From Miss Ethiopia to Miss Tourism Africa — the chronicle of a crown in motion.</p>
-        </div>
-      </a>
+  <!-- ============ COMPONENT: PressLine ============ -->
+  <section id="press-line" data-component="PressLine" class="px-5 md:px-14 py-20 bg-linen">
+    <div class="max-w-4xl mx-auto flex flex-col md:flex-row items-start md:items-center justify-between gap-6">
+      <p class="font-display text-2xl md:text-3xl" data-fade>For press, please lead with Miss Tourism Ethiopia — Hermela Ashenafi Assefa.</p>
+      <a href="mailto:press@hermela.example" data-magnetic data-cursor="link" class="btn-primary shrink-0">press@hermela.example</a>
     </div>
   </section>
 
 </main>
 
-<!-- ============ COMPONENT: Footer ============ -->
 <footer id="site-footer" class="px-5 md:px-14 pt-24 pb-10">
   <div class="max-w-6xl mx-auto">
-    <a href="contact.html" data-transition data-magnetic data-cursor="link" class="footer-word font-wordmark block mb-16 hover:opacity-80 transition-opacity">Let's build something.</a>
+    <p class="footer-word font-wordmark block mb-16">Thank you for being here.</p>
     <div class="grid md:grid-cols-4 gap-10 border-t footer-hair pt-10">
       <div>
         <p class="font-wordmark text-2xl mb-3">Hermela</p>
@@ -185,5 +153,20 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/Flip.min.js"></script>
 <script src="assets/js/main.js"></script>
+<script>
+  // Local behavior: intercept the contact form. No backend wired here by design —
+  // this posts nowhere and simply confirms receipt, ready to be pointed at a real
+  // endpoint (Formspree, a Next.js API route, etc.) during production handover.
+  (function () {
+    var form = document.getElementById('hermela-contact-form');
+    var status = document.getElementById('cf-status');
+    if (!form) return;
+    form.addEventListener('submit', function (e) {
+      e.preventDefault();
+      status.textContent = 'Thank you — your message has been received. Her team will follow up shortly.';
+      form.reset();
+    });
+  })();
+</script>
 </body>
 </html>
