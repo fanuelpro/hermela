@@ -1,0 +1,211 @@
+/* ==========================================================================
+   HERMELA — TOKENS.CSS
+   The single source of visual truth. See /blueprint.md before editing.
+   Elevated High-Key, Ink-Deep system. Do not introduce colors outside
+   this token list anywhere in the codebase.
+   ========================================================================== */
+
+:root {
+  /* --- COLOR --- */
+  --alabaster: #F6F3EC;
+  --linen: #EEE7D9;
+  --paper: #FBFAF6;
+  --ink: #161513;
+  --graphite: #3A362F;
+  --umber: #8B6F4E;
+  --sovereign: #5B4636;
+  --hairline: rgba(22, 21, 19, 0.14);
+  --shadow-warm: rgba(91, 70, 54, 0.10);
+
+  /* --- TYPE --- */
+  --font-wordmark: "Cormorant Garamond", "Cormorant SC", serif;
+  --font-display: "Fraunces", serif;
+  --font-body: "Inter", sans-serif;
+
+  /* --- MOTION --- */
+  --ease-reveal: cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-magnetic: cubic-bezier(0.19, 1, 0.22, 1);
+  --dur-enter: 0.7s;
+  --dur-hover: 0.25s;
+}
+
+* { box-sizing: border-box; }
+
+html {
+  scroll-behavior: auto; /* Lenis governs actual smoothing; native stays auto to avoid double-handling */
+  background: var(--alabaster);
+}
+
+html.lenis, html.lenis body { height: auto; }
+.lenis.lenis-smooth { scroll-behavior: auto; }
+.lenis.lenis-stopped { overflow: hidden; }
+
+body {
+  margin: 0;
+  background: var(--alabaster);
+  color: var(--ink);
+  font-family: var(--font-body);
+  font-weight: 400;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+  overflow-x: hidden;
+  cursor: none;
+}
+
+@media (max-width: 860px), (hover: none) {
+  body { cursor: auto; }
+  #custom-cursor { display: none !important; }
+}
+
+::selection { background: var(--ink); color: var(--paper); }
+
+/* --- Reduced motion global gate ---------------------------------------- */
+body[data-motion="reduced"] * {
+  animation-duration: 0.001ms !important;
+  animation-iteration-count: 1 !important;
+  transition-duration: 0.001ms !important;
+  scroll-behavior: auto !important;
+}
+body[data-motion="reduced"] #film-grain,
+body[data-motion="reduced"] #custom-cursor { display: none !important; }
+body[data-motion="reduced"] [data-reveal] { opacity: 1 !important; transform: none !important; }
+
+/* --- Typography base ---------------------------------------------------- */
+.font-wordmark { font-family: var(--font-wordmark); }
+.font-display   { font-family: var(--font-display); font-variation-settings: "opsz" 40, "SOFT" 0, "WONK" 0; }
+.font-body      { font-family: var(--font-body); }
+
+.eyebrow {
+  font-family: var(--font-body);
+  font-size: 0.72rem;
+  letter-spacing: 0.16em;
+  color: var(--umber);
+  font-weight: 600;
+}
+
+.h-display {
+  font-family: var(--font-display);
+  font-weight: 480;
+  line-height: 1.03;
+  letter-spacing: -0.01em;
+  color: var(--ink);
+}
+
+p.copy { max-width: 66ch; line-height: 1.75; color: var(--graphite); }
+
+/* --- Reveal / mask-line for per-character stagger ----------------------- */
+.reveal-line { overflow: hidden; display: block; }
+.reveal-line > span { display: inline-block; will-change: transform; }
+
+[data-reveal] { opacity: 0; }
+
+/* --- Hairlines / structure, never soft grey card shadows ---------------- */
+.hairline { border-color: var(--hairline); }
+.shadow-warm { box-shadow: 0 30px 60px -20px var(--shadow-warm); }
+
+/* --- Film grain overlay -------------------------------------------------- */
+#film-grain {
+  position: fixed;
+  inset: 0;
+  z-index: 998;
+  pointer-events: none;
+  opacity: 0.045;
+  mix-blend-mode: multiply;
+}
+#film-grain svg { width: 100%; height: 100%; }
+
+/* --- Custom cursor -------------------------------------------------------- */
+#custom-cursor {
+  position: fixed;
+  top: 0; left: 0;
+  width: 14px; height: 14px;
+  margin: -7px 0 0 -7px;
+  border-radius: 50%;
+  background: var(--ink);
+  z-index: 999;
+  pointer-events: none;
+  mix-blend-mode: difference;
+  transition: width 0.25s var(--ease-magnetic), height 0.25s var(--ease-magnetic), background 0.25s;
+}
+#custom-cursor[data-state="link"] { width: 46px; height: 46px; margin: -23px 0 0 -23px; background: var(--paper); }
+#custom-cursor[data-state="drag"] { width: 84px; height: 84px; margin: -42px 0 0 -42px; background: var(--paper); }
+#custom-cursor[data-state="view"] { width: 84px; height: 84px; margin: -42px 0 0 -42px; background: var(--paper); }
+#custom-cursor .cursor-label {
+  position: absolute; inset: 0; display: flex; align-items: center; justify-content: center;
+  font-size: 0.62rem; letter-spacing: 0.1em; color: var(--ink); opacity: 0; font-family: var(--font-body); font-weight: 600;
+}
+#custom-cursor[data-state="drag"] .cursor-label,
+#custom-cursor[data-state="view"] .cursor-label { opacity: 1; }
+
+/* --- Magnetic wrapper ------------------------------------------------------ */
+[data-magnetic] { display: inline-block; will-change: transform; }
+
+/* --- Nav ------------------------------------------------------------------- */
+#site-nav {
+  position: fixed; top: 0; left: 0; right: 0; z-index: 900;
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 1.6rem clamp(1.25rem, 4vw, 3.5rem);
+  mix-blend-mode: normal;
+}
+#site-nav .nav-word { font-family: var(--font-wordmark); font-size: 1.35rem; letter-spacing: 0.04em; color: var(--ink); text-decoration: none; }
+#nav-toggle {
+  width: 46px; height: 46px; border: 1px solid var(--ink); background: transparent;
+  display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 5px; cursor: none;
+}
+#nav-toggle span { width: 18px; height: 1px; background: var(--ink); display: block; transition: transform 0.3s var(--ease-reveal), opacity 0.3s; }
+body[data-nav-state="open"] #nav-toggle span:nth-child(1) { transform: translateY(6px) rotate(45deg); }
+body[data-nav-state="open"] #nav-toggle span:nth-child(2) { opacity: 0; }
+body[data-nav-state="open"] #nav-toggle span:nth-child(3) { transform: translateY(-6px) rotate(-45deg); }
+
+#nav-overlay {
+  position: fixed; inset: 0; background: var(--alabaster); z-index: 890;
+  display: flex; flex-direction: column; justify-content: center; padding: clamp(1.5rem,6vw,6rem);
+  clip-path: circle(0% at calc(100% - 3.2rem) 3.2rem);
+  transition: clip-path 0.8s var(--ease-reveal);
+}
+body[data-nav-state="open"] #nav-overlay { clip-path: circle(150% at calc(100% - 3.2rem) 3.2rem); }
+#nav-overlay a {
+  font-family: var(--font-display); font-weight: 480; font-size: clamp(2.4rem, 7vw, 5rem);
+  color: var(--ink); text-decoration: none; line-height: 1.1; display: block;
+  border-top: 1px solid var(--hairline); padding: 0.35em 0; transition: color 0.3s, padding-left 0.3s var(--ease-reveal);
+}
+#nav-overlay a:last-of-type { border-bottom: 1px solid var(--hairline); }
+#nav-overlay a:hover { color: var(--umber); padding-left: 0.4em; }
+#nav-overlay .nav-meta { font-family: var(--font-body); font-size: 0.85rem; color: var(--graphite); margin-top: 2.5rem; }
+#nav-overlay .nav-current { color: var(--umber); }
+
+/* --- Footer ----------------------------------------------------------------- */
+#site-footer { background: var(--ink); color: var(--paper); }
+#site-footer .footer-word { font-family: var(--font-wordmark); font-size: clamp(2.5rem, 8vw, 6rem); color: var(--paper); }
+#site-footer a { color: rgba(251,250,246,0.72); text-decoration: none; transition: color 0.25s; }
+#site-footer a:hover { color: var(--paper); }
+#site-footer .footer-hair { border-color: rgba(251,250,246,0.14); }
+
+/* --- Buttons ------------------------------------------------------------------ */
+.btn-primary {
+  display: inline-flex; align-items: center; gap: 0.6rem;
+  border: 1px solid var(--ink); color: var(--ink); background: transparent;
+  padding: 0.85rem 1.6rem; font-size: 0.85rem; letter-spacing: 0.04em; text-decoration: none;
+  transition: background 0.25s, color 0.25s;
+}
+.btn-primary:hover { background: var(--ink); color: var(--paper); }
+.btn-primary.on-dark { border-color: rgba(251,250,246,0.5); color: var(--paper); }
+.btn-primary.on-dark:hover { background: var(--paper); color: var(--ink); }
+
+/* --- Odometer ----------------------------------------------------------------- */
+.odometer-digit { display: inline-block; overflow: hidden; height: 1em; vertical-align: top; }
+.odometer-digit-inner { display: flex; flex-direction: column; will-change: transform; }
+
+/* --- Curtain transition -------------------------------------------------------- */
+#curtain {
+  position: fixed; inset: 0; z-index: 995; background: var(--ink);
+  clip-path: circle(0% at var(--curtain-x, 50%) var(--curtain-y, 50%));
+  pointer-events: none;
+}
+
+/* --- Sticky stack ---------------------------------------------------------------- */
+.stack-panel { position: sticky; top: 0; min-height: 100vh; display: flex; align-items: center; }
+
+/* --- Utility: hide scrollbars on horizontal pinned rail --------------------------- */
+.no-scrollbar::-webkit-scrollbar { display: none; }
+.no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
