@@ -20,13 +20,19 @@
   .field { background: transparent; border: none; border-bottom: 1px solid var(--hairline); width: 100%; padding: 0.9rem 0; font-family: var(--font-body); font-size: 1rem; color: var(--ink); }
   .field:focus { outline: none; border-color: var(--ink); }
   .field::placeholder { color: rgba(22,21,19,0.38); }
+  #contact-form-wrap { position: relative; }
 </style>
 </head>
 <body data-nav-state="closed">
 
+<div id="preloader"><span class="preloader-word font-wordmark">Hermela</span><span class="preloader-count" data-preloader-count>0%</span></div>
 <div id="film-grain" aria-hidden="true"></div>
 <div id="custom-cursor" data-state="default" aria-hidden="true"></div>
 <div id="curtain" aria-hidden="true"></div>
+<div id="lightbox" data-open="false">
+  <button class="lightbox-close" data-lightbox-close data-cursor="link">CLOSE ✕</button>
+  <img src="" alt="Expanded view" />
+</div>
 
 <header id="site-nav">
   <a href="index.html" data-transition class="nav-word" data-magnetic data-cursor="link">Hermela</a>
@@ -34,38 +40,43 @@
 </header>
 
 <nav id="nav-overlay" aria-hidden="true">
-  <a href="index.html" data-page="index.html" data-transition data-cursor="link" data-cursor-label="ENTER">01 — Home</a>
-  <a href="identity.html" data-page="identity.html" data-transition data-cursor="link" data-cursor-label="READ">02 — Identity</a>
-  <a href="portfolio.html" data-page="portfolio.html" data-transition data-cursor="link" data-cursor-label="VIEW">03 — Portfolio</a>
-  <a href="reign.html" data-page="reign.html" data-transition data-cursor="link" data-cursor-label="ENTER">04 — Reign</a>
-  <a href="mind.html" data-page="mind.html" data-transition data-cursor="link" data-cursor-label="READ">05 — Mind</a>
-  <a href="codes.html" data-page="codes.html" data-transition data-cursor="link" data-cursor-label="READ">06 — Codes</a>
-  <a href="contact.html" data-page="contact.html" data-transition data-cursor="link" data-cursor-label="BEGIN">07 — Contact</a>
+  <a href="index.html" data-page="index.html" data-transition data-cursor="link" data-cursor-label="ENTER">01 Home ↗</a>
+  <a href="identity.html" data-page="identity.html" data-transition data-cursor="link" data-cursor-label="READ">02 Identity ↗</a>
+  <a href="portfolio.html" data-page="portfolio.html" data-transition data-cursor="link" data-cursor-label="VIEW">03 Portfolio ↗</a>
+  <a href="reign.html" data-page="reign.html" data-transition data-cursor="link" data-cursor-label="ENTER">04 Reign ↗</a>
+  <a href="mind.html" data-page="mind.html" data-transition data-cursor="link" data-cursor-label="READ">05 Mind ↗</a>
+  <a href="codes.html" data-page="codes.html" data-transition data-cursor="link" data-cursor-label="READ">06 Codes ↗</a>
+  <a href="contact.html" data-page="contact.html" data-transition data-cursor="link" data-cursor-label="BEGIN">07 Contact ↗</a>
   <div class="nav-meta">Addis Ababa, Ethiopia — Miss Tourism Ethiopia 2026</div>
 </nav>
 
 <main>
 
   <!-- ============ COMPONENT: ContactHero ============ -->
-  <section id="contact-hero" data-component="ContactHero" class="min-h-[60svh] flex items-end px-5 md:px-14 pt-32 pb-16 bg-alabaster">
-    <div class="max-w-3xl">
-      <p class="eyebrow mb-5" data-fade>07 — Contact</p>
-      <h1 class="h-display font-display" style="font-size:clamp(2.6rem,7vw,5.5rem);">
-        <span class="reveal-line block" data-reveal="words">Begin something</span>
-        <span class="reveal-line block italic" data-reveal="words" style="color:var(--umber);">meaningful.</span>
-      </h1>
-      <p class="copy mt-8 text-lg" data-fade>
-        Influence is a tool best used to empower others, challenge perspectives, and
-        create meaningful change. If that's the work you're building too, this is where
-        it starts.
-      </p>
+  <section id="contact-hero" data-component="ContactHero" class="min-h-[60svh] flex flex-col justify-end px-5 md:px-14 pt-32 pb-14 bg-alabaster">
+    <p class="eyebrow mb-5" data-fade>07 — Contact</p>
+    <h1 class="h-display font-display" style="font-size:clamp(2.6rem,7vw,5.5rem);">
+      <span class="reveal-line block" data-reveal="words">Begin something</span>
+      <span class="reveal-line block italic" data-reveal="words" style="color:var(--umber);">meaningful.</span>
+    </h1>
+    <!-- ============ COMPONENT: MetaChipRow ============ -->
+    <div class="chip-row mt-7" data-fade>
+      <div class="chip"><span class="chip-label">Based In</span><span class="chip-value">Addis Ababa, Ethiopia</span></div>
+      <div class="chip"><span class="chip-label">Response</span><span class="chip-value">Read Personally</span></div>
+      <div class="chip"><span class="chip-label">Inquiries</span><span class="chip-value">Brand · Press · Modeling · Speaking</span></div>
     </div>
+    <p class="copy mt-8 text-lg" data-fade>
+      Influence is a tool best used to empower others, challenge perspectives, and
+      create meaningful change. If that's the work you're building too, this is where
+      it starts.
+    </p>
   </section>
 
-  <!-- ============ COMPONENT: ContactForm ============ -->
+  <!-- ============ COMPONENT: ContactForm (with success overlay) ============ -->
   <section id="contact-form" data-component="ContactForm" class="px-5 md:px-14 pb-24 md:pb-32 bg-alabaster">
-    <div class="max-w-2xl mx-auto">
-      <form id="hermela-contact-form" class="space-y-8" data-fade>
+    <div id="contact-form-wrap" class="max-w-2xl mx-auto">
+
+      <form id="hermela-contact-form" class="space-y-8" data-success-form="#success-overlay" data-fade>
         <div class="grid md:grid-cols-2 gap-8">
           <div>
             <label for="cf-name" class="eyebrow block mb-2">Name</label>
@@ -97,8 +108,16 @@
           <textarea id="cf-message" name="message" rows="4" class="field" placeholder="Tell her about the opportunity" required></textarea>
         </div>
         <button type="submit" data-magnetic data-cursor="link" class="btn-primary">Send Inquiry</button>
-        <p id="cf-status" class="text-sm mt-4" style="color:var(--graphite);" role="status"></p>
       </form>
+
+      <!-- ============ COMPONENT: SuccessOverlay ============ -->
+      <div id="success-overlay" data-open="false">
+        <div class="success-check">✓</div>
+        <h3 class="font-display text-2xl md:text-3xl mb-3">Message Received.</h3>
+        <p class="copy mb-8">Her team will respond to your inquiry personally within 48 hours.</p>
+        <button data-success-close data-magnetic data-cursor="link" class="btn-primary">Close</button>
+      </div>
+
     </div>
   </section>
 
@@ -112,40 +131,9 @@
 
 </main>
 
-<footer id="site-footer" class="px-5 md:px-14 pt-24 pb-10">
-  <div class="max-w-6xl mx-auto">
-    <p class="footer-word font-wordmark block mb-16">Thank you for being here.</p>
-    <div class="grid md:grid-cols-4 gap-10 border-t footer-hair pt-10">
-      <div>
-        <p class="font-wordmark text-2xl mb-3">Hermela</p>
-        <p class="text-sm" style="color:rgba(251,250,246,0.6);">Computer scientist. Project manager.<br/>Model. Miss Tourism Ethiopia.</p>
-      </div>
-      <div>
-        <p class="eyebrow mb-4" style="color:rgba(251,250,246,0.45);">Narrative</p>
-        <ul class="space-y-2 text-sm">
-          <li><a href="identity.html" data-transition>Identity</a></li>
-          <li><a href="mind.html" data-transition>Mind</a></li>
-          <li><a href="codes.html" data-transition>Codes</a></li>
-        </ul>
-      </div>
-      <div>
-        <p class="eyebrow mb-4" style="color:rgba(251,250,246,0.45);">World</p>
-        <ul class="space-y-2 text-sm">
-          <li><a href="portfolio.html" data-transition>Portfolio</a></li>
-          <li><a href="reign.html" data-transition>Reign</a></li>
-        </ul>
-      </div>
-      <div>
-        <p class="eyebrow mb-4" style="color:rgba(251,250,246,0.45);">Protocol</p>
-        <ul class="space-y-2 text-sm">
-          <li><a href="contact.html" data-transition>Contact</a></li>
-          <li><a href="#" data-cursor="link">Instagram</a></li>
-          <li><a href="#" data-cursor="link">TikTok</a></li>
-        </ul>
-      </div>
-    </div>
-    <p class="text-xs mt-14" style="color:rgba(251,250,246,0.4);">© 2026 Hermela Ashenafi Assefa. Intrigue, depth, and continuous evolution.</p>
-  </div>
+<footer class="footer-minimal">
+  <p>© 2026 Hermela Ashenafi Assefa · Contact</p>
+  <a href="index.html" data-transition data-magnetic data-cursor="link">← Return Home</a>
 </footer>
 
 <script src="https://unpkg.com/lenis@1.1.18/dist/lenis.min.js"></script>
@@ -153,20 +141,5 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/Flip.min.js"></script>
 <script src="assets/js/main.js"></script>
-<script>
-  // Local behavior: intercept the contact form. No backend wired here by design —
-  // this posts nowhere and simply confirms receipt, ready to be pointed at a real
-  // endpoint (Formspree, a Next.js API route, etc.) during production handover.
-  (function () {
-    var form = document.getElementById('hermela-contact-form');
-    var status = document.getElementById('cf-status');
-    if (!form) return;
-    form.addEventListener('submit', function (e) {
-      e.preventDefault();
-      status.textContent = 'Thank you — your message has been received. Her team will follow up shortly.';
-      form.reset();
-    });
-  })();
-</script>
 </body>
 </html>
