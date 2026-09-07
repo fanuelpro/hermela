@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Portfolio — Hermela Ashenafi</title>
+<meta name="description" content="Visual grammar — sovereign structure, tactility, and the wardrobe commandments." />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,400&family=Fraunces:opsz,wght@9..144,300..700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+  tailwind.config = { theme: { extend: {
+    colors: { alabaster:"#F6F3EC", linen:"#EEE7D9", paper:"#FBFAF6", ink:"#161513", graphite:"#3A362F", umber:"#8B6F4E", sovereign:"#5B4636" },
+    fontFamily: { wordmark:["Cormorant Garamond","serif"], display:["Fraunces","serif"], body:["Inter","sans-serif"] },
+  } } }
+</script>
+<link rel="stylesheet" href="assets/css/tokens.css">
+<style>
+  /* Local: SVG-filter displacement hover (lightweight substitute for a full WebGL/Three.js
+     fragment shader — chosen for GitHub Pages performance; see blueprint.md §2 note).
+     Reserved for exactly one hero image on this page per the motion vocabulary rule. */
+  #displacement-hero { filter: url(#heroDisplace); transition: filter 0.4s; }
+</style>
+</head>
+<body data-nav-state="closed">
+
+<div id="film-grain" aria-hidden="true"></div>
+<div id="custom-cursor" data-state="default" aria-hidden="true"></div>
+<div id="curtain" aria-hidden="true"></div>
+
+<header id="site-nav">
+  <a href="index.html" data-transition class="nav-word" data-magnetic data-cursor="link">Hermela</a>
+  <button id="nav-toggle" aria-label="Open menu" data-cursor="link"><span></span><span></span><span></span></button>
+</header>
+
+<nav id="nav-overlay" aria-hidden="true">
+  <a href="index.html" data-page="index.html" data-transition data-cursor="link" data-cursor-label="ENTER">01 — Home</a>
+  <a href="identity.html" data-page="identity.html" data-transition data-cursor="link" data-cursor-label="READ">02 — Identity</a>
+  <a href="portfolio.html" data-page="portfolio.html" data-transition data-cursor="link" data-cursor-label="VIEW">03 — Portfolio</a>
+  <a href="reign.html" data-page="reign.html" data-transition data-cursor="link" data-cursor-label="ENTER">04 — Reign</a>
+  <a href="mind.html" data-page="mind.html" data-transition data-cursor="link" data-cursor-label="READ">05 — Mind</a>
+  <a href="codes.html" data-page="codes.html" data-transition data-cursor="link" data-cursor-label="READ">06 — Codes</a>
+  <a href="contact.html" data-page="contact.html" data-transition data-cursor="link" data-cursor-label="BEGIN">07 — Contact</a>
+  <div class="nav-meta">Addis Ababa, Ethiopia — Miss Tourism Ethiopia 2026</div>
+</nav>
+
+<!-- Hidden SVG filter definition for the displacement hover effect -->
+<svg width="0" height="0" style="position:absolute;">
+  <filter id="heroDisplace">
+    <feTurbulence id="heroTurb" type="fractalNoise" baseFrequency="0.01 0.02" numOctaves="2" result="noise" seed="4" />
+    <feDisplacementMap in="SourceGraphic" in2="noise" id="heroDisplaceMap" scale="0" xChannelSelector="R" yChannelSelector="G" />
+  </filter>
+</svg>
+
+<main>
+
+  <!-- ============ COMPONENT: PortfolioHero (SVG displacement hover) ============ -->
+  <section id="portfolio-hero" data-component="PortfolioHero" class="relative min-h-[90svh] flex items-center justify-center bg-linen overflow-hidden px-5">
+    <p class="eyebrow absolute top-32 left-5 md:left-14" data-fade>03 — Portfolio</p>
+    <img id="displacement-hero" data-cursor="drag" data-cursor-label="DRAG"
+         src="https://images.unsplash.com/photo-1524504388940-b1c1722653e1?q=80&w=1200&auto=format&fit=crop"
+         alt="High-fashion editorial portrait in architectural setting" class="h-[70vh] object-cover grayscale-[0.1]" />
+    <h1 class="absolute bottom-16 left-5 md:left-14 font-wordmark italic" style="font-size:clamp(2.4rem,8vw,6rem); color:var(--ink);">
+      <span class="reveal-line block" data-reveal="chars">Visual Grammar</span>
+    </h1>
+  </section>
+
+  <!-- ============ COMPONENT: PinnedGallery (horizontal scroll-jack) ============ -->
+  <section id="gallery" data-component="PinnedGallery" data-horizontal-scroll class="relative bg-alabaster overflow-hidden h-screen">
+    <div data-horizontal-track class="flex h-full items-center gap-6 md:gap-10 px-5 md:px-14 no-scrollbar" style="width:max-content;">
+
+      <figure class="shrink-0 w-[70vw] md:w-[32vw] h-[70vh]" data-velocity-skew>
+        <img data-flip-trigger="look1" data-cursor="view" data-cursor-label="VIEW" src="https://images.unsplash.com/photo-1483985988355-763728e1935b?q=80&w=1000&auto=format&fit=crop" alt="Look 01 — architectural tailoring" class="w-full h-full object-cover grayscale-[0.1]" />
+        <figcaption class="eyebrow mt-4">Look 01 — Structure</figcaption>
+      </figure>
+
+      <figure class="shrink-0 w-[60vw] md:w-[24vw] h-[55vh] self-end" data-velocity-skew>
+        <img data-cursor="view" data-cursor-label="VIEW" src="https://images.unsplash.com/photo-1490114538077-0a7f8cb49891?q=80&w=900&auto=format&fit=crop" alt="Look 02 — draped fluid form" class="w-full h-full object-cover grayscale-[0.1]" />
+        <figcaption class="eyebrow mt-4">Look 02 — Fluidity</figcaption>
+      </figure>
+
+      <figure class="shrink-0 w-[70vw] md:w-[34vw] h-[75vh]" data-velocity-skew>
+        <img data-cursor="view" data-cursor-label="VIEW" src="https://images.unsplash.com/photo-1509967419530-da38b4704bc6?q=80&w=1000&auto=format&fit=crop" alt="Look 03 — sovereign silhouette" class="w-full h-full object-cover grayscale-[0.1]" />
+        <figcaption class="eyebrow mt-4">Look 03 — Sovereign</figcaption>
+      </figure>
+
+      <figure class="shrink-0 w-[55vw] md:w-[22vw] h-[48vh] self-start mt-20" data-velocity-skew>
+        <img data-cursor="view" data-cursor-label="VIEW" src="https://images.unsplash.com/photo-1441123694162-e54a981ceba5?q=80&w=900&auto=format&fit=crop" alt="Look 04 — minimal architectural line" class="w-full h-full object-cover grayscale-[0.1]" />
+        <figcaption class="eyebrow mt-4">Look 04 — Line</figcaption>
+      </figure>
+
+      <figure class="shrink-0 w-[70vw] md:w-[32vw] h-[68vh]" data-velocity-skew>
+        <img data-cursor="view" data-cursor-label="VIEW" src="https://images.unsplash.com/photo-1524504388940-b1c1722653e1?q=80&w=1000&auto=format&fit=crop" alt="Look 05 — editorial portrait" class="w-full h-full object-cover grayscale-[0.1]" />
+        <figcaption class="eyebrow mt-4">Look 05 — Presence</figcaption>
+      </figure>
+
+      <div class="shrink-0 w-[50vw] md:w-[22vw] flex items-center pr-14">
+        <p class="font-display text-2xl md:text-3xl leading-snug" data-fade>Every outfit should tell a story about who I am.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ COMPONENT: Tactility (structural x fluid) ============ -->
+  <section id="tactility" data-component="Tactility" class="px-5 md:px-14 py-24 md:py-32 bg-linen">
+    <div class="max-w-5xl mx-auto grid md:grid-cols-2 gap-14">
+      <div data-fade>
+        <p class="eyebrow mb-4">Rigid & Defined</p>
+        <p class="copy text-lg">Heavy wools, crisp poplins, structured leather — fabrics that hold their shape and answer for themselves.</p>
+      </div>
+      <div data-fade>
+        <p class="eyebrow mb-4" style="color:var(--sovereign);">Fluid & Kinetic</p>
+        <p class="copy text-lg">Matte silk, heavy crepe, fine linen — textures that cascade and react to motion, never rigid, never still.</p>
+      </div>
+    </div>
+    <p class="font-display italic text-2xl md:text-3xl text-center mt-16 max-w-3xl mx-auto" style="color:var(--sovereign);" data-fade>
+      A curated juxtaposition of both structural and fluid elements.
+    </p>
+  </section>
+
+  <!-- ============ COMPONENT: WardrobeCommandments ============ -->
+  <section id="commandments" data-component="WardrobeCommandments" class="px-5 md:px-14 py-28 md:py-36 bg-ink text-paper">
+    <p class="eyebrow mb-10" style="color:var(--umber);">The Wardrobe Commandments</p>
+    <div class="grid md:grid-cols-3 gap-10 max-w-6xl">
+      <div class="border-t pt-6" style="border-color:rgba(251,250,246,0.14);" data-fade>
+        <p class="font-display text-2xl md:text-3xl mb-3" style="color:var(--paper);">Tell a story.</p>
+        <p class="text-sm" style="color:rgba(251,250,246,0.68);">Every outfit should tell a story about who I am. My clothing is an extension of my personality, not just something I wear.</p>
+      </div>
+      <div class="border-t pt-6" style="border-color:rgba(251,250,246,0.14);" data-fade>
+        <p class="font-display text-2xl md:text-3xl mb-3" style="color:var(--paper);">Dress with intention.</p>
+        <p class="text-sm" style="color:rgba(251,250,246,0.68);">Always dress with intention and have fun with it. Let your personality shine, embrace a touch of whimsy, and never be afraid to express your own unique sense of style.</p>
+      </div>
+      <div class="border-t pt-6" style="border-color:rgba(251,250,246,0.14);" data-fade>
+        <p class="font-display text-2xl md:text-3xl mb-3" style="color:var(--paper);">Know what works.</p>
+        <p class="text-sm" style="color:rgba(251,250,246,0.68);">Understand the silhouettes, fabrics, and colors that complement your body and complexion, and wear them with confidence.</p>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer id="site-footer" class="px-5 md:px-14 pt-24 pb-10">
+  <div class="max-w-6xl mx-auto">
+    <a href="contact.html" data-transition data-magnetic data-cursor="link" class="footer-word font-wordmark block mb-16 hover:opacity-80 transition-opacity">Let's build something.</a>
+    <div class="grid md:grid-cols-4 gap-10 border-t footer-hair pt-10">
+      <div>
+        <p class="font-wordmark text-2xl mb-3">Hermela</p>
+        <p class="text-sm" style="color:rgba(251,250,246,0.6);">Computer scientist. Project manager.<br/>Model. Miss Tourism Ethiopia.</p>
+      </div>
+      <div>
+        <p class="eyebrow mb-4" style="color:rgba(251,250,246,0.45);">Narrative</p>
+        <ul class="space-y-2 text-sm">
+          <li><a href="identity.html" data-transition>Identity</a></li>
+          <li><a href="mind.html" data-transition>Mind</a></li>
+          <li><a href="codes.html" data-transition>Codes</a></li>
+        </ul>
+      </div>
+      <div>
+        <p class="eyebrow mb-4" style="color:rgba(251,250,246,0.45);">World</p>
+        <ul class="space-y-2 text-sm">
+          <li><a href="portfolio.html" data-transition>Portfolio</a></li>
+          <li><a href="reign.html" data-transition>Reign</a></li>
+        </ul>
+      </div>
+      <div>
+        <p class="eyebrow mb-4" style="color:rgba(251,250,246,0.45);">Protocol</p>
+        <ul class="space-y-2 text-sm">
+          <li><a href="contact.html" data-transition>Contact</a></li>
+          <li><a href="#" data-cursor="link">Instagram</a></li>
+          <li><a href="#" data-cursor="link">TikTok</a></li>
+        </ul>
+      </div>
+    </div>
+    <p class="text-xs mt-14" style="color:rgba(251,250,246,0.4);">© 2026 Hermela Ashenafi Assefa. Intrigue, depth, and continuous evolution.</p>
+  </div>
+</footer>
+
+<script src="https://unpkg.com/lenis@1.1.18/dist/lenis.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/Flip.min.js"></script>
+<script src="assets/js/main.js"></script>
+<script>
+  // Local behavior: drive the SVG displacement scale from hover/pointer proximity on the hero image only.
+  (function(){
+    var hero = document.getElementById('displacement-hero');
+    var map = document.getElementById('heroDisplaceMap');
+    if (!hero || !map) return;
+    var reduced = document.body.getAttribute('data-motion') === 'reduced';
+    if (reduced) return;
+    hero.addEventListener('mouseenter', function(){ map.setAttribute('scale','0'); animateScale(38); });
+    hero.addEventListener('mouseleave', function(){ animateScale(0); });
+    function animateScale(target){
+      if (window.gsap) { gsap.to({v:parseFloat(map.getAttribute('scale'))||0}, {v:target, duration:0.5, ease:'power3.out', onUpdate:function(){ map.setAttribute('scale', this.targets()[0].v); }}); }
+      else { map.setAttribute('scale', target); }
+    }
+  })();
+</script>
+</body>
+</html>
