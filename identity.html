@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Identity — Hermela Ashenafi</title>
+<meta name="description" content="The Intellectual Alchemist — where computer science, project management, and high fashion meet." />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,400&family=Fraunces:opsz,wght@9..144,300..700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+  tailwind.config = { theme: { extend: {
+    colors: { alabaster:"#F6F3EC", linen:"#EEE7D9", paper:"#FBFAF6", ink:"#161513", graphite:"#3A362F", umber:"#8B6F4E", sovereign:"#5B4636" },
+    fontFamily: { wordmark:["Cormorant Garamond","serif"], display:["Fraunces","serif"], body:["Inter","sans-serif"] },
+  } } }
+</script>
+<link rel="stylesheet" href="assets/css/tokens.css">
+</head>
+<body data-nav-state="closed">
+
+<div id="film-grain" aria-hidden="true"></div>
+<div id="custom-cursor" data-state="default" aria-hidden="true"></div>
+<div id="curtain" aria-hidden="true"></div>
+
+<header id="site-nav">
+  <a href="index.html" data-transition class="nav-word" data-magnetic data-cursor="link">Hermela</a>
+  <button id="nav-toggle" aria-label="Open menu" data-cursor="link">
+    <span></span><span></span><span></span>
+  </button>
+</header>
+
+<nav id="nav-overlay" aria-hidden="true">
+  <a href="index.html" data-page="index.html" data-transition data-cursor="link" data-cursor-label="ENTER">01 — Home</a>
+  <a href="identity.html" data-page="identity.html" data-transition data-cursor="link" data-cursor-label="READ">02 — Identity</a>
+  <a href="portfolio.html" data-page="portfolio.html" data-transition data-cursor="link" data-cursor-label="VIEW">03 — Portfolio</a>
+  <a href="reign.html" data-page="reign.html" data-transition data-cursor="link" data-cursor-label="ENTER">04 — Reign</a>
+  <a href="mind.html" data-page="mind.html" data-transition data-cursor="link" data-cursor-label="READ">05 — Mind</a>
+  <a href="codes.html" data-page="codes.html" data-transition data-cursor="link" data-cursor-label="READ">06 — Codes</a>
+  <a href="contact.html" data-page="contact.html" data-transition data-cursor="link" data-cursor-label="BEGIN">07 — Contact</a>
+  <div class="nav-meta">Addis Ababa, Ethiopia — Miss Tourism Ethiopia 2026</div>
+</nav>
+
+<main>
+
+  <!-- ============ COMPONENT: IdentityHero ============ -->
+  <section id="identity-hero" data-component="IdentityHero" class="relative min-h-[80svh] flex items-end px-5 md:px-14 pt-32 pb-16 md:pb-24 bg-alabaster overflow-hidden">
+    <div class="absolute right-0 top-0 h-full w-1/2 opacity-90 hidden md:block" data-parallax-scene>
+      <div data-parallax-layer="0.25" class="h-full">
+        <img src="https://images.unsplash.com/photo-1483985988355-763728e1935b?q=80&w=1400&auto=format&fit=crop" alt="" class="w-full h-[120%] object-cover grayscale-[0.2]" />
+      </div>
+    </div>
+    <div class="relative z-10 max-w-2xl">
+      <p class="eyebrow mb-5" data-fade>02 — Identity</p>
+      <h1 class="h-display font-display" style="font-size:clamp(2.6rem,6.5vw,5rem);">
+        <span class="reveal-line block" data-reveal="words">The Intellectual</span>
+        <span class="reveal-line block italic" data-reveal="words" style="color:var(--umber);">Alchemist.</span>
+      </h1>
+      <p class="copy mt-8 text-lg" data-fade>
+        She sits precisely at the intersection of rigid structural logic and fluid aesthetic
+        expression — computer science and high fashion, project management and modeling.
+        She refuses to resolve that tension. It is the brand.
+      </p>
+    </div>
+  </section>
+
+  <!-- ============ COMPONENT: LeadershipLanguage ============ -->
+  <section id="leadership" data-component="LeadershipLanguage" class="px-5 md:px-14 py-24 md:py-32 bg-linen">
+    <div class="max-w-5xl mx-auto grid md:grid-cols-2 gap-14 items-center">
+      <div data-fade>
+        <p class="eyebrow mb-4">Leadership Language</p>
+        <h2 class="font-display text-3xl md:text-4xl mb-6">Strategic Innovation.</h2>
+        <p class="copy">
+          As a project manager, her primary language is not architecture for its own sake,
+          nor pure empathy — it is disruption of standard patterns. She introduces novel
+          concepts and challenges assumptions, then builds the structure that makes the new
+          idea survive contact with a team.
+        </p>
+      </div>
+      <div class="border-l pl-8" style="border-color:var(--hairline);" data-fade>
+        <p class="font-display italic text-2xl md:text-3xl leading-snug" style="color:var(--sovereign);">
+          "Influence is a tool best used to empower others, challenge perspectives, and
+          create meaningful change."
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ COMPONENT: FourPillarStack (sticky stacking) ============ -->
+  <section id="pillars-stack" data-component="FourPillarStack" data-stack class="relative bg-alabaster">
+    <div class="stack-panel px-5 md:px-14">
+      <div class="max-w-4xl mx-auto w-full grid md:grid-cols-[120px_1fr] gap-8 items-start border-t pt-10" style="border-color:var(--hairline);">
+        <p class="eyebrow">I.</p>
+        <div>
+          <h3 class="font-display text-3xl md:text-5xl mb-5">Computer Science.</h3>
+          <p class="copy text-base md:text-lg">
+            Her formal training. The discipline of breaking a problem into its true component
+            parts before touching a solution — a habit that follows her into every room she
+            enters, from a fitting to a boardroom.
+          </p>
+        </div>
+      </div>
+    </div>
+    <div class="stack-panel px-5 md:px-14 bg-alabaster">
+      <div class="max-w-4xl mx-auto w-full grid md:grid-cols-[120px_1fr] gap-8 items-start border-t pt-10" style="border-color:var(--hairline);">
+        <p class="eyebrow">II.</p>
+        <div>
+          <h3 class="font-display text-3xl md:text-5xl mb-5">Project Management.</h3>
+          <p class="copy text-base md:text-lg">
+            Where the discipline becomes leadership. Structure exists to hold a bold idea
+            steady long enough for it to become real — not to contain people, but to give
+            their best thinking somewhere safe to land.
+          </p>
+        </div>
+      </div>
+    </div>
+    <div class="stack-panel px-5 md:px-14 bg-alabaster">
+      <div class="max-w-4xl mx-auto w-full grid md:grid-cols-[120px_1fr] gap-8 items-start border-t pt-10" style="border-color:var(--hairline);">
+        <p class="eyebrow">III.</p>
+        <div>
+          <h3 class="font-display text-3xl md:text-5xl mb-5">Modeling.</h3>
+          <p class="copy text-base md:text-lg">
+            The fluid counterweight. Sovereign Structure — power silhouettes, architectural
+            shoulders, bold and commanding pieces — proof that precision and elegance were
+            never opposites to begin with.
+          </p>
+        </div>
+      </div>
+    </div>
+    <div class="stack-panel px-5 md:px-14 bg-alabaster">
+      <div class="max-w-4xl mx-auto w-full grid md:grid-cols-[120px_1fr] gap-8 items-start border-t border-b pt-10 pb-16" style="border-color:var(--hairline);">
+        <p class="eyebrow">IV.</p>
+        <div>
+          <h3 class="font-display text-3xl md:text-5xl mb-5">Digital Creation.</h3>
+          <p class="copy text-base md:text-lg">
+            The synthesis made visible — a living ecosystem, not a static portfolio, built to
+            mirror a woman who explores, learns, creates, and challenges herself to keep
+            growing in public.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ COMPONENT: MorningRitual ============ -->
+  <section id="morning" data-component="MorningRitual" class="px-5 md:px-14 py-28 md:py-40 bg-ink text-paper">
+    <div class="max-w-4xl mx-auto grid md:grid-cols-[1fr_1.4fr] gap-14 items-center">
+      <div data-fade>
+        <img src="https://images.unsplash.com/photo-1518199266791-5375a83190b7?q=80&w=900&auto=format&fit=crop" alt="Quiet morning light, minimal architectural interior" class="w-full h-[420px] object-cover grayscale-[0.35]" />
+      </div>
+      <div>
+        <p class="eyebrow mb-5" style="color:var(--umber);">The Morning Code</p>
+        <h2 class="font-display text-3xl md:text-4xl mb-6" style="color:var(--paper);">Mental sovereignty, before the noise.</h2>
+        <p class="text-base md:text-lg leading-relaxed" style="color:rgba(251,250,246,0.78); max-width:60ch;" data-fade>
+          Every morning begins with movement. I dance to reconnect with myself, awaken my
+          energy, and start the day feeling present before I step into the expectations of
+          the outside world. I take time for reflection to understand my thoughts, set my
+          intentions, and remind myself of what truly matters. Mornings are not just about
+          productivity — they are about creating a moment of connection with myself before I
+          give my energy to everything else.
+        </p>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer id="site-footer" class="px-5 md:px-14 pt-24 pb-10">
+  <div class="max-w-6xl mx-auto">
+    <a href="contact.html" data-transition data-magnetic data-cursor="link" class="footer-word font-wordmark block mb-16 hover:opacity-80 transition-opacity">Let's build something.</a>
+    <div class="grid md:grid-cols-4 gap-10 border-t footer-hair pt-10">
+      <div>
+        <p class="font-wordmark text-2xl mb-3">Hermela</p>
+        <p class="text-sm" style="color:rgba(251,250,246,0.6);">Computer scientist. Project manager.<br/>Model. Miss Tourism Ethiopia.</p>
+      </div>
+      <div>
+        <p class="eyebrow mb-4" style="color:rgba(251,250,246,0.45);">Narrative</p>
+        <ul class="space-y-2 text-sm">
+          <li><a href="identity.html" data-transition>Identity</a></li>
+          <li><a href="mind.html" data-transition>Mind</a></li>
+          <li><a href="codes.html" data-transition>Codes</a></li>
+        </ul>
+      </div>
+      <div>
+        <p class="eyebrow mb-4" style="color:rgba(251,250,246,0.45);">World</p>
+        <ul class="space-y-2 text-sm">
+          <li><a href="portfolio.html" data-transition>Portfolio</a></li>
+          <li><a href="reign.html" data-transition>Reign</a></li>
+        </ul>
+      </div>
+      <div>
+        <p class="eyebrow mb-4" style="color:rgba(251,250,246,0.45);">Protocol</p>
+        <ul class="space-y-2 text-sm">
+          <li><a href="contact.html" data-transition>Contact</a></li>
+          <li><a href="#" data-cursor="link">Instagram</a></li>
+          <li><a href="#" data-cursor="link">TikTok</a></li>
+        </ul>
+      </div>
+    </div>
+    <p class="text-xs mt-14" style="color:rgba(251,250,246,0.4);">© 2026 Hermela Ashenafi Assefa. Intrigue, depth, and continuous evolution.</p>
+  </div>
+</footer>
+
+<script src="https://unpkg.com/lenis@1.1.18/dist/lenis.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/Flip.min.js"></script>
+<script src="assets/js/main.js"></script>
+</body>
+</html>
