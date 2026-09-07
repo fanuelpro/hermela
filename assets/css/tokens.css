@@ -209,3 +209,110 @@ body[data-nav-state="open"] #nav-overlay { clip-path: circle(150% at calc(100% -
 /* --- Utility: hide scrollbars on horizontal pinned rail --------------------------- */
 .no-scrollbar::-webkit-scrollbar { display: none; }
 .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+
+/* ==========================================================================
+   V2 ADDITIONS — structural vocabulary adopted per blueprint.md §7
+   ========================================================================== */
+
+/* --- Preloader ------------------------------------------------------------- */
+#preloader {
+  position: fixed; inset: 0; z-index: 999;
+  background: var(--alabaster);
+  display: flex; align-items: flex-end; justify-content: space-between;
+  padding: clamp(1.25rem,4vw,3.5rem);
+  transition: clip-path 0.9s var(--ease-reveal);
+  clip-path: circle(150% at 50% 50%);
+}
+#preloader[data-done="true"] { clip-path: circle(0% at 50% 100%); pointer-events: none; }
+#preloader .preloader-word { font-family: var(--font-wordmark); font-size: clamp(1.4rem,3vw,2rem); color: var(--ink); }
+#preloader .preloader-count { font-family: var(--font-display); font-size: clamp(2.5rem,6vw,4.5rem); color: var(--umber); font-variant-numeric: tabular-nums; }
+body[data-motion="reduced"] #preloader { display: none; }
+
+/* --- Credentials marquee ----------------------------------------------------- */
+.marquee { overflow: hidden; white-space: nowrap; border-top: 1px solid var(--hairline); border-bottom: 1px solid var(--hairline); }
+.marquee-track { display: inline-flex; gap: 3rem; padding: 1.1rem 0; will-change: transform; animation: marquee-scroll 32s linear infinite; }
+body[data-motion="reduced"] .marquee-track { animation: none; }
+.marquee-track span { font-size: 0.78rem; letter-spacing: 0.08em; color: var(--graphite); white-space: nowrap; }
+.marquee-track span em { font-style: normal; color: var(--umber); margin-right: 0.5em; }
+@keyframes marquee-scroll { from { transform: translateX(0); } to { transform: translateX(-50%); } }
+
+/* --- Numbered recognition/chronicle rows -------------------------------------- */
+.chronicle-row { display: grid; grid-template-columns: 3rem 1fr auto; gap: 1.25rem; align-items: baseline; padding: 1.4rem 0; border-top: 1px solid var(--hairline); }
+.chronicle-row:last-child { border-bottom: 1px solid var(--hairline); }
+.chronicle-row .chronicle-num { font-family: var(--font-display); font-size: 0.95rem; color: var(--umber); }
+.chronicle-row .chronicle-title { font-family: var(--font-display); font-size: clamp(1.1rem,2vw,1.5rem); }
+.chronicle-row .chronicle-meta { font-size: 0.78rem; color: var(--graphite); }
+.chronicle-row .chronicle-status { font-size: 0.72rem; letter-spacing: 0.08em; color: var(--umber); text-align: right; white-space: nowrap; }
+
+/* --- Archive / masonry grid ---------------------------------------------------- */
+.archive-grid { display: grid; grid-template-columns: repeat(6, 1fr); gap: 0.75rem; }
+.archive-grid figure { cursor: none; overflow: hidden; }
+.archive-grid img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.6s var(--ease-reveal); }
+.archive-grid figure:hover img { transform: scale(1.04); }
+
+/* --- Lightbox ------------------------------------------------------------------- */
+#lightbox {
+  position: fixed; inset: 0; z-index: 997; background: rgba(22,21,19,0.94);
+  display: flex; align-items: center; justify-content: center; padding: 4vh 4vw;
+  opacity: 0; pointer-events: none; transition: opacity 0.4s var(--ease-reveal);
+}
+#lightbox[data-open="true"] { opacity: 1; pointer-events: auto; }
+#lightbox img { max-width: 100%; max-height: 88vh; object-fit: contain; }
+#lightbox .lightbox-close {
+  position: absolute; top: clamp(1.25rem,4vw,3rem); right: clamp(1.25rem,4vw,3rem);
+  color: var(--paper); font-size: 0.85rem; letter-spacing: 0.08em; background: none; border: none; cursor: none;
+}
+
+/* --- Video-slot placeholder (play affordance, no broken <video> tags) ------------- */
+.video-slot { position: relative; overflow: hidden; }
+.video-slot img { width: 100%; height: 100%; object-fit: cover; }
+.video-slot .play-affordance {
+  position: absolute; inset: 0; display: flex; align-items: center; justify-content: center;
+  background: rgba(22,21,19,0.18);
+}
+.video-slot .play-affordance span {
+  width: 62px; height: 62px; border-radius: 50%; border: 1px solid var(--paper);
+  display: flex; align-items: center; justify-content: center; color: var(--paper); font-size: 0.9rem;
+}
+
+/* --- Contact success overlay ------------------------------------------------------ */
+#success-overlay {
+  position: absolute; inset: 0; background: var(--alabaster);
+  display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center;
+  opacity: 0; pointer-events: none; transition: opacity 0.5s var(--ease-reveal);
+}
+#success-overlay[data-open="true"] { opacity: 1; pointer-events: auto; }
+#success-overlay .success-check {
+  width: 56px; height: 56px; border-radius: 50%; border: 1px solid var(--ink);
+  display: flex; align-items: center; justify-content: center; margin-bottom: 1.5rem; font-size: 1.4rem;
+}
+
+/* --- Minimal subpage footer ---------------------------------------------------------- */
+.footer-minimal { padding: 2.5rem clamp(1.25rem,4vw,3.5rem); display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 1rem; border-top: 1px solid var(--hairline); background: var(--alabaster); }
+.footer-minimal a { color: var(--ink); text-decoration: none; font-size: 0.85rem; letter-spacing: 0.02em; }
+.footer-minimal a:hover { color: var(--umber); }
+.footer-minimal p { font-size: 0.78rem; color: var(--graphite); }
+
+@media (max-width: 860px) {
+  .archive-grid { grid-template-columns: repeat(2, 1fr); }
+}
+
+/* --- Meta-chip row (under every H1, every page) ----------------------------------- */
+.chip-row { display: flex; flex-wrap: wrap; gap: 0.6rem 2rem; }
+.chip { display: flex; flex-direction: column; gap: 0.15rem; }
+.chip-label { font-size: 0.68rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--umber); }
+.chip-value { font-size: 0.88rem; color: var(--graphite); }
+.chip-row.on-dark .chip-label { color: var(--umber); }
+.chip-row.on-dark .chip-value { color: rgba(251,250,246,0.8); }
+
+/* --- Roman-numeral process block --------------------------------------------------- */
+.process-row { display: grid; grid-template-columns: 4rem 1fr; gap: 1.5rem; padding: 2rem 0; border-top: 1px solid var(--hairline); }
+.process-row:last-child { border-bottom: 1px solid var(--hairline); }
+.process-row .process-num { font-family: var(--font-wordmark); font-style: italic; font-size: 1.6rem; color: var(--umber); }
+.process-row .process-title { font-family: var(--font-display); font-size: clamp(1.3rem,2.4vw,1.9rem); margin-bottom: 0.6rem; }
+
+/* --- Numbered category chip (Interiors-style: "Title — Category 01") ---------------- */
+.category-chip { border-top: 1px solid var(--hairline); padding: 1.4rem 0; display: flex; align-items: baseline; justify-content: space-between; gap: 1rem; }
+.category-chip:last-child { border-bottom: 1px solid var(--hairline); }
+.category-chip .category-title { font-family: var(--font-display); font-size: clamp(1.05rem,2vw,1.35rem); }
+.category-chip .category-num { font-size: 0.72rem; letter-spacing: 0.1em; color: var(--umber); white-space: nowrap; }
