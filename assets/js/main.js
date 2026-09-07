@@ -365,6 +365,76 @@
     if (a.getAttribute("data-page") === currentPath) a.classList.add("nav-current");
   });
 
+  /* ------------------------------------------------------------------------
+     17. PRELOADER — 0% to 100%, then dissolves. Reduced motion = instant skip.
+     ------------------------------------------------------------------------ */
+  const preloader = document.getElementById("preloader");
+  if (preloader) {
+    const countEl = preloader.querySelector("[data-preloader-count]");
+    if (REDUCED) {
+      preloader.setAttribute("data-done", "true");
+    } else {
+      let pct = 0;
+      const tick = () => {
+        pct += Math.random() * 18 + 6;
+        if (pct >= 100) {
+          pct = 100;
+          if (countEl) countEl.textContent = "100%";
+          setTimeout(() => preloader.setAttribute("data-done", "true"), 260);
+          if (hasGSAP && window.ScrollTrigger) setTimeout(() => ScrollTrigger.refresh(), 700);
+          return;
+        }
+        if (countEl) countEl.textContent = Math.floor(pct) + "%";
+        setTimeout(tick, 90 + Math.random() * 90);
+      };
+      tick();
+    }
+    window.addEventListener("load", () => {
+      if (!REDUCED) return;
+      preloader.setAttribute("data-done", "true");
+    });
+  }
+
+  /* ------------------------------------------------------------------------
+     18. LIGHTBOX — click any [data-lightbox] image to open fullscreen
+     ------------------------------------------------------------------------ */
+  const lightbox = document.getElementById("lightbox");
+  if (lightbox) {
+    const lightboxImg = lightbox.querySelector("img");
+    document.querySelectorAll("[data-lightbox]").forEach((el) => {
+      el.addEventListener("click", () => {
+        const src = el.getAttribute("data-lightbox") || el.querySelector("img")?.src;
+        if (!src || !lightboxImg) return;
+        lightboxImg.src = src;
+        lightbox.setAttribute("data-open", "true");
+        if (lenis) lenis.stop();
+      });
+    });
+    const closeLightbox = () => {
+      lightbox.setAttribute("data-open", "false");
+      if (lenis) lenis.start();
+    };
+    lightbox.addEventListener("click", closeLightbox);
+    document.querySelectorAll("[data-lightbox-close]").forEach((btn) => btn.addEventListener("click", (e) => { e.stopPropagation(); closeLightbox(); }));
+    window.addEventListener("keydown", (e) => { if (e.key === "Escape") closeLightbox(); });
+  }
+
+  /* ------------------------------------------------------------------------
+     19. CONTACT SUCCESS OVERLAY — generic, any form with [data-success-form]
+     ------------------------------------------------------------------------ */
+  document.querySelectorAll("[data-success-form]").forEach((form) => {
+    const overlay = document.querySelector(form.getAttribute("data-success-form"));
+    form.addEventListener("submit", (e) => {
+      e.preventDefault();
+      if (overlay) overlay.setAttribute("data-open", "true");
+    });
+    if (overlay) {
+      overlay.querySelectorAll("[data-success-close]").forEach((btn) => {
+        btn.addEventListener("click", () => { overlay.setAttribute("data-open", "false"); form.reset(); });
+      });
+    }
+  });
+
   /* Refresh ScrollTrigger once fonts/images settle */
   window.addEventListener("load", () => { if (hasGSAP && window.ScrollTrigger) ScrollTrigger.refresh(); });
 })();
