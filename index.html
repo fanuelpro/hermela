@@ -10,27 +10,31 @@
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,400&family=Fraunces:opsz,wght@9..144,300..700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
 <script src="https://cdn.tailwindcss.com"></script>
 <script>
-  tailwind.config = {
-    theme: {
-      extend: {
-        colors: { alabaster:"#F6F3EC", linen:"#EEE7D9", paper:"#FBFAF6", ink:"#161513", graphite:"#3A362F", umber:"#8B6F4E", sovereign:"#5B4636" },
-        fontFamily: { wordmark:["Cormorant Garamond","serif"], display:["Fraunces","serif"], body:["Inter","sans-serif"] },
-      }
-    }
-  }
+  tailwind.config = { theme: { extend: {
+    colors: { alabaster:"#F6F3EC", linen:"#EEE7D9", paper:"#FBFAF6", ink:"#161513", graphite:"#3A362F", umber:"#8B6F4E", sovereign:"#5B4636" },
+    fontFamily: { wordmark:["Cormorant Garamond","serif"], display:["Fraunces","serif"], body:["Inter","sans-serif"] },
+  } } }
 </script>
 <link rel="stylesheet" href="assets/css/tokens.css">
 </head>
 <body data-nav-state="closed">
 
-<!-- ============ COMPONENT: FilmGrain ============ -->
+<!-- ============ COMPONENT: Preloader ============ -->
+<div id="preloader">
+  <span class="preloader-word font-wordmark">Hermela</span>
+  <span class="preloader-count" data-preloader-count>0%</span>
+</div>
+
 <div id="film-grain" aria-hidden="true"></div>
-<!-- ============ COMPONENT: CustomCursor ============ -->
 <div id="custom-cursor" data-state="default" aria-hidden="true"></div>
-<!-- ============ COMPONENT: CurtainTransition ============ -->
 <div id="curtain" aria-hidden="true"></div>
 
-<!-- ============ COMPONENT: Navigation ============ -->
+<!-- ============ COMPONENT: Lightbox ============ -->
+<div id="lightbox" data-open="false">
+  <button class="lightbox-close" data-lightbox-close data-cursor="link">CLOSE ✕</button>
+  <img src="" alt="Expanded view" />
+</div>
+
 <header id="site-nav">
   <a href="index.html" class="nav-word" data-magnetic data-cursor="link">Hermela</a>
   <button id="nav-toggle" aria-label="Open menu" data-cursor="link">
@@ -39,13 +43,13 @@
 </header>
 
 <nav id="nav-overlay" aria-hidden="true">
-  <a href="index.html" data-page="index.html" data-transition data-cursor="link" data-cursor-label="ENTER">01 — Home</a>
-  <a href="identity.html" data-page="identity.html" data-transition data-cursor="link" data-cursor-label="READ">02 — Identity</a>
-  <a href="portfolio.html" data-page="portfolio.html" data-transition data-cursor="link" data-cursor-label="VIEW">03 — Portfolio</a>
-  <a href="reign.html" data-page="reign.html" data-transition data-cursor="link" data-cursor-label="ENTER">04 — Reign</a>
-  <a href="mind.html" data-page="mind.html" data-transition data-cursor="link" data-cursor-label="READ">05 — Mind</a>
-  <a href="codes.html" data-page="codes.html" data-transition data-cursor="link" data-cursor-label="READ">06 — Codes</a>
-  <a href="contact.html" data-page="contact.html" data-transition data-cursor="link" data-cursor-label="BEGIN">07 — Contact</a>
+  <a href="index.html" data-page="index.html" data-transition data-cursor="link" data-cursor-label="ENTER">01 Home ↗</a>
+  <a href="identity.html" data-page="identity.html" data-transition data-cursor="link" data-cursor-label="READ">02 Identity ↗</a>
+  <a href="portfolio.html" data-page="portfolio.html" data-transition data-cursor="link" data-cursor-label="VIEW">03 Portfolio ↗</a>
+  <a href="reign.html" data-page="reign.html" data-transition data-cursor="link" data-cursor-label="ENTER">04 Reign ↗</a>
+  <a href="mind.html" data-page="mind.html" data-transition data-cursor="link" data-cursor-label="READ">05 Mind ↗</a>
+  <a href="codes.html" data-page="codes.html" data-transition data-cursor="link" data-cursor-label="READ">06 Codes ↗</a>
+  <a href="contact.html" data-page="contact.html" data-transition data-cursor="link" data-cursor-label="BEGIN">07 Contact ↗</a>
   <div class="nav-meta">Addis Ababa, Ethiopia — Miss Tourism Ethiopia 2026</div>
 </nav>
 
@@ -65,12 +69,22 @@
       </div>
     </div>
 
-    <div class="relative z-10 w-full px-5 md:px-14 pb-14 md:pb-20">
+    <div class="relative z-10 w-full px-5 md:px-14 pb-8 md:pb-10">
       <p class="eyebrow mb-4" data-fade>Miss Tourism Ethiopia · 2026</p>
       <h1 class="font-wordmark text-ink leading-[0.92]" style="font-size:clamp(3.2rem,13vw,10.5rem);">
         <span class="reveal-line block" data-reveal="chars">Hermela</span>
         <span class="reveal-line block italic font-light" data-reveal="chars" style="color:var(--umber);">Ashenafi</span>
       </h1>
+
+      <!-- ============ COMPONENT: MetaChipRow ============ -->
+      <div class="chip-row mt-8" data-fade>
+        <div class="chip"><span class="chip-label">Field</span><span class="chip-value">Computer Science</span></div>
+        <div class="chip"><span class="chip-label">Role</span><span class="chip-value">Project Manager</span></div>
+        <div class="chip"><span class="chip-label">Craft</span><span class="chip-value">Model · Digital Creator</span></div>
+        <div class="chip"><span class="chip-label">Title</span><span class="chip-value">Miss Tourism Ethiopia</span></div>
+        <div class="chip"><span class="chip-label">Based</span><span class="chip-value">Addis Ababa</span></div>
+      </div>
+
       <div class="mt-8 md:mt-10 flex flex-col md:flex-row md:items-end md:justify-between gap-6 border-t border-ink/10 pt-6">
         <p class="copy text-base md:text-lg" data-fade>
           I want them to feel curiosity first — the sense that there is more to discover
@@ -78,6 +92,24 @@
         </p>
         <a href="mind.html" data-transition data-magnetic data-cursor="link" class="btn-primary shrink-0">Enter Her World</a>
       </div>
+    </div>
+  </section>
+
+  <!-- ============ COMPONENT: CredentialsMarquee ============ -->
+  <section id="marquee" data-component="CredentialsMarquee" class="marquee bg-alabaster">
+    <div class="marquee-track">
+      <span><em>Field</em>Computer Science, BSc</span>
+      <span><em>Role</em>Project Manager</span>
+      <span><em>Placement</em>4th Runner-Up, Miss Ethiopia 2026</span>
+      <span><em>Title</em>Reigning Miss Tourism Ethiopia</span>
+      <span><em>Forward</em>Miss Tourism Africa, Nigeria — Sep 2026</span>
+      <span><em>Practice</em>Digital Creator</span>
+      <span><em>Field</em>Computer Science, BSc</span>
+      <span><em>Role</em>Project Manager</span>
+      <span><em>Placement</em>4th Runner-Up, Miss Ethiopia 2026</span>
+      <span><em>Title</em>Reigning Miss Tourism Ethiopia</span>
+      <span><em>Forward</em>Miss Tourism Africa, Nigeria — Sep 2026</span>
+      <span><em>Practice</em>Digital Creator</span>
     </div>
   </section>
 
@@ -114,25 +146,25 @@
     </div>
   </section>
 
-  <!-- ============ COMPONENT: PillarTeaser (Mind / Form / Reign) ============ -->
-  <section id="pillars" data-component="PillarTeaser" class="px-5 md:px-14 pb-28 md:pb-40 bg-alabaster">
+  <!-- ============ COMPONENT: ExploreTriad (numbered 01/03–03/03) ============ -->
+  <section id="explore" data-component="ExploreTriad" class="px-5 md:px-14 pb-24 bg-alabaster">
     <div class="max-w-6xl mx-auto grid md:grid-cols-3 gap-px bg-ink/10">
       <a href="mind.html" data-transition data-cursor="view" data-cursor-label="READ" class="group bg-alabaster p-10 md:p-12 flex flex-col justify-between min-h-[380px] hover:bg-linen transition-colors duration-300" data-fade>
-        <span class="eyebrow">I — The Mind</span>
+        <span class="eyebrow">01 / 03 — The Mind</span>
         <div>
           <h3 class="font-display text-3xl md:text-4xl mb-4">A field still<br/>evolving.</h3>
           <p class="copy text-sm">Philosophy, neuroscience, and a definition of beauty she refuses to borrow.</p>
         </div>
       </a>
       <a href="portfolio.html" data-transition data-cursor="view" data-cursor-label="VIEW" class="group bg-alabaster p-10 md:p-12 flex flex-col justify-between min-h-[380px] hover:bg-linen transition-colors duration-300" data-fade>
-        <span class="eyebrow">II — The Form</span>
+        <span class="eyebrow">02 / 03 — The Form</span>
         <div>
           <h3 class="font-display text-3xl md:text-4xl mb-4">Sovereign<br/>structure.</h3>
           <p class="copy text-sm">A visual grammar built on architectural silhouettes and quiet intention.</p>
         </div>
       </a>
       <a href="reign.html" data-transition data-cursor="view" data-cursor-label="ENTER" class="group bg-alabaster p-10 md:p-12 flex flex-col justify-between min-h-[380px] hover:bg-linen transition-colors duration-300" data-fade>
-        <span class="eyebrow">III — The Reign</span>
+        <span class="eyebrow">03 / 03 — The Reign</span>
         <div>
           <h3 class="font-display text-3xl md:text-4xl mb-4">Ethiopia,<br/>carried forward.</h3>
           <p class="copy text-sm">From Miss Ethiopia to Miss Tourism Africa — the chronicle of a crown in motion.</p>
@@ -141,9 +173,36 @@
     </div>
   </section>
 
+  <!-- ============ COMPONENT: ArchivePreview (masonry + lightbox) ============ -->
+  <section id="archive" data-component="ArchivePreview" class="px-5 md:px-14 pb-28 md:pb-40 bg-alabaster">
+    <div class="max-w-6xl mx-auto">
+      <div class="flex items-end justify-between mb-8" data-fade>
+        <h2 class="font-display text-3xl md:text-4xl">The Archive.</h2>
+        <a href="portfolio.html" data-transition data-magnetic data-cursor="link" class="text-sm underline underline-offset-4">Full Portfolio</a>
+      </div>
+      <div class="archive-grid" style="grid-auto-rows: 160px;">
+        <figure class="col-span-3 row-span-2" data-lightbox="https://images.unsplash.com/photo-1524504388940-b1c1722653e1?q=80&w=1400&auto=format&fit=crop" data-cursor="view" data-cursor-label="VIEW">
+          <img src="https://images.unsplash.com/photo-1524504388940-b1c1722653e1?q=80&w=900&auto=format&fit=crop" alt="Hermela — Editorial" class="grayscale-[0.1]" />
+        </figure>
+        <figure class="col-span-2 row-span-1" data-lightbox="https://images.unsplash.com/photo-1490114538077-0a7f8cb49891?q=80&w=1200&auto=format&fit=crop" data-cursor="view" data-cursor-label="VIEW">
+          <img src="https://images.unsplash.com/photo-1490114538077-0a7f8cb49891?q=80&w=700&auto=format&fit=crop" alt="Hermela — Portrait" class="grayscale-[0.1]" />
+        </figure>
+        <figure class="col-span-1 row-span-1" data-lightbox="https://images.unsplash.com/photo-1441123694162-e54a981ceba5?q=80&w=1000&auto=format&fit=crop" data-cursor="view" data-cursor-label="VIEW">
+          <img src="https://images.unsplash.com/photo-1441123694162-e54a981ceba5?q=80&w=500&auto=format&fit=crop" alt="Hermela — Detail" class="grayscale-[0.1]" />
+        </figure>
+        <figure class="col-span-2 row-span-1" data-lightbox="https://images.unsplash.com/photo-1509967419530-da38b4704bc6?q=80&w=1200&auto=format&fit=crop" data-cursor="view" data-cursor-label="VIEW">
+          <img src="https://images.unsplash.com/photo-1509967419530-da38b4704bc6?q=80&w=700&auto=format&fit=crop" alt="Hermela — Sovereign" class="grayscale-[0.1]" />
+        </figure>
+        <figure class="col-span-1 row-span-1" data-lightbox="https://images.unsplash.com/photo-1483985988355-763728e1935b?q=80&w=1000&auto=format&fit=crop" data-cursor="view" data-cursor-label="VIEW">
+          <img src="https://images.unsplash.com/photo-1483985988355-763728e1935b?q=80&w=500&auto=format&fit=crop" alt="Hermela — Structure" class="grayscale-[0.1]" />
+        </figure>
+      </div>
+    </div>
+  </section>
+
 </main>
 
-<!-- ============ COMPONENT: Footer ============ -->
+<!-- ============ COMPONENT: MegaFooter (Home only) ============ -->
 <footer id="site-footer" class="px-5 md:px-14 pt-24 pb-10">
   <div class="max-w-6xl mx-auto">
     <a href="contact.html" data-transition data-magnetic data-cursor="link" class="footer-word font-wordmark block mb-16 hover:opacity-80 transition-opacity">Let's build something.</a>
@@ -176,7 +235,7 @@
         </ul>
       </div>
     </div>
-    <p class="text-xs mt-14" style="color:rgba(251,250,246,0.4);">© 2026 Hermela Ashenafi Assefa. Intrigue, depth, and continuous evolution.</p>
+    <p class="text-xs mt-14" style="color:rgba(251,250,246,0.4);">© 2026 Hermela Ashenafi Assefa. Intrigue, depth, and continuous evolution. Photography shown is placeholder editorial reference pending her production shoot — see photography-brief.md.</p>
   </div>
 </footer>
 
