@@ -19,9 +19,14 @@
 </head>
 <body data-nav-state="closed">
 
+<div id="preloader"><span class="preloader-word font-wordmark">Hermela</span><span class="preloader-count" data-preloader-count>0%</span></div>
 <div id="film-grain" aria-hidden="true"></div>
 <div id="custom-cursor" data-state="default" aria-hidden="true"></div>
 <div id="curtain" aria-hidden="true"></div>
+<div id="lightbox" data-open="false">
+  <button class="lightbox-close" data-lightbox-close data-cursor="link">CLOSE ✕</button>
+  <img src="" alt="Expanded view" />
+</div>
 
 <header id="site-nav">
   <a href="index.html" data-transition class="nav-word" data-magnetic data-cursor="link">Hermela</a>
@@ -29,71 +34,124 @@
 </header>
 
 <nav id="nav-overlay" aria-hidden="true">
-  <a href="index.html" data-page="index.html" data-transition data-cursor="link" data-cursor-label="ENTER">01 — Home</a>
-  <a href="identity.html" data-page="identity.html" data-transition data-cursor="link" data-cursor-label="READ">02 — Identity</a>
-  <a href="portfolio.html" data-page="portfolio.html" data-transition data-cursor="link" data-cursor-label="VIEW">03 — Portfolio</a>
-  <a href="reign.html" data-page="reign.html" data-transition data-cursor="link" data-cursor-label="ENTER">04 — Reign</a>
-  <a href="mind.html" data-page="mind.html" data-transition data-cursor="link" data-cursor-label="READ">05 — Mind</a>
-  <a href="codes.html" data-page="codes.html" data-transition data-cursor="link" data-cursor-label="READ">06 — Codes</a>
-  <a href="contact.html" data-page="contact.html" data-transition data-cursor="link" data-cursor-label="BEGIN">07 — Contact</a>
+  <a href="index.html" data-page="index.html" data-transition data-cursor="link" data-cursor-label="ENTER">01 Home ↗</a>
+  <a href="identity.html" data-page="identity.html" data-transition data-cursor="link" data-cursor-label="READ">02 Identity ↗</a>
+  <a href="portfolio.html" data-page="portfolio.html" data-transition data-cursor="link" data-cursor-label="VIEW">03 Portfolio ↗</a>
+  <a href="reign.html" data-page="reign.html" data-transition data-cursor="link" data-cursor-label="ENTER">04 Reign ↗</a>
+  <a href="mind.html" data-page="mind.html" data-transition data-cursor="link" data-cursor-label="READ">05 Mind ↗</a>
+  <a href="codes.html" data-page="codes.html" data-transition data-cursor="link" data-cursor-label="READ">06 Codes ↗</a>
+  <a href="contact.html" data-page="contact.html" data-transition data-cursor="link" data-cursor-label="BEGIN">07 Contact ↗</a>
   <div class="nav-meta">Addis Ababa, Ethiopia — Miss Tourism Ethiopia 2026</div>
 </nav>
 
 <main>
 
   <!-- ============ COMPONENT: ReignHero ============ -->
-  <section id="reign-hero" data-component="ReignHero" class="relative min-h-[85svh] flex flex-col justify-center items-center text-center px-5 bg-ink text-paper overflow-hidden">
+  <section id="reign-hero" data-component="ReignHero" class="relative min-h-[85svh] flex flex-col justify-end px-5 md:px-14 pt-32 pb-14 bg-ink text-paper overflow-hidden">
     <div class="absolute inset-0 opacity-20" data-parallax-scene>
       <div data-parallax-layer="0.3" class="h-full">
         <img src="https://images.unsplash.com/photo-1490114538077-0a7f8cb49891?q=80&w=1600&auto=format&fit=crop" alt="" class="w-full h-[130%] object-cover grayscale" />
       </div>
     </div>
-    <p class="eyebrow relative z-10 mb-6" style="color:var(--umber);" data-fade>04 — Reign</p>
-    <h1 class="relative z-10 font-wordmark italic" style="font-size:clamp(3rem,10vw,7.5rem); color:var(--paper);">
-      <span class="reveal-line block" data-reveal="chars">The Crown Chronicle.</span>
-    </h1>
-    <p class="relative z-10 copy mt-8 max-w-xl" style="color:rgba(251,250,246,0.75);" data-fade>
-      A record, not a résumé — the story of a nation carried forward by a woman who never
-      once let the crown outshine the mind beneath it.
-    </p>
+    <div class="relative z-10">
+      <p class="eyebrow mb-6" style="color:var(--umber);" data-fade>04 — Reign</p>
+      <h1 class="font-wordmark italic" style="font-size:clamp(3rem,10vw,7.5rem); color:var(--paper);">
+        <span class="reveal-line block" data-reveal="chars">The Crown Chronicle.</span>
+      </h1>
+      <!-- ============ COMPONENT: MetaChipRow (on dark) ============ -->
+      <div class="chip-row on-dark mt-7" data-fade>
+        <div class="chip"><span class="chip-label">2026</span><span class="chip-value">4th Runner-Up, Miss Ethiopia</span></div>
+        <div class="chip"><span class="chip-label">Reigning</span><span class="chip-value">Miss Tourism Ethiopia</span></div>
+        <div class="chip"><span class="chip-label">Sep 2026</span><span class="chip-value">Miss Tourism Africa, Nigeria</span></div>
+      </div>
+      <p class="copy mt-8 max-w-xl" style="color:rgba(251,250,246,0.75);" data-fade>
+        A record, not a résumé — the story of a nation carried forward by a woman who never
+        once let the crown outshine the mind beneath it.
+      </p>
+    </div>
   </section>
 
-  <!-- ============ COMPONENT: MilestoneSequence (sticky stack + odometer) ============ -->
-  <section id="milestone-sequence" data-component="MilestoneSequence" data-stack class="relative bg-alabaster">
-
-    <div class="stack-panel px-5 md:px-14">
-      <div class="max-w-5xl mx-auto w-full grid md:grid-cols-2 gap-10 items-center border-t pt-12" style="border-color:var(--hairline);">
-        <div data-fade>
-          <p class="eyebrow mb-4">Chapter One</p>
-          <h2 class="font-display text-3xl md:text-5xl mb-5">Miss Ethiopia<br/>2026.</h2>
-          <p class="copy text-base md:text-lg">Fourth Runner-Up on the national stage — the moment the country first met a queen who leads with a project manager's discipline and a scientist's curiosity.</p>
-        </div>
-        <div class="font-display" style="font-size:clamp(4rem,9vw,7rem); color:var(--umber);" data-odometer="0004">0000</div>
+  <!-- ============ COMPONENT: ChapterOne ============ -->
+  <section id="chapter-one" data-component="ChapterOne" class="px-5 md:px-14 py-24 md:py-32 bg-alabaster">
+    <div class="max-w-5xl mx-auto grid md:grid-cols-2 gap-12 items-center">
+      <div data-fade>
+        <p class="eyebrow mb-4">01 · The National Stage</p>
+        <h2 class="font-display text-3xl md:text-4xl mb-5">Miss Ethiopia 2026.</h2>
+        <p class="copy text-base md:text-lg mb-6">
+          Fourth Runner-Up on the national stage — the moment the country first met a queen
+          who leads with a project manager's discipline and a scientist's curiosity.
+        </p>
+        <blockquote class="font-display italic" style="font-size:1.2rem; color:var(--sovereign);">
+          "Influence is a tool best used to empower others, challenge perspectives, and
+          create meaningful change."
+        </blockquote>
+      </div>
+      <div data-fade data-lightbox="https://images.unsplash.com/photo-1509967419530-da38b4704bc6?q=80&w=1400&auto=format&fit=crop" data-cursor="view" data-cursor-label="VIEW">
+        <img src="https://images.unsplash.com/photo-1509967419530-da38b4704bc6?q=80&w=1000&auto=format&fit=crop" alt="Miss Ethiopia 2026 stage moment" class="w-full h-[440px] object-cover grayscale-[0.1]" />
       </div>
     </div>
+  </section>
 
-    <div class="stack-panel px-5 md:px-14 bg-alabaster">
-      <div class="max-w-5xl mx-auto w-full grid md:grid-cols-2 gap-10 items-center border-t pt-12" style="border-color:var(--hairline);">
-        <div data-fade>
-          <p class="eyebrow mb-4">Chapter Two</p>
-          <h2 class="font-display text-3xl md:text-5xl mb-5">Miss Tourism<br/>Ethiopia.</h2>
-          <p class="copy text-base md:text-lg">Crowned August 2026 — the reigning title she now carries. Tourism, to her, is not spectacle; it is a nation's story, told by someone the world will actually listen to.</p>
-        </div>
-        <div class="font-display" style="font-size:clamp(4rem,9vw,7rem); color:var(--umber);" data-odometer="2026">0000</div>
+  <!-- ============ COMPONENT: ChapterTwo ============ -->
+  <section id="chapter-two" data-component="ChapterTwo" class="px-5 md:px-14 py-24 md:py-32 bg-linen">
+    <div class="max-w-5xl mx-auto grid md:grid-cols-2 gap-12 items-center">
+      <div class="order-2 md:order-1" data-fade data-lightbox="https://images.unsplash.com/photo-1490114538077-0a7f8cb49891?q=80&w=1400&auto=format&fit=crop" data-cursor="view" data-cursor-label="VIEW">
+        <img src="https://images.unsplash.com/photo-1490114538077-0a7f8cb49891?q=80&w=1000&auto=format&fit=crop" alt="Miss Tourism Ethiopia crowning moment" class="w-full h-[440px] object-cover grayscale-[0.1]" />
+      </div>
+      <div class="order-1 md:order-2" data-fade>
+        <p class="eyebrow mb-4">02 · The Reigning Title</p>
+        <h2 class="font-display text-3xl md:text-4xl mb-5">Miss Tourism Ethiopia.</h2>
+        <p class="copy text-base md:text-lg mb-6">
+          Crowned August 2026 — the title she now carries. Tourism, to her, is not spectacle;
+          it is a nation's story, told by someone the world will actually listen to.
+        </p>
+        <blockquote class="font-display italic" style="font-size:1.2rem; color:var(--sovereign);">
+          "The feeling I want to create is not just admiration, but connection."
+        </blockquote>
       </div>
     </div>
+  </section>
 
-    <div class="stack-panel px-5 md:px-14 bg-alabaster">
-      <div class="max-w-5xl mx-auto w-full grid md:grid-cols-2 gap-10 items-center border-t border-b pt-12 pb-16" style="border-color:var(--hairline);">
-        <div data-fade>
-          <p class="eyebrow mb-4">Chapter Three — Forward</p>
-          <h2 class="font-display text-3xl md:text-5xl mb-5">Miss Tourism<br/>Africa, Nigeria.</h2>
-          <p class="copy text-base md:text-lg">September 2026. Ethiopia's next chapter, written on a continental stage — carried by a woman still becoming, in full view of everyone watching.</p>
-        </div>
-        <div class="font-display" style="font-size:clamp(4rem,9vw,7rem); color:var(--umber);" data-odometer="0009">0000</div>
+  <!-- ============ COMPONENT: ChapterThree ============ -->
+  <section id="chapter-three" data-component="ChapterThree" class="px-5 md:px-14 py-24 md:py-32 bg-alabaster">
+    <div class="max-w-5xl mx-auto grid md:grid-cols-2 gap-12 items-center">
+      <div data-fade>
+        <p class="eyebrow mb-4">03 · Forward — September 2026</p>
+        <h2 class="font-display text-3xl md:text-4xl mb-5">Miss Tourism Africa, Nigeria.</h2>
+        <p class="copy text-base md:text-lg mb-6">
+          Ethiopia's next chapter, written on a continental stage — carried by a woman still
+          becoming, in full view of everyone watching.
+        </p>
+        <blockquote class="font-display italic" style="font-size:1.2rem; color:var(--sovereign);">
+          "I want my presence to tell a story of continuous evolution."
+        </blockquote>
+      </div>
+      <div data-fade data-lightbox="https://images.unsplash.com/photo-1441123694162-e54a981ceba5?q=80&w=1400&auto=format&fit=crop" data-cursor="view" data-cursor-label="VIEW">
+        <img src="https://images.unsplash.com/photo-1441123694162-e54a981ceba5?q=80&w=1000&auto=format&fit=crop" alt="Placeholder — Miss Tourism Africa preparation" class="w-full h-[440px] object-cover grayscale-[0.1]" />
       </div>
     </div>
+  </section>
 
+  <!-- ============ COMPONENT: AllChapters (numbered chronicle rows) ============ -->
+  <section id="all-chapters" data-component="AllChapters" class="px-5 md:px-14 py-24 md:py-32 bg-ink text-paper">
+    <p class="eyebrow mb-10" style="color:var(--umber);">All Chapters — 2026</p>
+    <div class="max-w-4xl">
+      <div class="chronicle-row" style="border-color:rgba(251,250,246,0.14);" data-fade>
+        <p class="chronicle-num" style="color:var(--umber);">01</p>
+        <div><p class="chronicle-title" style="color:var(--paper);">Miss Ethiopia — National Pageant</p><p class="chronicle-meta" style="color:rgba(251,250,246,0.55);">Ethiopia · 2026</p></div>
+        <p class="chronicle-status">4th Runner-Up</p>
+      </div>
+      <div class="chronicle-row" style="border-color:rgba(251,250,246,0.14);" data-fade>
+        <p class="chronicle-num" style="color:var(--umber);">02</p>
+        <div><p class="chronicle-title" style="color:var(--paper);">Miss Tourism Ethiopia</p><p class="chronicle-meta" style="color:rgba(251,250,246,0.55);">Ethiopia · August 2026</p></div>
+        <p class="chronicle-status">Reigning</p>
+      </div>
+      <div class="chronicle-row" style="border-color:rgba(251,250,246,0.14);" data-fade>
+        <p class="chronicle-num" style="color:var(--umber);">03</p>
+        <div><p class="chronicle-title" style="color:var(--paper);">Miss Tourism Africa</p><p class="chronicle-meta" style="color:rgba(251,250,246,0.55);">Nigeria · September 2026</p></div>
+        <p class="chronicle-status">Representing Ethiopia</p>
+      </div>
+    </div>
   </section>
 
   <!-- ============ COMPONENT: CrownStatement ============ -->
@@ -108,40 +166,9 @@
 
 </main>
 
-<footer id="site-footer" class="px-5 md:px-14 pt-24 pb-10">
-  <div class="max-w-6xl mx-auto">
-    <a href="contact.html" data-transition data-magnetic data-cursor="link" class="footer-word font-wordmark block mb-16 hover:opacity-80 transition-opacity">Let's build something.</a>
-    <div class="grid md:grid-cols-4 gap-10 border-t footer-hair pt-10">
-      <div>
-        <p class="font-wordmark text-2xl mb-3">Hermela</p>
-        <p class="text-sm" style="color:rgba(251,250,246,0.6);">Computer scientist. Project manager.<br/>Model. Miss Tourism Ethiopia.</p>
-      </div>
-      <div>
-        <p class="eyebrow mb-4" style="color:rgba(251,250,246,0.45);">Narrative</p>
-        <ul class="space-y-2 text-sm">
-          <li><a href="identity.html" data-transition>Identity</a></li>
-          <li><a href="mind.html" data-transition>Mind</a></li>
-          <li><a href="codes.html" data-transition>Codes</a></li>
-        </ul>
-      </div>
-      <div>
-        <p class="eyebrow mb-4" style="color:rgba(251,250,246,0.45);">World</p>
-        <ul class="space-y-2 text-sm">
-          <li><a href="portfolio.html" data-transition>Portfolio</a></li>
-          <li><a href="reign.html" data-transition>Reign</a></li>
-        </ul>
-      </div>
-      <div>
-        <p class="eyebrow mb-4" style="color:rgba(251,250,246,0.45);">Protocol</p>
-        <ul class="space-y-2 text-sm">
-          <li><a href="contact.html" data-transition>Contact</a></li>
-          <li><a href="#" data-cursor="link">Instagram</a></li>
-          <li><a href="#" data-cursor="link">TikTok</a></li>
-        </ul>
-      </div>
-    </div>
-    <p class="text-xs mt-14" style="color:rgba(251,250,246,0.4);">© 2026 Hermela Ashenafi Assefa. Intrigue, depth, and continuous evolution.</p>
-  </div>
+<footer class="footer-minimal">
+  <p>© 2026 Hermela Ashenafi Assefa · Reign</p>
+  <a href="index.html" data-transition data-magnetic data-cursor="link">← Return Home</a>
 </footer>
 
 <script src="https://unpkg.com/lenis@1.1.18/dist/lenis.min.js"></script>
