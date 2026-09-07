@@ -19,9 +19,14 @@
 </head>
 <body data-nav-state="closed">
 
+<div id="preloader"><span class="preloader-word font-wordmark">Hermela</span><span class="preloader-count" data-preloader-count>0%</span></div>
 <div id="film-grain" aria-hidden="true"></div>
 <div id="custom-cursor" data-state="default" aria-hidden="true"></div>
 <div id="curtain" aria-hidden="true"></div>
+<div id="lightbox" data-open="false">
+  <button class="lightbox-close" data-lightbox-close data-cursor="link">CLOSE ✕</button>
+  <img src="" alt="Expanded view" />
+</div>
 
 <header id="site-nav">
   <a href="index.html" data-transition class="nav-word" data-magnetic data-cursor="link">Hermela</a>
@@ -29,27 +34,41 @@
 </header>
 
 <nav id="nav-overlay" aria-hidden="true">
-  <a href="index.html" data-page="index.html" data-transition data-cursor="link" data-cursor-label="ENTER">01 — Home</a>
-  <a href="identity.html" data-page="identity.html" data-transition data-cursor="link" data-cursor-label="READ">02 — Identity</a>
-  <a href="portfolio.html" data-page="portfolio.html" data-transition data-cursor="link" data-cursor-label="VIEW">03 — Portfolio</a>
-  <a href="reign.html" data-page="reign.html" data-transition data-cursor="link" data-cursor-label="ENTER">04 — Reign</a>
-  <a href="mind.html" data-page="mind.html" data-transition data-cursor="link" data-cursor-label="READ">05 — Mind</a>
-  <a href="codes.html" data-page="codes.html" data-transition data-cursor="link" data-cursor-label="READ">06 — Codes</a>
-  <a href="contact.html" data-page="contact.html" data-transition data-cursor="link" data-cursor-label="BEGIN">07 — Contact</a>
+  <a href="index.html" data-page="index.html" data-transition data-cursor="link" data-cursor-label="ENTER">01 Home ↗</a>
+  <a href="identity.html" data-page="identity.html" data-transition data-cursor="link" data-cursor-label="READ">02 Identity ↗</a>
+  <a href="portfolio.html" data-page="portfolio.html" data-transition data-cursor="link" data-cursor-label="VIEW">03 Portfolio ↗</a>
+  <a href="reign.html" data-page="reign.html" data-transition data-cursor="link" data-cursor-label="ENTER">04 Reign ↗</a>
+  <a href="mind.html" data-page="mind.html" data-transition data-cursor="link" data-cursor-label="READ">05 Mind ↗</a>
+  <a href="codes.html" data-page="codes.html" data-transition data-cursor="link" data-cursor-label="READ">06 Codes ↗</a>
+  <a href="contact.html" data-page="contact.html" data-transition data-cursor="link" data-cursor-label="BEGIN">07 Contact ↗</a>
   <div class="nav-meta">Addis Ababa, Ethiopia — Miss Tourism Ethiopia 2026</div>
 </nav>
 
 <main>
 
   <!-- ============ COMPONENT: MindHero ============ -->
-  <section id="mind-hero" data-component="MindHero" class="min-h-[70svh] flex items-end px-5 md:px-14 pt-32 pb-16 bg-alabaster">
-    <div class="max-w-3xl">
-      <p class="eyebrow mb-5" data-fade>05 — Mind</p>
-      <h1 class="h-display font-display" style="font-size:clamp(2.6rem,6.5vw,5rem);">
-        <span class="reveal-line block" data-reveal="words">A field still</span>
-        <span class="reveal-line block italic" data-reveal="words" style="color:var(--umber);">evolving.</span>
-      </h1>
+  <section id="mind-hero" data-component="MindHero" class="min-h-[75svh] flex flex-col justify-end px-5 md:px-14 pt-32 pb-14 bg-alabaster">
+    <p class="eyebrow mb-5" data-fade>05 — Mind</p>
+    <h1 class="h-display font-display" style="font-size:clamp(2.6rem,6.5vw,5rem);">
+      <span class="reveal-line block" data-reveal="words">A field still</span>
+      <span class="reveal-line block italic" data-reveal="words" style="color:var(--umber);">evolving.</span>
+    </h1>
+    <!-- ============ COMPONENT: MetaChipRow ============ -->
+    <div class="chip-row mt-7" data-fade>
+      <div class="chip"><span class="chip-label">Studying</span><span class="chip-value">Philosophy · Psychology</span></div>
+      <div class="chip"><span class="chip-label">Exploring</span><span class="chip-value">Neuroscience · Neuroplasticity</span></div>
+      <div class="chip"><span class="chip-label">Practicing</span><span class="chip-value">Guitar · Voice</span></div>
+      <div class="chip"><span class="chip-label">Guided by</span><span class="chip-value">Travel</span></div>
     </div>
+  </section>
+
+  <!-- ============ COMPONENT: PhilosophyQuote ============ -->
+  <section id="philosophy-quote" data-component="PhilosophyQuote" class="px-5 md:px-14 py-24 md:py-32 bg-ink text-center">
+    <p class="eyebrow mb-6" style="color:var(--umber);" data-fade>The Mission</p>
+    <p class="font-display italic max-w-3xl mx-auto" style="font-size:clamp(1.8rem,4.2vw,2.9rem); color:var(--paper);" data-fade>
+      "We may have far more potential to grow, create, and transform than we currently
+      understand."
+    </p>
   </section>
 
   <!-- ============ COMPONENT: BeautyManifesto ============ -->
@@ -69,14 +88,14 @@
   </section>
 
   <!-- ============ COMPONENT: TechManifesto ============ -->
-  <section id="tech-manifesto" data-component="TechManifesto" class="px-5 md:px-14 py-24 md:py-32 bg-ink text-paper">
+  <section id="tech-manifesto" data-component="TechManifesto" class="px-5 md:px-14 py-24 md:py-32 bg-alabaster">
     <div class="max-w-3xl mx-auto">
-      <p class="eyebrow mb-6" style="color:var(--umber);">Challenging the Narrative — Technology</p>
-      <p class="font-display" data-variable-scroll style="font-size:clamp(1.6rem,3.6vw,2.6rem); line-height:1.4; color:var(--paper); font-variation-settings:'wght' 300;">
+      <p class="eyebrow mb-6">Challenging the Narrative — Technology</p>
+      <p class="font-display" data-variable-scroll style="font-size:clamp(1.6rem,3.6vw,2.6rem); line-height:1.4; color:var(--ink); font-variation-settings:'wght' 300;">
         The future of technology should not be measured only by how intelligent our
         machines become, but by how wisely we use that intelligence.
       </p>
-      <p class="mt-8 text-base md:text-lg leading-relaxed" style="color:rgba(251,250,246,0.75); max-width:66ch;">
+      <p class="copy mt-8">
         True innovation is not just about creating more powerful systems; it is about
         creating technology that understands human needs, respects human values, and solves
         problems that truly matter.
@@ -84,32 +103,46 @@
     </div>
   </section>
 
-  <!-- ============ COMPONENT: EvolutionMetric ============ -->
-  <section id="evolution" data-component="EvolutionMetric" class="px-5 md:px-14 py-24 md:py-32 bg-alabaster">
+  <!-- ============ COMPONENT: ProcessBlock (roman numeral — her curiosity journey) ============ -->
+  <section id="process" data-component="ProcessBlock" class="px-5 md:px-14 py-24 md:py-32 bg-linen">
+    <p class="eyebrow mb-10 max-w-4xl mx-auto">The Evolution Metric — How the Curiosity Moves</p>
     <div class="max-w-4xl mx-auto">
-      <p class="eyebrow mb-6">The Evolution Metric</p>
-      <p class="copy text-lg" data-fade>
-        Her curiosity currently pulls toward understanding human potential — the hidden
-        layers of how we think, perceive, and transform. Philosophy challenges her to
-        question assumptions. Psychology draws her toward human behavior and emotion.
-        Recently, neuroscience and <em>neuroplasticity</em> — the idea that the brain is
-        not fixed, but constantly shaped by experience, habit, and choice. Guitar and
-        singing, because she is curious how humans turn feeling into creativity. Travel,
-        because it keeps reshaping how she sees the world.
-      </p>
-      <p class="font-display italic mt-10" style="font-size:clamp(1.3rem,2.6vw,1.8rem); color:var(--sovereign);" data-fade>
-        We may have far more potential to grow, create, and transform than we currently
-        understand.
-      </p>
+      <div class="process-row" data-fade>
+        <p class="process-num">I</p>
+        <div>
+          <p class="process-title">Questioning Assumptions.</p>
+          <p class="copy">Philosophy pulls her first — it challenges her to question assumptions and expand the way she sees the world.</p>
+        </div>
+      </div>
+      <div class="process-row" data-fade>
+        <p class="process-num">II</p>
+        <div>
+          <p class="process-title">Understanding the Self.</p>
+          <p class="copy">Psychology draws her toward human behavior and emotion — the complexity of both herself and others. Recently, neuroscience and neuroplasticity: the idea that the brain is shaped, not fixed.</p>
+        </div>
+      </div>
+      <div class="process-row" data-fade>
+        <p class="process-num">III</p>
+        <div>
+          <p class="process-title">Turning Feeling Into Creativity.</p>
+          <p class="copy">Guitar and singing — she is curious how humans turn emotion and inner experience into creativity.</p>
+        </div>
+      </div>
+      <div class="process-row" data-fade>
+        <p class="process-num">IV</p>
+        <div>
+          <p class="process-title">Reshaping Perspective.</p>
+          <p class="copy">Travel continues to challenge her perspectives — showing her how differently people can experience and interpret the world.</p>
+        </div>
+      </div>
     </div>
   </section>
 
   <!-- ============ COMPONENT: IconTriad (perspective tilt cards) ============ -->
-  <section id="icons" data-component="IconTriad" class="px-5 md:px-14 py-24 md:py-32 bg-linen">
+  <section id="icons" data-component="IconTriad" class="px-5 md:px-14 py-24 md:py-32 bg-alabaster">
     <p class="eyebrow mb-10 max-w-4xl mx-auto">Humanity & Womanhood — Her Icons</p>
     <div class="max-w-6xl mx-auto grid md:grid-cols-3 gap-8">
-
-      <div data-tilt class="relative bg-paper p-8 md:p-10 min-h-[420px] flex flex-col justify-between overflow-hidden shadow-warm" style="transform-style:preserve-3d;" data-fade>
+      <div data-tilt class="relative bg-linen p-8 md:p-10 min-h-[420px] flex flex-col justify-between overflow-hidden shadow-warm" style="transform-style:preserve-3d;" data-fade>
         <div data-tilt-highlight class="absolute inset-0 pointer-events-none"></div>
         <p class="font-wordmark italic text-3xl">Maya Angelou</p>
         <p class="copy text-sm">
@@ -118,8 +151,7 @@
           creating connection and making people feel seen.
         </p>
       </div>
-
-      <div data-tilt class="relative bg-paper p-8 md:p-10 min-h-[420px] flex flex-col justify-between overflow-hidden shadow-warm" style="transform-style:preserve-3d;" data-fade>
+      <div data-tilt class="relative bg-linen p-8 md:p-10 min-h-[420px] flex flex-col justify-between overflow-hidden shadow-warm" style="transform-style:preserve-3d;" data-fade>
         <div data-tilt-highlight class="absolute inset-0 pointer-events-none"></div>
         <p class="font-wordmark italic text-3xl">Cleopatra</p>
         <p class="copy text-sm">
@@ -128,8 +160,7 @@
           navigate a complex world.
         </p>
       </div>
-
-      <div data-tilt class="relative bg-paper p-8 md:p-10 min-h-[420px] flex flex-col justify-between overflow-hidden shadow-warm" style="transform-style:preserve-3d;" data-fade>
+      <div data-tilt class="relative bg-linen p-8 md:p-10 min-h-[420px] flex flex-col justify-between overflow-hidden shadow-warm" style="transform-style:preserve-3d;" data-fade>
         <div data-tilt-highlight class="absolute inset-0 pointer-events-none"></div>
         <p class="font-wordmark italic text-3xl">Carl Jung</p>
         <p class="copy text-sm">
@@ -145,42 +176,18 @@
     </p>
   </section>
 
+  <!-- ============ COMPONENT: ClosingCTA ============ -->
+  <section id="closing-cta" class="px-5 md:px-14 py-24 md:py-32 bg-ink text-paper text-center">
+    <p class="eyebrow mb-6" style="color:var(--umber);">The Bridge</p>
+    <h2 class="font-display text-3xl md:text-5xl mb-8" style="color:var(--paper);">Between the ancient discipline and the still-unfolding self.</h2>
+    <a href="codes.html" data-transition data-magnetic data-cursor="link" class="btn-primary on-dark">See Her Codes</a>
+  </section>
+
 </main>
 
-<footer id="site-footer" class="px-5 md:px-14 pt-24 pb-10">
-  <div class="max-w-6xl mx-auto">
-    <a href="contact.html" data-transition data-magnetic data-cursor="link" class="footer-word font-wordmark block mb-16 hover:opacity-80 transition-opacity">Let's build something.</a>
-    <div class="grid md:grid-cols-4 gap-10 border-t footer-hair pt-10">
-      <div>
-        <p class="font-wordmark text-2xl mb-3">Hermela</p>
-        <p class="text-sm" style="color:rgba(251,250,246,0.6);">Computer scientist. Project manager.<br/>Model. Miss Tourism Ethiopia.</p>
-      </div>
-      <div>
-        <p class="eyebrow mb-4" style="color:rgba(251,250,246,0.45);">Narrative</p>
-        <ul class="space-y-2 text-sm">
-          <li><a href="identity.html" data-transition>Identity</a></li>
-          <li><a href="mind.html" data-transition>Mind</a></li>
-          <li><a href="codes.html" data-transition>Codes</a></li>
-        </ul>
-      </div>
-      <div>
-        <p class="eyebrow mb-4" style="color:rgba(251,250,246,0.45);">World</p>
-        <ul class="space-y-2 text-sm">
-          <li><a href="portfolio.html" data-transition>Portfolio</a></li>
-          <li><a href="reign.html" data-transition>Reign</a></li>
-        </ul>
-      </div>
-      <div>
-        <p class="eyebrow mb-4" style="color:rgba(251,250,246,0.45);">Protocol</p>
-        <ul class="space-y-2 text-sm">
-          <li><a href="contact.html" data-transition>Contact</a></li>
-          <li><a href="#" data-cursor="link">Instagram</a></li>
-          <li><a href="#" data-cursor="link">TikTok</a></li>
-        </ul>
-      </div>
-    </div>
-    <p class="text-xs mt-14" style="color:rgba(251,250,246,0.4);">© 2026 Hermela Ashenafi Assefa. Intrigue, depth, and continuous evolution.</p>
-  </div>
+<footer class="footer-minimal">
+  <p>© 2026 Hermela Ashenafi Assefa · Mind</p>
+  <a href="index.html" data-transition data-magnetic data-cursor="link">← Return Home</a>
 </footer>
 
 <script src="https://unpkg.com/lenis@1.1.18/dist/lenis.min.js"></script>
