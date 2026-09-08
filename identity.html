@@ -11,7 +11,7 @@
 <script src="https://cdn.tailwindcss.com"></script>
 <script>
   tailwind.config = { theme: { extend: {
-    colors: { alabaster:"#F6F3EC", linen:"#EEE7D9", paper:"#FBFAF6", ink:"#161513", graphite:"#3A362F", umber:"#8B6F4E", sovereign:"#5B4636" },
+    colors: { alabaster:"var(--alabaster)", linen:"var(--linen)", paper:"var(--paper)", ink:"var(--ink)", graphite:"var(--graphite)", umber:"var(--umber)", sovereign:"var(--sovereign)", obsidian:"#161513", porcelain:"#FBFAF6" },
     fontFamily: { wordmark:["Cormorant Garamond","serif"], display:["Fraunces","serif"], body:["Inter","sans-serif"] },
   } } }
 </script>
@@ -30,7 +30,10 @@
 
 <header id="site-nav">
   <a href="index.html" data-transition class="nav-word" data-magnetic data-cursor="link">Hermela</a>
-  <button id="nav-toggle" aria-label="Open menu" data-cursor="link"><span></span><span></span><span></span></button>
+  <div class="flex items-center gap-4">
+    <button class="theme-toggle" data-theme-toggle aria-label="Toggle light and dark mode" data-cursor="link"><span class="toggle-thumb"></span></button>
+    <button id="nav-toggle" aria-label="Open menu" data-cursor="link"><span></span><span></span><span></span></button>
+  </div>
 </header>
 
 <nav id="nav-overlay" aria-hidden="true">
@@ -40,7 +43,8 @@
   <a href="reign.html" data-page="reign.html" data-transition data-cursor="link" data-cursor-label="ENTER">04 Reign ↗</a>
   <a href="mind.html" data-page="mind.html" data-transition data-cursor="link" data-cursor-label="READ">05 Mind ↗</a>
   <a href="codes.html" data-page="codes.html" data-transition data-cursor="link" data-cursor-label="READ">06 Codes ↗</a>
-  <a href="contact.html" data-page="contact.html" data-transition data-cursor="link" data-cursor-label="BEGIN">07 Contact ↗</a>
+  <a href="academy.html" data-page="academy.html" data-transition data-cursor="link" data-cursor-label="LEARN">07 Academy ↗</a>
+  <a href="contact.html" data-page="contact.html" data-transition data-cursor="link" data-cursor-label="BEGIN">08 Contact ↗</a>
   <div class="nav-meta">Addis Ababa, Ethiopia — Miss Tourism Ethiopia 2026</div>
 </nav>
 
@@ -125,14 +129,14 @@
   </section>
 
   <!-- ============ COMPONENT: MorningRitual ============ -->
-  <section id="morning" data-component="MorningRitual" class="px-5 md:px-14 py-28 md:py-40 bg-ink text-paper">
+  <section id="morning" data-component="MorningRitual" class="px-5 md:px-14 py-28 md:py-40 bg-obsidian text-porcelain">
     <div class="max-w-4xl mx-auto grid md:grid-cols-[1fr_1.4fr] gap-14 items-center">
       <div data-fade data-lightbox="https://images.unsplash.com/photo-1518199266791-5375a83190b7?q=80&w=1400&auto=format&fit=crop" data-cursor="view" data-cursor-label="VIEW">
         <img src="https://images.unsplash.com/photo-1518199266791-5375a83190b7?q=80&w=900&auto=format&fit=crop" alt="Quiet morning light, minimal architectural interior" class="w-full h-[420px] object-cover grayscale-[0.35]" />
       </div>
       <div>
         <p class="eyebrow mb-5" style="color:var(--umber);">The Morning Code</p>
-        <h2 class="font-display text-3xl md:text-4xl mb-6" style="color:var(--paper);">Mental sovereignty, before the noise.</h2>
+        <h2 class="font-display text-3xl md:text-4xl mb-6" style="color:var(--porcelain);">Mental sovereignty, before the noise.</h2>
         <p class="text-base md:text-lg leading-relaxed" style="color:rgba(251,250,246,0.78); max-width:60ch;" data-fade>
           Every morning begins with movement. I dance to reconnect with myself, awaken my
           energy, and start the day feeling present before I step into the expectations of
