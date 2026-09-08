@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Identity — Hermela Ashenafi</title>
-<meta name="description" content="The Intellectual Alchemist — where computer science, project management, and high fashion meet." />
+<title>Portfolio — Hermela Ashenafi</title>
+<meta name="description" content="Visual grammar — sovereign structure, tactility, and the wardrobe commandments." />
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,400&family=Fraunces:opsz,wght@9..144,300..700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
@@ -16,6 +16,9 @@
   } } }
 </script>
 <link rel="stylesheet" href="assets/css/tokens.css">
+<style>
+  #displacement-hero { filter: url(#heroDisplace); transition: filter 0.4s; }
+</style>
 </head>
 <body data-nav-state="closed">
 
@@ -48,119 +51,190 @@
   <div class="nav-meta">Addis Ababa, Ethiopia — Miss Tourism Ethiopia 2026</div>
 </nav>
 
+<svg width="0" height="0" style="position:absolute;">
+  <filter id="heroDisplace">
+    <feTurbulence id="heroTurb" type="fractalNoise" baseFrequency="0.01 0.02" numOctaves="2" result="noise" seed="4" />
+    <feDisplacementMap in="SourceGraphic" in2="noise" id="heroDisplaceMap" scale="0" xChannelSelector="R" yChannelSelector="G" />
+  </filter>
+</svg>
+
 <main>
 
-  <!-- ============ COMPONENT: IdentityHero (video-slot) ============ -->
-  <section id="identity-hero" data-component="IdentityHero" class="relative min-h-[92svh] flex flex-col justify-end px-5 md:px-14 pt-32 pb-14 bg-alabaster overflow-hidden">
-    <div class="absolute inset-0 video-slot" data-video-slot="identity-hero-loop">
-      <img src="https://images.unsplash.com/photo-1483985988355-763728e1935b?q=80&w=1600&auto=format&fit=crop" alt="Placeholder for future motion reel — the Intellectual Alchemist at work" class="opacity-[0.16] grayscale" />
-      <div class="play-affordance"><span data-cursor="drag" data-cursor-label="PLAY">▶</span></div>
+  <!-- ============ COMPONENT: PortfolioHero ============ -->
+  <section id="portfolio-hero" data-component="PortfolioHero" class="px-5 md:px-14 pt-32 pb-10 bg-alabaster">
+    <p class="eyebrow mb-5" data-fade>03 — Portfolio</p>
+    <h1 class="font-wordmark italic" style="font-size:clamp(2.6rem,8vw,6rem); color:var(--ink);">
+      <span class="reveal-line block" data-reveal="chars">The Muse.</span>
+    </h1>
+    <!-- ============ COMPONENT: MetaChipRow ============ -->
+    <div class="chip-row mt-7" data-fade>
+      <div class="chip"><span class="chip-label">Focus</span><span class="chip-value">Editorial · Campaign</span></div>
+      <div class="chip"><span class="chip-label">Signature</span><span class="chip-value">Sovereign Structure</span></div>
+      <div class="chip"><span class="chip-label">Based</span><span class="chip-value">Addis Ababa</span></div>
+      <div class="chip"><span class="chip-label">Reach</span><span class="chip-value">Ethiopia → Africa</span></div>
+      <div class="chip"><span class="chip-label">Also</span><span class="chip-value">Digital Creator</span></div>
     </div>
-    <div class="relative z-10 max-w-2xl">
-      <p class="eyebrow mb-5" data-fade>02 — Identity</p>
-      <h1 class="h-display font-display" style="font-size:clamp(2.6rem,6.5vw,5rem);">
-        <span class="reveal-line block" data-reveal="words">The Intellectual</span>
-        <span class="reveal-line block italic" data-reveal="words" style="color:var(--umber);">Alchemist.</span>
-      </h1>
+  </section>
 
-      <!-- ============ COMPONENT: MetaChipRow ============ -->
-      <div class="chip-row mt-7" data-fade>
-        <div class="chip"><span class="chip-label">Field</span><span class="chip-value">Computer Science, BSc</span></div>
-        <div class="chip"><span class="chip-label">Role</span><span class="chip-value">Project Manager</span></div>
-        <div class="chip"><span class="chip-label">Language</span><span class="chip-value">Strategic Innovation</span></div>
-        <div class="chip"><span class="chip-label">Based</span><span class="chip-value">Addis Ababa</span></div>
-      </div>
-
-      <p class="copy mt-8 text-lg" data-fade>
-        She sits precisely at the intersection of rigid structural logic and fluid aesthetic
-        expression — computer science and high fashion, project management and modeling.
-        She refuses to resolve that tension. It is the brand.
-      </p>
-    </div>
+  <!-- ============ COMPONENT: DisplacementHero (SVG-filter WebGL-style hover) ============ -->
+  <section class="relative min-h-[80svh] flex items-center justify-center bg-linen overflow-hidden px-5">
+    <img id="displacement-hero" data-cursor="drag" data-cursor-label="DRAG"
+         src="https://images.unsplash.com/photo-1524504388940-b1c1722653e1?q=80&w=1200&auto=format&fit=crop"
+         alt="High-fashion editorial portrait in architectural setting" class="h-[68vh] object-cover grayscale-[0.1]" />
   </section>
 
   <!-- ============ COMPONENT: PhilosophyQuote ============ -->
-  <section id="philosophy-quote" data-component="PhilosophyQuote" class="px-5 md:px-14 py-28 md:py-36 bg-linen text-center">
-    <p class="eyebrow mb-6" data-fade>The Leadership Philosophy</p>
-    <p class="font-display italic max-w-3xl mx-auto" style="font-size:clamp(1.8rem,4.2vw,2.9rem); color:var(--sovereign);" data-fade>
-      "Influence is a tool best used to empower others, challenge perspectives, and create
-      meaningful change."
+  <section id="philosophy-quote" data-component="PhilosophyQuote" class="px-5 md:px-14 py-24 md:py-32 bg-obsidian text-center">
+    <p class="eyebrow mb-6" style="color:var(--umber);" data-fade>Editorial Philosophy</p>
+    <p class="font-display italic max-w-3xl mx-auto" style="font-size:clamp(1.7rem,4vw,2.7rem); color:var(--porcelain);" data-fade>
+      "A curated juxtaposition of both structural and fluid elements."
     </p>
-    <p class="copy mt-8 max-w-xl mx-auto" data-fade>
-      Her primary leadership language is not architecture for its own sake, nor pure
-      empathy — it is <strong>Strategic Innovation</strong>: disrupting standard patterns,
-      introducing novel concepts, and challenging assumptions.
+    <p class="mt-8 max-w-xl mx-auto text-base md:text-lg" style="color:rgba(251,250,246,0.72);" data-fade>
+      Heavy wools and crisp poplins that hold their shape, set against matte silk and fine
+      linen that cascade and react to motion. Neither wins. That tension is the point.
     </p>
   </section>
 
-  <!-- ============ COMPONENT: ProcessBlock (roman numeral I–IV) ============ -->
-  <section id="process" data-component="ProcessBlock" class="px-5 md:px-14 py-24 md:py-32 bg-alabaster">
-    <p class="eyebrow mb-10 max-w-4xl mx-auto">The Process — How the Synthesis Works</p>
-    <div class="max-w-4xl mx-auto">
-      <div class="process-row" data-fade>
-        <p class="process-num">I</p>
-        <div>
-          <p class="process-title">Computer Science.</p>
-          <p class="copy">Her formal training. The discipline of breaking a problem into its true component parts before touching a solution — a habit that follows her into every room she enters, from a fitting to a boardroom.</p>
-        </div>
+  <!-- ============ COMPONENT: SelectedWorks (commission-style masonry, category+year tags) ============ -->
+  <!-- STUDIO PROPOSAL — placeholder commissions pending Hermela's actual campaign history -->
+  <section id="selected-works" data-component="SelectedWorks" class="px-5 md:px-14 py-24 md:py-32 bg-alabaster">
+    <div class="flex items-end justify-between mb-10" data-fade>
+      <h2 class="font-display text-3xl md:text-4xl">Selected Works.</h2>
+      <a href="contact.html" data-transition data-magnetic data-cursor="link" class="text-sm underline underline-offset-4">Commission Work</a>
+    </div>
+    <div class="grid md:grid-cols-3 gap-6">
+      <figure data-fade data-lightbox="https://images.unsplash.com/photo-1509967419530-da38b4704bc6?q=80&w=1400&auto=format&fit=crop" data-cursor="view" data-cursor-label="VIEW">
+        <img src="https://images.unsplash.com/photo-1509967419530-da38b4704bc6?q=80&w=800&auto=format&fit=crop" alt="Tourism campaign placeholder" class="w-full h-72 object-cover grayscale-[0.1]" />
+        <figcaption class="mt-3"><span class="font-display text-lg block">Tourism Campaign</span><span class="eyebrow">Ambassador · 2026</span></figcaption>
+      </figure>
+      <figure data-fade data-lightbox="https://images.unsplash.com/photo-1483985988355-763728e1935b?q=80&w=1400&auto=format&fit=crop" data-cursor="view" data-cursor-label="VIEW">
+        <img src="https://images.unsplash.com/photo-1483985988355-763728e1935b?q=80&w=800&auto=format&fit=crop" alt="Runway placeholder" class="w-full h-72 object-cover grayscale-[0.1]" />
+        <figcaption class="mt-3"><span class="font-display text-lg block">Runway Presentation</span><span class="eyebrow">Runway · 2026</span></figcaption>
+      </figure>
+      <figure data-fade data-lightbox="https://images.unsplash.com/photo-1490114538077-0a7f8cb49891?q=80&w=1400&auto=format&fit=crop" data-cursor="view" data-cursor-label="VIEW">
+        <img src="https://images.unsplash.com/photo-1490114538077-0a7f8cb49891?q=80&w=800&auto=format&fit=crop" alt="Editorial placeholder" class="w-full h-72 object-cover grayscale-[0.1]" />
+        <figcaption class="mt-3"><span class="font-display text-lg block">Editorial Story</span><span class="eyebrow">Campaign · 2026</span></figcaption>
+      </figure>
+    </div>
+  </section>
+  <section id="video-triptych" data-component="VideoTriptych" class="px-5 md:px-14 py-16 bg-alabaster">
+    <div class="grid md:grid-cols-3 gap-4">
+      <div class="video-slot h-64 md:h-80" data-video-slot="portfolio-reel-1" data-fade>
+        <img src="https://images.unsplash.com/photo-1483985988355-763728e1935b?q=80&w=800&auto=format&fit=crop" alt="Motion reel placeholder 1" class="grayscale-[0.15]" />
+        <div class="play-affordance"><span data-cursor="drag" data-cursor-label="PLAY">▶</span></div>
       </div>
-      <div class="process-row" data-fade>
-        <p class="process-num">II</p>
-        <div>
-          <p class="process-title">Project Management.</p>
-          <p class="copy">Where the discipline becomes leadership. Structure exists to hold a bold idea steady long enough for it to become real — not to contain people, but to give their best thinking somewhere safe to land.</p>
-        </div>
+      <div class="video-slot h-64 md:h-80" data-video-slot="portfolio-reel-2" data-fade>
+        <img src="https://images.unsplash.com/photo-1490114538077-0a7f8cb49891?q=80&w=800&auto=format&fit=crop" alt="Motion reel placeholder 2" class="grayscale-[0.15]" />
+        <div class="play-affordance"><span data-cursor="drag" data-cursor-label="PLAY">▶</span></div>
       </div>
-      <div class="process-row" data-fade>
-        <p class="process-num">III</p>
-        <div>
-          <p class="process-title">Modeling.</p>
-          <p class="copy">The fluid counterweight. Sovereign Structure — power silhouettes, architectural shoulders, bold and commanding pieces — proof that precision and elegance were never opposites to begin with.</p>
-        </div>
-      </div>
-      <div class="process-row" data-fade>
-        <p class="process-num">IV</p>
-        <div>
-          <p class="process-title">Digital Creation.</p>
-          <p class="copy">The synthesis made visible — a living ecosystem, not a static portfolio, built to mirror a woman who explores, learns, creates, and challenges herself to keep growing in public.</p>
-        </div>
+      <div class="video-slot h-64 md:h-80" data-video-slot="portfolio-reel-3" data-fade>
+        <img src="https://images.unsplash.com/photo-1441123694162-e54a981ceba5?q=80&w=800&auto=format&fit=crop" alt="Motion reel placeholder 3" class="grayscale-[0.15]" />
+        <div class="play-affordance"><span data-cursor="drag" data-cursor-label="PLAY">▶</span></div>
       </div>
     </div>
   </section>
 
-  <!-- ============ COMPONENT: MorningRitual ============ -->
-  <section id="morning" data-component="MorningRitual" class="px-5 md:px-14 py-28 md:py-40 bg-obsidian text-porcelain">
-    <div class="max-w-4xl mx-auto grid md:grid-cols-[1fr_1.4fr] gap-14 items-center">
-      <div data-fade data-lightbox="https://images.unsplash.com/photo-1518199266791-5375a83190b7?q=80&w=1400&auto=format&fit=crop" data-cursor="view" data-cursor-label="VIEW">
-        <img src="https://images.unsplash.com/photo-1518199266791-5375a83190b7?q=80&w=900&auto=format&fit=crop" alt="Quiet morning light, minimal architectural interior" class="w-full h-[420px] object-cover grayscale-[0.35]" />
+  <!-- ============ COMPONENT: PinnedGallery (horizontal scroll-jack) ============ -->
+  <section id="gallery" data-component="PinnedGallery" data-horizontal-scroll class="relative bg-alabaster overflow-hidden h-screen">
+    <div data-horizontal-track class="flex h-full items-center gap-6 md:gap-10 px-5 md:px-14 no-scrollbar" style="width:max-content;">
+      <figure class="shrink-0 w-[70vw] md:w-[32vw] h-[70vh]" data-velocity-skew>
+        <img data-lightbox="https://images.unsplash.com/photo-1483985988355-763728e1935b?q=80&w=1400&auto=format&fit=crop" data-cursor="view" data-cursor-label="VIEW" src="https://images.unsplash.com/photo-1483985988355-763728e1935b?q=80&w=1000&auto=format&fit=crop" alt="Look 01 — architectural tailoring" class="w-full h-full object-cover grayscale-[0.1]" />
+        <figcaption class="eyebrow mt-4">Look 01 — Structure</figcaption>
+      </figure>
+      <figure class="shrink-0 w-[60vw] md:w-[24vw] h-[55vh] self-end" data-velocity-skew>
+        <img data-lightbox="https://images.unsplash.com/photo-1490114538077-0a7f8cb49891?q=80&w=1400&auto=format&fit=crop" data-cursor="view" data-cursor-label="VIEW" src="https://images.unsplash.com/photo-1490114538077-0a7f8cb49891?q=80&w=900&auto=format&fit=crop" alt="Look 02 — draped fluid form" class="w-full h-full object-cover grayscale-[0.1]" />
+        <figcaption class="eyebrow mt-4">Look 02 — Fluidity</figcaption>
+      </figure>
+      <figure class="shrink-0 w-[70vw] md:w-[34vw] h-[75vh]" data-velocity-skew>
+        <img data-lightbox="https://images.unsplash.com/photo-1509967419530-da38b4704bc6?q=80&w=1400&auto=format&fit=crop" data-cursor="view" data-cursor-label="VIEW" src="https://images.unsplash.com/photo-1509967419530-da38b4704bc6?q=80&w=1000&auto=format&fit=crop" alt="Look 03 — sovereign silhouette" class="w-full h-full object-cover grayscale-[0.1]" />
+        <figcaption class="eyebrow mt-4">Look 03 — Sovereign</figcaption>
+      </figure>
+      <figure class="shrink-0 w-[55vw] md:w-[22vw] h-[48vh] self-start mt-20" data-velocity-skew>
+        <img data-lightbox="https://images.unsplash.com/photo-1441123694162-e54a981ceba5?q=80&w=1400&auto=format&fit=crop" data-cursor="view" data-cursor-label="VIEW" src="https://images.unsplash.com/photo-1441123694162-e54a981ceba5?q=80&w=900&auto=format&fit=crop" alt="Look 04 — minimal architectural line" class="w-full h-full object-cover grayscale-[0.1]" />
+        <figcaption class="eyebrow mt-4">Look 04 — Line</figcaption>
+      </figure>
+      <figure class="shrink-0 w-[70vw] md:w-[32vw] h-[68vh]" data-velocity-skew>
+        <img data-lightbox="https://images.unsplash.com/photo-1524504388940-b1c1722653e1?q=80&w=1400&auto=format&fit=crop" data-cursor="view" data-cursor-label="VIEW" src="https://images.unsplash.com/photo-1524504388940-b1c1722653e1?q=80&w=1000&auto=format&fit=crop" alt="Look 05 — editorial portrait" class="w-full h-full object-cover grayscale-[0.1]" />
+        <figcaption class="eyebrow mt-4">Look 05 — Presence</figcaption>
+      </figure>
+      <div class="shrink-0 w-[50vw] md:w-[22vw] flex items-center pr-14">
+        <p class="font-display text-2xl md:text-3xl leading-snug" data-fade>Every outfit should tell a story about who I am.</p>
       </div>
-      <div>
-        <p class="eyebrow mb-5" style="color:var(--umber);">The Morning Code</p>
-        <h2 class="font-display text-3xl md:text-4xl mb-6" style="color:var(--porcelain);">Mental sovereignty, before the noise.</h2>
-        <p class="text-base md:text-lg leading-relaxed" style="color:rgba(251,250,246,0.78); max-width:60ch;" data-fade>
-          Every morning begins with movement. I dance to reconnect with myself, awaken my
-          energy, and start the day feeling present before I step into the expectations of
-          the outside world. I take time for reflection to understand my thoughts, set my
-          intentions, and remind myself of what truly matters. Mornings are not just about
-          productivity — they are about creating a moment of connection with myself before I
-          give my energy to everything else.
-        </p>
+    </div>
+  </section>
+
+  <!-- ============ COMPONENT: FullArchiveGrid (masonry + lightbox) ============ -->
+  <section id="full-archive" data-component="FullArchiveGrid" class="px-5 md:px-14 py-24 md:py-32 bg-alabaster">
+    <h2 class="font-display text-3xl md:text-4xl mb-10" data-fade>The Full Archive.</h2>
+    <div class="archive-grid" style="grid-auto-rows: 150px;">
+      <figure class="col-span-2 row-span-2" data-lightbox="https://images.unsplash.com/photo-1509967419530-da38b4704bc6?q=80&w=1400&auto=format&fit=crop" data-cursor="view" data-cursor-label="VIEW"><img src="https://images.unsplash.com/photo-1509967419530-da38b4704bc6?q=80&w=700&auto=format&fit=crop" alt="Archive 01" class="grayscale-[0.1]" /></figure>
+      <figure class="col-span-1 row-span-1" data-lightbox="https://images.unsplash.com/photo-1483985988355-763728e1935b?q=80&w=1200&auto=format&fit=crop" data-cursor="view" data-cursor-label="VIEW"><img src="https://images.unsplash.com/photo-1483985988355-763728e1935b?q=80&w=500&auto=format&fit=crop" alt="Archive 02" class="grayscale-[0.1]" /></figure>
+      <figure class="col-span-1 row-span-1" data-lightbox="https://images.unsplash.com/photo-1490114538077-0a7f8cb49891?q=80&w=1200&auto=format&fit=crop" data-cursor="view" data-cursor-label="VIEW"><img src="https://images.unsplash.com/photo-1490114538077-0a7f8cb49891?q=80&w=500&auto=format&fit=crop" alt="Archive 03" class="grayscale-[0.1]" /></figure>
+      <figure class="col-span-2 row-span-1" data-lightbox="https://images.unsplash.com/photo-1441123694162-e54a981ceba5?q=80&w=1400&auto=format&fit=crop" data-cursor="view" data-cursor-label="VIEW"><img src="https://images.unsplash.com/photo-1441123694162-e54a981ceba5?q=80&w=700&auto=format&fit=crop" alt="Archive 04" class="grayscale-[0.1]" /></figure>
+      <figure class="col-span-1 row-span-1" data-lightbox="https://images.unsplash.com/photo-1524504388940-b1c1722653e1?q=80&w=1200&auto=format&fit=crop" data-cursor="view" data-cursor-label="VIEW"><img src="https://images.unsplash.com/photo-1524504388940-b1c1722653e1?q=80&w=500&auto=format&fit=crop" alt="Archive 05" class="grayscale-[0.1]" /></figure>
+      <figure class="col-span-1 row-span-1" data-lightbox="https://images.unsplash.com/photo-1518199266791-5375a83190b7?q=80&w=1200&auto=format&fit=crop" data-cursor="view" data-cursor-label="VIEW"><img src="https://images.unsplash.com/photo-1518199266791-5375a83190b7?q=80&w=500&auto=format&fit=crop" alt="Archive 06" class="grayscale-[0.1]" /></figure>
+      <figure class="col-span-2 row-span-1" data-lightbox="https://images.unsplash.com/photo-1509967419530-da38b4704bc6?q=80&w=1400&auto=format&fit=crop" data-cursor="view" data-cursor-label="VIEW"><img src="https://images.unsplash.com/photo-1509967419530-da38b4704bc6?q=80&w=700&auto=format&fit=crop" alt="Archive 07" class="grayscale-[0.1]" /></figure>
+    </div>
+  </section>
+
+  <!-- ============ COMPONENT: DigitalsCompCard ============ -->
+  <!-- Measurement fields are structurally present but intentionally left "To be confirmed" —
+       fabricating specific body measurements for a real person is outside the creative-
+       freedom authorization; see blueprint.md §8.1. -->
+  <section id="digitals" data-component="DigitalsCompCard" class="px-5 md:px-14 py-24 md:py-32 bg-linen">
+    <p class="eyebrow mb-10">Comp Card & Digitals</p>
+    <div class="max-w-5xl mx-auto grid md:grid-cols-[1fr_1.2fr] gap-14">
+      <div class="grid grid-cols-2 gap-3" data-fade>
+        <figure data-lightbox="https://images.unsplash.com/photo-1509967419530-da38b4704bc6?q=80&w=1200&auto=format&fit=crop" data-cursor="view" data-cursor-label="VIEW"><img src="https://images.unsplash.com/photo-1509967419530-da38b4704bc6?q=80&w=500&auto=format&fit=crop" alt="Digital 01" class="w-full h-48 object-cover grayscale-[0.1]" /></figure>
+        <figure data-lightbox="https://images.unsplash.com/photo-1483985988355-763728e1935b?q=80&w=1200&auto=format&fit=crop" data-cursor="view" data-cursor-label="VIEW"><img src="https://images.unsplash.com/photo-1483985988355-763728e1935b?q=80&w=500&auto=format&fit=crop" alt="Digital 02" class="w-full h-48 object-cover grayscale-[0.1]" /></figure>
+        <figure data-lightbox="https://images.unsplash.com/photo-1490114538077-0a7f8cb49891?q=80&w=1200&auto=format&fit=crop" data-cursor="view" data-cursor-label="VIEW"><img src="https://images.unsplash.com/photo-1490114538077-0a7f8cb49891?q=80&w=500&auto=format&fit=crop" alt="Digital 03" class="w-full h-48 object-cover grayscale-[0.1]" /></figure>
+        <figure data-lightbox="https://images.unsplash.com/photo-1441123694162-e54a981ceba5?q=80&w=1200&auto=format&fit=crop" data-cursor="view" data-cursor-label="VIEW"><img src="https://images.unsplash.com/photo-1441123694162-e54a981ceba5?q=80&w=500&auto=format&fit=crop" alt="Digital 04" class="w-full h-48 object-cover grayscale-[0.1]" /></figure>
+      </div>
+      <div data-fade>
+        <h3 class="font-display text-2xl md:text-3xl mb-6">Measurements & Details</h3>
+        <div class="space-y-3 text-sm">
+          <div class="flex justify-between border-b pb-2" style="border-color:var(--hairline);"><span style="color:var(--graphite);">Height</span><span>To be confirmed</span></div>
+          <div class="flex justify-between border-b pb-2" style="border-color:var(--hairline);"><span style="color:var(--graphite);">Bust · Waist · Hips</span><span>To be confirmed</span></div>
+          <div class="flex justify-between border-b pb-2" style="border-color:var(--hairline);"><span style="color:var(--graphite);">Shoe</span><span>To be confirmed</span></div>
+          <div class="flex justify-between border-b pb-2" style="border-color:var(--hairline);"><span style="color:var(--graphite);">Hair · Eyes</span><span>To be confirmed</span></div>
+          <div class="flex justify-between border-b pb-2" style="border-color:var(--hairline);"><span style="color:var(--graphite);">Experience</span><span>Runway · Editorial · Pageantry</span></div>
+          <div class="flex justify-between pb-2"><span style="color:var(--graphite);">Based</span><span>Addis Ababa, Ethiopia</span></div>
+        </div>
+        <a href="contact.html" data-transition data-magnetic data-cursor="link" class="btn-primary mt-8">Request Full Comp Card</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ COMPONENT: WardrobeCommandments (numbered category chips) ============ -->
+  <section id="commandments" data-component="WardrobeCommandments" class="px-5 md:px-14 py-28 md:py-36 bg-linen">
+    <p class="eyebrow mb-10">The Wardrobe Commandments</p>
+    <div class="max-w-3xl">
+      <div class="category-chip" data-fade>
+        <p class="category-title">Every outfit should tell a story about who I am.</p>
+        <p class="category-num">Commandment 01</p>
+      </div>
+      <div class="category-chip" data-fade>
+        <p class="category-title">Dress with intention — let a touch of whimsy through.</p>
+        <p class="category-num">Commandment 02</p>
+      </div>
+      <div class="category-chip" data-fade>
+        <p class="category-title">Know your silhouette. Wear it with confidence.</p>
+        <p class="category-num">Commandment 03</p>
       </div>
     </div>
   </section>
 
   <!-- ============ COMPONENT: ClosingCTA ============ -->
-  <section id="closing-cta" data-component="ClosingCTA" class="px-5 md:px-14 py-24 md:py-32 bg-linen text-center">
-    <p class="eyebrow mb-6" data-fade>Continue the Synthesis</p>
-    <h2 class="font-display text-3xl md:text-5xl mb-8">See the form it takes.</h2>
-    <a href="portfolio.html" data-transition data-magnetic data-cursor="link" class="btn-primary">Enter the Portfolio</a>
+  <section id="closing-cta" class="px-5 md:px-14 py-24 md:py-32 bg-obsidian text-porcelain text-center">
+    <p class="eyebrow mb-6" style="color:var(--umber);">Bookings & Inquiries</p>
+    <h2 class="font-display text-3xl md:text-5xl mb-8" style="color:var(--porcelain);">Ready to create something iconic?</h2>
+    <a href="contact.html" data-transition data-magnetic data-cursor="link" class="btn-primary on-dark">Book Hermela</a>
   </section>
 
 </main>
 
-<!-- ============ COMPONENT: MinimalFooter ============ -->
 <footer class="footer-minimal">
-  <p>© 2026 Hermela Ashenafi Assefa · Identity</p>
+  <p>© 2026 Hermela Ashenafi Assefa · The Muse</p>
   <a href="index.html" data-transition data-magnetic data-cursor="link">← Return Home</a>
 </footer>
 
@@ -169,5 +243,19 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/Flip.min.js"></script>
 <script src="assets/js/main.js"></script>
+<script>
+  (function(){
+    var hero = document.getElementById('displacement-hero');
+    var map = document.getElementById('heroDisplaceMap');
+    if (!hero || !map) return;
+    if (document.body.getAttribute('data-motion') === 'reduced') return;
+    hero.addEventListener('mouseenter', function(){ animateScale(38); });
+    hero.addEventListener('mouseleave', function(){ animateScale(0); });
+    function animateScale(target){
+      if (window.gsap) { gsap.to({v:parseFloat(map.getAttribute('scale'))||0}, {v:target, duration:0.5, ease:'power3.out', onUpdate:function(){ map.setAttribute('scale', this.targets()[0].v); }}); }
+      else { map.setAttribute('scale', target); }
+    }
+  })();
+</script>
 </body>
 </html>
