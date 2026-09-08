@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Private Office | Hermela Ashenafi</title>
+<meta name="robots" content="noindex, nofollow" />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,400&family=Fraunces:opsz,wght@9..144,300..700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+  tailwind.config = { theme: { extend: {
+    colors: { alabaster:"var(--alabaster)", linen:"var(--linen)", paper:"var(--paper)", ink:"var(--ink)", graphite:"var(--graphite)", umber:"var(--umber)", sovereign:"var(--sovereign)", obsidian:"#161513", porcelain:"#FBFAF6" },
+    fontFamily: { wordmark:["Cormorant Garamond","serif"], display:["Fraunces","serif"], body:["Inter","sans-serif"] },
+  } } }
+</script>
+<link rel="stylesheet" href="assets/css/tokens.css">
+<style>
+  /* ================================================================================
+     SECURITY NOTE — read before deploying this page anywhere real.
+     This is a CLIENT-SIDE password gate only, matching the reference implementation
+     it's adapted from. The "passwords" below are visible to anyone who views the
+     page source or opens dev tools — there is no server verifying anything. This is
+     cosmetic access control suitable for keeping casual visitors out of a back-office
+     CONCEPT, not for protecting real confidential business or financial data. A real
+     deployment needs actual server-side authentication (a proper backend, Supabase
+     Auth, Netlify Identity, etc.) before any real bookings or documents live behind it.
+     ================================================================================ */
+  body { cursor: auto; }
+  #custom-cursor { display: none; }
+  .glass { background: rgba(139, 111, 78, 0.06); backdrop-filter: blur(14px); border: 1px solid var(--hairline); }
+  .vault-field { background: transparent; border-bottom: 1px solid var(--hairline); width: 100%; padding: 1rem 0; text-align: center; letter-spacing: 0.4em; color: var(--ink); font-family: var(--font-body); font-size: 0.9rem; }
+  .vault-field:focus { outline: none; border-color: var(--umber); }
+  .hidden-panel { display: none; }
+  .office-row { display: grid; grid-template-columns: 1fr auto; gap: 1rem; align-items: center; padding: 1.4rem 0; border-top: 1px solid var(--hairline); }
+</style>
+</head>
+<body data-nav-state="closed" class="bg-alabaster text-ink font-body">
+
+<div id="film-grain" aria-hidden="true"></div>
+<div id="curtain" aria-hidden="true"></div>
+
+<!-- Theme toggle, top-right, always available -->
+<div class="fixed top-6 right-6 z-50">
+  <button class="theme-toggle" data-theme-toggle aria-label="Toggle light and dark mode"><span class="toggle-thumb"></span></button>
+</div>
+
+<!-- ============ COMPONENT: VaultLock ============ -->
+<div id="vault-lock" class="fixed inset-0 z-40 bg-alabaster flex flex-col items-center justify-center p-6 text-center">
+  <div class="max-w-md w-full space-y-8">
+    <p class="font-wordmark italic text-3xl mb-10">Hermela</p>
+    <h2 class="font-display text-2xl md:text-3xl">Private Office.</h2>
+    <p id="lock-msg" class="eyebrow">Enter your access key</p>
+    <input type="password" id="pass-input" placeholder="ACCESS KEY" class="vault-field" autocomplete="off" />
+    <button id="auth-btn" class="btn-primary w-full justify-center">Authenticate</button>
+  </div>
+</div>
+
+<!-- ============ COMPONENT: AdminDashboard (Hermela's own login) ============ -->
+<main id="admin-portal" class="hidden-panel min-h-screen pt-28 pb-20 px-5 md:px-14">
+  <div class="max-w-5xl mx-auto">
+    <div class="flex flex-col md:flex-row justify-between md:items-end mb-16 border-b pt-6 pb-10" style="border-color:var(--hairline);">
+      <div>
+        <p class="eyebrow mb-3">Executive Command</p>
+        <h1 class="font-display text-4xl md:text-6xl">Good to see you.</h1>
+      </div>
+      <p class="text-xs mt-4 md:mt-0" style="color:var(--graphite);">Ref: HA-2026-INTERNAL</p>
+    </div>
+
+    <!-- Sample/placeholder data — no backend exists yet to source real submissions from.
+         Wire this section to your actual form backend (e.g. the Contact page's inquiry
+         form) before relying on it for real bookings. -->
+    <p class="eyebrow mb-6">Bookings & Inquiries — Sample Data</p>
+    <div class="mb-16">
+      <div class="office-row">
+        <div>
+          <p class="font-display text-lg">Zoma Beauty — Brand Partnership</p>
+          <p class="text-sm" style="color:var(--graphite);">contact@zomabeauty.example · Received 2 days ago</p>
+        </div>
+        <a href="mailto:contact@zomabeauty.example" class="btn-primary text-sm">Reply</a>
+      </div>
+      <div class="office-row">
+        <div>
+          <p class="font-display text-lg">Addis Fashion Collective — Runway Casting</p>
+          <p class="text-sm" style="color:var(--graphite);">casting@addisfashion.example · Received 5 days ago</p>
+        </div>
+        <a href="mailto:casting@addisfashion.example" class="btn-primary text-sm">Reply</a>
+      </div>
+      <div class="office-row" style="border-bottom: 1px solid var(--hairline);">
+        <div>
+          <p class="font-display text-lg">Ethiopian Airlines — Tourism Campaign Inquiry</p>
+          <p class="text-sm" style="color:var(--graphite);">marketing@ethiopianairlines.example · Received 1 week ago</p>
+        </div>
+        <a href="mailto:marketing@ethiopianairlines.example" class="btn-primary text-sm">Reply</a>
+      </div>
+    </div>
+
+    <div class="grid md:grid-cols-2 gap-8">
+      <div class="glass p-8">
+        <p class="eyebrow mb-4">Newsletter — The Alchemist Letter</p>
+        <div class="flex items-baseline justify-between mb-2">
+          <span class="text-4xl font-display">—</span>
+          <span class="text-xs" style="color:var(--graphite);">subscribers (connect a real list to populate)</span>
+        </div>
+        <p class="text-sm" style="color:var(--graphite);">Future integration: Mailchimp / Brevo API connection.</p>
+      </div>
+      <div class="glass p-8">
+        <p class="eyebrow mb-4">Academy Enrollment</p>
+        <div class="flex items-baseline justify-between mb-2">
+          <span class="text-4xl font-display">—</span>
+          <span class="text-xs" style="color:var(--graphite);">active students (connect course platform to populate)</span>
+        </div>
+        <p class="text-sm" style="color:var(--graphite);">Wire to your course/payment provider when ready.</p>
+      </div>
+    </div>
+
+    <footer class="mt-20 pt-10 border-t text-center" style="border-color:var(--hairline);">
+      <a href="index.html" data-transition class="text-sm underline underline-offset-4">← Exit to Public Site</a>
+    </footer>
+  </div>
+</main>
+
+<!-- ============ COMPONENT: ClientPortal (client/partner login) ============ -->
+<main id="client-vault" class="hidden-panel min-h-screen pt-28 pb-20 px-5 md:px-14">
+  <div class="max-w-5xl mx-auto">
+    <div class="flex flex-col md:flex-row justify-between md:items-end mb-16 border-b pt-6 pb-10" style="border-color:var(--hairline);">
+      <div>
+        <p class="eyebrow mb-3">Partner Access</p>
+        <h1 class="font-display text-4xl md:text-6xl">Press &amp; Partner Vault.</h1>
+      </div>
+      <p class="text-xs mt-4 md:mt-0" style="color:var(--graphite);">Ref: HA-2026-EXTERNAL</p>
+    </div>
+
+    <div class="grid md:grid-cols-2 gap-8 mb-16">
+      <div class="glass p-10">
+        <p class="eyebrow mb-4">Digitals & Comp Card</p>
+        <h3 class="font-display text-2xl mb-4">Current Digitals Set.</h3>
+        <p class="text-sm mb-8" style="color:var(--graphite);">High-resolution digitals and comp card, updated each season.</p>
+        <a href="javascript:void(0)" class="btn-primary text-sm">Download Assets →</a>
+      </div>
+      <div class="glass p-10">
+        <p class="eyebrow mb-4">Press Kit</p>
+        <h3 class="font-display text-2xl mb-4">Official Media Kit.</h3>
+        <p class="text-sm mb-8" style="color:var(--graphite);">Headshots, biography, and title verification for press and publication use.</p>
+        <a href="javascript:void(0)" class="btn-primary text-sm">Download Assets →</a>
+      </div>
+      <div class="glass p-10">
+        <p class="eyebrow mb-4">Photoshoot Documents</p>
+        <h3 class="font-display text-2xl mb-4">Booking Documents.</h3>
+        <p class="text-sm mb-8" style="color:var(--graphite);">Model release templates, usage agreements, and rate cards for booked shoots.</p>
+        <a href="javascript:void(0)" class="btn-primary text-sm">Download Assets →</a>
+      </div>
+      <div class="glass p-10">
+        <p class="eyebrow mb-4">Newsletter</p>
+        <h3 class="font-display text-2xl mb-4">Partner Updates.</h3>
+        <p class="text-sm mb-8" style="color:var(--graphite);">Subscribe for early access to availability, campaigns, and appearance dates.</p>
+        <div class="flex gap-2">
+          <input type="email" placeholder="Email Address" class="field" style="border-bottom:1px solid var(--hairline);" />
+          <button class="btn-primary text-sm shrink-0">Register</button>
+        </div>
+      </div>
+    </div>
+
+    <footer class="mt-20 pt-10 border-t text-center" style="border-color:var(--hairline);">
+      <a href="index.html" data-transition class="text-sm underline underline-offset-4">← Exit to Public Site</a>
+    </footer>
+  </div>
+</main>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script src="assets/js/main.js"></script>
+<script>
+  // Cosmetic client-side gate only — see the SECURITY NOTE at the top of this file's <style> block.
+  document.getElementById('auth-btn').addEventListener('click', handleAccess);
+  document.getElementById('pass-input').addEventListener('keydown', (e) => { if (e.key === 'Enter') handleAccess(); });
+
+  function handleAccess() {
+    const pass = document.getElementById('pass-input').value;
+    const lock = document.getElementById('vault-lock');
+    const reduced = document.body.getAttribute('data-motion') === 'reduced';
+
+    if (pass === 'hermela23') {
+      reveal(lock, 'admin-portal', reduced);
+    } else if (pass === 'AskHermela') {
+      reveal(lock, 'client-vault', reduced);
+    } else {
+      const msg = document.getElementById('lock-msg');
+      msg.textContent = 'Invalid access key';
+      msg.style.color = '#b0453f';
+    }
+  }
+
+  function reveal(lock, panelId, reduced) {
+    const panel = document.getElementById(panelId);
+    if (reduced || typeof gsap === 'undefined') {
+      lock.style.display = 'none';
+      panel.style.display = 'block';
+      return;
+    }
+    gsap.to(lock, {
+      opacity: 0, duration: 0.7, ease: 'power3.inOut',
+      onComplete: () => {
+        lock.style.display = 'none';
+        panel.style.display = 'block';
+        gsap.from(panel, { opacity: 0, y: 16, duration: 0.7, ease: 'power3.out' });
+      }
+    });
+  }
+</script>
+</body>
+</html>
