@@ -11,7 +11,7 @@
 <script src="https://cdn.tailwindcss.com"></script>
 <script>
   tailwind.config = { theme: { extend: {
-    colors: { alabaster:"#F6F3EC", linen:"#EEE7D9", paper:"#FBFAF6", ink:"#161513", graphite:"#3A362F", umber:"#8B6F4E", sovereign:"#5B4636" },
+    colors: { alabaster:"var(--alabaster)", linen:"var(--linen)", paper:"var(--paper)", ink:"var(--ink)", graphite:"var(--graphite)", umber:"var(--umber)", sovereign:"var(--sovereign)", obsidian:"#161513", porcelain:"#FBFAF6" },
     fontFamily: { wordmark:["Cormorant Garamond","serif"], display:["Fraunces","serif"], body:["Inter","sans-serif"] },
   } } }
 </script>
@@ -37,9 +37,12 @@
 
 <header id="site-nav">
   <a href="index.html" class="nav-word" data-magnetic data-cursor="link">Hermela</a>
-  <button id="nav-toggle" aria-label="Open menu" data-cursor="link">
-    <span></span><span></span><span></span>
-  </button>
+  <div class="flex items-center gap-4">
+    <button class="theme-toggle" data-theme-toggle aria-label="Toggle light and dark mode" data-cursor="link"><span class="toggle-thumb"></span></button>
+    <button id="nav-toggle" aria-label="Open menu" data-cursor="link">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
 </header>
 
 <nav id="nav-overlay" aria-hidden="true">
@@ -49,7 +52,8 @@
   <a href="reign.html" data-page="reign.html" data-transition data-cursor="link" data-cursor-label="ENTER">04 Reign ↗</a>
   <a href="mind.html" data-page="mind.html" data-transition data-cursor="link" data-cursor-label="READ">05 Mind ↗</a>
   <a href="codes.html" data-page="codes.html" data-transition data-cursor="link" data-cursor-label="READ">06 Codes ↗</a>
-  <a href="contact.html" data-page="contact.html" data-transition data-cursor="link" data-cursor-label="BEGIN">07 Contact ↗</a>
+  <a href="academy.html" data-page="academy.html" data-transition data-cursor="link" data-cursor-label="LEARN">07 Academy ↗</a>
+  <a href="contact.html" data-page="contact.html" data-transition data-cursor="link" data-cursor-label="BEGIN">08 Contact ↗</a>
   <div class="nav-meta">Addis Ababa, Ethiopia — Miss Tourism Ethiopia 2026</div>
 </nav>
 
@@ -83,6 +87,7 @@
         <div class="chip"><span class="chip-label">Craft</span><span class="chip-value">Model · Digital Creator</span></div>
         <div class="chip"><span class="chip-label">Title</span><span class="chip-value">Miss Tourism Ethiopia</span></div>
         <div class="chip"><span class="chip-label">Based</span><span class="chip-value">Addis Ababa</span></div>
+        <div class="chip"><span class="chip-label">Instagram</span><span class="chip-value">100K+ · growing daily</span></div>
       </div>
 
       <div class="mt-8 md:mt-10 flex flex-col md:flex-row md:items-end md:justify-between gap-6 border-t border-ink/10 pt-6">
@@ -104,17 +109,19 @@
       <span><em>Title</em>Reigning Miss Tourism Ethiopia</span>
       <span><em>Forward</em>Miss Tourism Africa, Nigeria — Sep 2026</span>
       <span><em>Practice</em>Digital Creator</span>
+      <span><em>Community</em>100K+ Instagram — growing daily</span>
       <span><em>Field</em>Computer Science, BSc</span>
       <span><em>Role</em>Project Manager</span>
       <span><em>Placement</em>4th Runner-Up, Miss Ethiopia 2026</span>
       <span><em>Title</em>Reigning Miss Tourism Ethiopia</span>
       <span><em>Forward</em>Miss Tourism Africa, Nigeria — Sep 2026</span>
       <span><em>Practice</em>Digital Creator</span>
+      <span><em>Community</em>100K+ Instagram — growing daily</span>
     </div>
   </section>
 
   <!-- ============ COMPONENT: MilestoneStrip ============ -->
-  <section id="milestones" data-component="MilestoneStrip" class="bg-ink text-paper py-16 md:py-20 px-5 md:px-14">
+  <section id="milestones" data-component="MilestoneStrip" class="bg-obsidian text-porcelain py-16 md:py-20 px-5 md:px-14">
     <div class="grid grid-cols-2 md:grid-cols-4 gap-10 md:gap-6 max-w-6xl mx-auto">
       <div data-fade>
         <div class="font-display text-4xl md:text-6xl" data-odometer="0004">0000</div>
