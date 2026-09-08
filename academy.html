@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Academy — Hermela Ashenafi</title>
+<meta name="description" content="The Alchemist Method — Hermela's mentorship and education arm for aspiring Ethiopian models and creators." />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,400&family=Fraunces:opsz,wght@9..144,300..700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+  tailwind.config = { theme: { extend: {
+    colors: { alabaster:"var(--alabaster)", linen:"var(--linen)", paper:"var(--paper)", ink:"var(--ink)", graphite:"var(--graphite)", umber:"var(--umber)", sovereign:"var(--sovereign)", obsidian:"#161513", porcelain:"#FBFAF6" },
+    fontFamily: { wordmark:["Cormorant Garamond","serif"], display:["Fraunces","serif"], body:["Inter","sans-serif"] },
+  } } }
+</script>
+<link rel="stylesheet" href="assets/css/tokens.css">
+<style>
+  .field { background: transparent; border: none; border-bottom: 1px solid var(--hairline); width: 100%; padding: 0.9rem 0; font-family: var(--font-body); font-size: 1rem; color: var(--ink); }
+  .field:focus { outline: none; border-color: var(--ink); }
+  .field::placeholder { color: rgba(22,21,19,0.38); }
+</style>
+</head>
+<body data-nav-state="closed">
+
+<!-- STUDIO PROPOSAL — this entire page is a creative studio proposal per blueprint.md §8.1,
+     pending Hermela's review. Pricing, course/module names, and download titles are
+     invented consistent with her disclosed CS/PM + modeling identity; nothing here
+     contradicts a real survey answer. -->
+
+<div id="preloader"><span class="preloader-word font-wordmark">Hermela</span><span class="preloader-count" data-preloader-count>0%</span></div>
+<div id="film-grain" aria-hidden="true"></div>
+<div id="custom-cursor" data-state="default" aria-hidden="true"></div>
+<div id="curtain" aria-hidden="true"></div>
+<div id="lightbox" data-open="false">
+  <button class="lightbox-close" data-lightbox-close data-cursor="link">CLOSE ✕</button>
+  <img src="" alt="Expanded view" />
+</div>
+
+<header id="site-nav">
+  <a href="index.html" data-transition class="nav-word" data-magnetic data-cursor="link">Hermela</a>
+  <div class="flex items-center gap-4">
+    <button class="theme-toggle" data-theme-toggle aria-label="Toggle light and dark mode" data-cursor="link"><span class="toggle-thumb"></span></button>
+    <button id="nav-toggle" aria-label="Open menu" data-cursor="link"><span></span><span></span><span></span></button>
+  </div>
+</header>
+
+<nav id="nav-overlay" aria-hidden="true">
+  <a href="index.html" data-page="index.html" data-transition data-cursor="link" data-cursor-label="ENTER">01 Home ↗</a>
+  <a href="identity.html" data-page="identity.html" data-transition data-cursor="link" data-cursor-label="READ">02 Identity ↗</a>
+  <a href="portfolio.html" data-page="portfolio.html" data-transition data-cursor="link" data-cursor-label="VIEW">03 Portfolio ↗</a>
+  <a href="reign.html" data-page="reign.html" data-transition data-cursor="link" data-cursor-label="ENTER">04 Reign ↗</a>
+  <a href="mind.html" data-page="mind.html" data-transition data-cursor="link" data-cursor-label="READ">05 Mind ↗</a>
+  <a href="codes.html" data-page="codes.html" data-transition data-cursor="link" data-cursor-label="READ">06 Codes ↗</a>
+  <a href="academy.html" data-page="academy.html" data-transition data-cursor="link" data-cursor-label="LEARN">07 Academy ↗</a>
+  <a href="contact.html" data-page="contact.html" data-transition data-cursor="link" data-cursor-label="BEGIN">08 Contact ↗</a>
+  <div class="nav-meta">Addis Ababa, Ethiopia — Miss Tourism Ethiopia 2026</div>
+</nav>
+
+<main>
+
+  <!-- ============ COMPONENT: AcademyHero ============ -->
+  <section id="academy-hero" data-component="AcademyHero" class="min-h-[85svh] flex flex-col justify-end px-5 md:px-14 pt-32 pb-14 bg-alabaster">
+    <p class="eyebrow mb-5" data-fade>The Academy</p>
+    <h1 class="h-display font-display" style="font-size:clamp(2.6rem,7vw,5.5rem);">
+      <span class="reveal-line block" data-reveal="words">The Alchemist</span>
+      <span class="reveal-line block italic" data-reveal="words" style="color:var(--umber);">Method.</span>
+    </h1>
+    <div class="chip-row mt-7" data-fade>
+      <div class="chip"><span class="chip-label">Format</span><span class="chip-value">Free Resources · Course · 1-on-1</span></div>
+      <div class="chip"><span class="chip-label">Focus</span><span class="chip-value">Modeling · Content Creation</span></div>
+      <div class="chip"><span class="chip-label">Approach</span><span class="chip-value">Career Architecture</span></div>
+      <div class="chip"><span class="chip-label">Based</span><span class="chip-value">Addis Ababa</span></div>
+    </div>
+    <p class="copy mt-8 text-lg max-w-2xl" data-fade>
+      A modeling or content career is treated by most as a lucky break. She treats it as a
+      system — one that can be audited, architected, and run with discipline. This is the
+      method she wishes someone had handed her first.
+    </p>
+  </section>
+
+  <!-- ============ COMPONENT: PhilosophyQuote ============ -->
+  <section id="philosophy-quote" data-component="PhilosophyQuote" class="px-5 md:px-14 py-24 md:py-32 bg-obsidian text-center">
+    <p class="eyebrow mb-6" style="color:var(--umber);" data-fade>The Founding Principle</p>
+    <p class="font-display italic max-w-3xl mx-auto" style="font-size:clamp(1.8rem,4.2vw,2.9rem); color:var(--porcelain);" data-fade>
+      "A career is a system. Build it like one."
+    </p>
+    <p class="mt-8 max-w-xl mx-auto text-base md:text-lg" style="color:rgba(251,250,246,0.72);" data-fade>
+      Talent gets you noticed. Structure is what makes a career last — the same discipline
+      that manages a product launch, applied to a portfolio, a submission calendar, and a
+      body of work.
+    </p>
+  </section>
+
+  <!-- ============ COMPONENT: TheMethod (roman numeral process) ============ -->
+  <section id="the-method" data-component="TheMethod" class="px-5 md:px-14 py-24 md:py-32 bg-linen">
+    <p class="eyebrow mb-10 max-w-4xl mx-auto">The Method — Four Phases</p>
+    <div class="max-w-4xl mx-auto">
+      <div class="process-row" data-fade>
+        <p class="process-num">I</p>
+        <div>
+          <p class="process-title">Audit.</p>
+          <p class="copy">Know exactly where you're starting. Current portfolio, current presence, current gaps — assessed honestly, before a single new photo is taken.</p>
+        </div>
+      </div>
+      <div class="process-row" data-fade>
+        <p class="process-num">II</p>
+        <div>
+          <p class="process-title">Architecture.</p>
+          <p class="copy">Build the structural plan: comp card, portfolio sequencing, content calendar, and a submission strategy that targets the right agencies and castings — not every agency and casting.</p>
+        </div>
+      </div>
+      <div class="process-row" data-fade>
+        <p class="process-num">III</p>
+        <div>
+          <p class="process-title">Execution.</p>
+          <p class="copy">Run it with a project manager's cadence — submissions tracked, content posted on a rhythm, every rejection logged as data, not defeat.</p>
+        </div>
+      </div>
+      <div class="process-row" data-fade>
+        <p class="process-num">IV</p>
+        <div>
+          <p class="process-title">Scale.</p>
+          <p class="copy">Agency-ready, brand-ready, stage-ready — the point where the system runs itself and the work simply compounds.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ COMPONENT: FreeResources ============ -->
+  <section id="free-resources" data-component="FreeResources" class="px-5 md:px-14 py-24 md:py-32 bg-alabaster">
+    <p class="eyebrow mb-10">Free, Always</p>
+    <div class="grid md:grid-cols-2 gap-8 max-w-5xl">
+      <div class="border-t pt-6" style="border-color:var(--hairline);" data-fade>
+        <p class="eyebrow mb-3" style="color:var(--umber);">01 — Free Download</p>
+        <h3 class="font-display text-2xl md:text-3xl mb-4">The Comp Card Blueprint.</h3>
+        <p class="copy text-sm mb-6">A structural, start-to-finish checklist for building a comp card and starter portfolio that actually gets you submitted — not just photographed.</p>
+        <a href="javascript:void(0)" data-magnetic data-cursor="link" class="btn-primary text-sm">Download Free Guide →</a>
+      </div>
+      <div class="border-t pt-6" style="border-color:var(--hairline);" data-fade>
+        <p class="eyebrow mb-3" style="color:var(--umber);">02 — Free Download</p>
+        <h3 class="font-display text-2xl md:text-3xl mb-4">The Confidence Protocol.</h3>
+        <p class="copy text-sm mb-6">A project manager's approach to pre-casting nerves — a repeatable, structured prep routine, not vague pep talk.</p>
+        <a href="javascript:void(0)" data-magnetic data-cursor="link" class="btn-primary text-sm">Download Free Guide →</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ COMPONENT: SignatureCourse ============ -->
+  <section id="signature-course" data-component="SignatureCourse" class="px-5 md:px-14 py-24 md:py-32 bg-obsidian text-porcelain">
+    <p class="eyebrow mb-6" style="color:var(--umber);">Signature Course</p>
+    <h2 class="font-display text-3xl md:text-5xl mb-10" style="color:var(--porcelain);">From Portfolio to Presence.</h2>
+    <div class="max-w-3xl">
+      <div class="category-chip" style="border-color:rgba(251,250,246,0.14);" data-fade>
+        <p class="category-title" style="color:var(--porcelain);">Module 1 — Auditing Your Starting Point</p>
+        <p class="category-num">01</p>
+      </div>
+      <div class="category-chip" style="border-color:rgba(251,250,246,0.14);" data-fade>
+        <p class="category-title" style="color:var(--porcelain);">Module 2 — Building Your Visual System</p>
+        <p class="category-num">02</p>
+      </div>
+      <div class="category-chip" style="border-color:rgba(251,250,246,0.14);" data-fade>
+        <p class="category-title" style="color:var(--porcelain);">Module 3 — The Submission Playbook</p>
+        <p class="category-num">03</p>
+      </div>
+      <div class="category-chip" style="border-color:rgba(251,250,246,0.14);" data-fade>
+        <p class="category-title" style="color:var(--porcelain);">Module 4 — Content as Infrastructure</p>
+        <p class="category-num">04</p>
+      </div>
+      <div class="category-chip" style="border-color:rgba(251,250,246,0.14);" data-fade>
+        <p class="category-title" style="color:var(--porcelain);">Module 5 — Stage & Camera Presence</p>
+        <p class="category-num">05</p>
+      </div>
+      <div class="category-chip" style="border-color:rgba(251,250,246,0.14);" data-fade>
+        <p class="category-title" style="color:var(--porcelain);">Module 6 — Sustaining Momentum</p>
+        <p class="category-num">06</p>
+      </div>
+    </div>
+    <div class="mt-10 flex flex-col md:flex-row md:items-center gap-6" data-fade>
+      <p class="text-2xl font-display" style="color:var(--umber);">From $150</p>
+      <a href="contact.html" data-transition data-magnetic data-cursor="link" class="btn-primary on-dark">Enroll Now →</a>
+    </div>
+  </section>
+
+  <!-- ============ COMPONENT: PrivateMentorship ============ -->
+  <section id="mentorship" data-component="PrivateMentorship" class="px-5 md:px-14 py-24 md:py-32 bg-linen">
+    <div class="max-w-5xl mx-auto grid md:grid-cols-2 gap-14 items-center">
+      <div data-fade>
+        <p class="eyebrow mb-5">Private Mentorship</p>
+        <h2 class="font-display text-3xl md:text-4xl mb-6">1-on-1 Strategy Sessions.</h2>
+        <p class="copy mb-6">
+          A focused 60-minute private session — your portfolio reviewed, your starting point
+          audited, and a personalized roadmap built with the same rigor she brings to a
+          project plan.
+        </p>
+        <ul class="space-y-2 text-sm copy mb-8">
+          <li>✦ Portfolio & comp card review</li>
+          <li>✦ Personalized career roadmap</li>
+          <li>✦ Submission strategy guidance</li>
+          <li>✦ Live Q&A with Hermela</li>
+        </ul>
+        <div class="flex items-center gap-6">
+          <p class="text-xl font-display" style="color:var(--sovereign);">From $90</p>
+          <a href="contact.html" data-transition data-magnetic data-cursor="link" class="btn-primary">Book Your Session →</a>
+        </div>
+      </div>
+      <div data-fade data-lightbox="https://images.unsplash.com/photo-1524504388940-b1c1722653e1?q=80&w=1400&auto=format&fit=crop" data-cursor="view" data-cursor-label="VIEW">
+        <img src="https://images.unsplash.com/photo-1524504388940-b1c1722653e1?q=80&w=1000&auto=format&fit=crop" alt="Private mentorship session placeholder" class="w-full h-[420px] object-cover grayscale-[0.15]" />
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ COMPONENT: Newsletter ============ -->
+  <section id="newsletter" data-component="Newsletter" class="px-5 md:px-14 py-24 md:py-32 bg-alabaster text-center">
+    <p class="eyebrow mb-6">The Alchemist Letter</p>
+    <h2 class="font-display text-2xl md:text-3xl mb-6 max-w-2xl mx-auto">Weekly insight from her desk — career strategy, casting notes, and the occasional reminder that structure and grace aren't opposites.</h2>
+    <div style="position:relative; max-width: 28rem; margin: 2rem auto 0; min-height: 4rem;">
+      <form id="academy-newsletter-form" class="flex gap-2" data-success-form="#success-overlay">
+        <input type="email" required placeholder="Email address" class="field" />
+        <button type="submit" data-magnetic data-cursor="link" class="btn-primary shrink-0">Subscribe</button>
+      </form>
+      <div id="success-overlay" data-open="false">
+        <div class="success-check">✓</div>
+        <h3 class="font-display text-2xl mb-2">Welcome in.</h3>
+        <p class="copy mb-6">Your first letter arrives soon.</p>
+        <button data-success-close data-magnetic data-cursor="link" class="btn-primary">Close</button>
+      </div>
+    </div>
+    <p class="text-xs mt-4" style="color:var(--graphite);">No spam, ever · Unsubscribe anytime</p>
+  </section>
+
+</main>
+
+<footer class="footer-minimal">
+  <p>© 2026 Hermela Ashenafi Assefa · Academy</p>
+  <a href="index.html" data-transition data-magnetic data-cursor="link">← Return Home</a>
+</footer>
+
+<script src="https://unpkg.com/lenis@1.1.18/dist/lenis.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/Flip.min.js"></script>
+<script src="assets/js/main.js"></script>
+</body>
+</html>
