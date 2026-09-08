@@ -11,7 +11,7 @@
 <script src="https://cdn.tailwindcss.com"></script>
 <script>
   tailwind.config = { theme: { extend: {
-    colors: { alabaster:"#F6F3EC", linen:"#EEE7D9", paper:"#FBFAF6", ink:"#161513", graphite:"#3A362F", umber:"#8B6F4E", sovereign:"#5B4636" },
+    colors: { alabaster:"var(--alabaster)", linen:"var(--linen)", paper:"var(--paper)", ink:"var(--ink)", graphite:"var(--graphite)", umber:"var(--umber)", sovereign:"var(--sovereign)", obsidian:"#161513", porcelain:"#FBFAF6" },
     fontFamily: { wordmark:["Cormorant Garamond","serif"], display:["Fraunces","serif"], body:["Inter","sans-serif"] },
   } } }
 </script>
@@ -30,7 +30,10 @@
 
 <header id="site-nav">
   <a href="index.html" data-transition class="nav-word" data-magnetic data-cursor="link">Hermela</a>
-  <button id="nav-toggle" aria-label="Open menu" data-cursor="link"><span></span><span></span><span></span></button>
+  <div class="flex items-center gap-4">
+    <button class="theme-toggle" data-theme-toggle aria-label="Toggle light and dark mode" data-cursor="link"><span class="toggle-thumb"></span></button>
+    <button id="nav-toggle" aria-label="Open menu" data-cursor="link"><span></span><span></span><span></span></button>
+  </div>
 </header>
 
 <nav id="nav-overlay" aria-hidden="true">
@@ -40,14 +43,15 @@
   <a href="reign.html" data-page="reign.html" data-transition data-cursor="link" data-cursor-label="ENTER">04 Reign ↗</a>
   <a href="mind.html" data-page="mind.html" data-transition data-cursor="link" data-cursor-label="READ">05 Mind ↗</a>
   <a href="codes.html" data-page="codes.html" data-transition data-cursor="link" data-cursor-label="READ">06 Codes ↗</a>
-  <a href="contact.html" data-page="contact.html" data-transition data-cursor="link" data-cursor-label="BEGIN">07 Contact ↗</a>
+  <a href="academy.html" data-page="academy.html" data-transition data-cursor="link" data-cursor-label="LEARN">07 Academy ↗</a>
+  <a href="contact.html" data-page="contact.html" data-transition data-cursor="link" data-cursor-label="BEGIN">08 Contact ↗</a>
   <div class="nav-meta">Addis Ababa, Ethiopia — Miss Tourism Ethiopia 2026</div>
 </nav>
 
 <main>
 
   <!-- ============ COMPONENT: ReignHero ============ -->
-  <section id="reign-hero" data-component="ReignHero" class="relative min-h-[85svh] flex flex-col justify-end px-5 md:px-14 pt-32 pb-14 bg-ink text-paper overflow-hidden">
+  <section id="reign-hero" data-component="ReignHero" class="relative min-h-[85svh] flex flex-col justify-end px-5 md:px-14 pt-32 pb-14 bg-obsidian text-porcelain overflow-hidden">
     <div class="absolute inset-0 opacity-20" data-parallax-scene>
       <div data-parallax-layer="0.3" class="h-full">
         <img src="https://images.unsplash.com/photo-1490114538077-0a7f8cb49891?q=80&w=1600&auto=format&fit=crop" alt="" class="w-full h-[130%] object-cover grayscale" />
@@ -55,7 +59,7 @@
     </div>
     <div class="relative z-10">
       <p class="eyebrow mb-6" style="color:var(--umber);" data-fade>04 — Reign</p>
-      <h1 class="font-wordmark italic" style="font-size:clamp(3rem,10vw,7.5rem); color:var(--paper);">
+      <h1 class="font-wordmark italic" style="font-size:clamp(3rem,10vw,7.5rem); color:var(--porcelain);">
         <span class="reveal-line block" data-reveal="chars">The Crown Chronicle.</span>
       </h1>
       <!-- ============ COMPONENT: MetaChipRow (on dark) ============ -->
@@ -133,22 +137,22 @@
   </section>
 
   <!-- ============ COMPONENT: AllChapters (numbered chronicle rows) ============ -->
-  <section id="all-chapters" data-component="AllChapters" class="px-5 md:px-14 py-24 md:py-32 bg-ink text-paper">
+  <section id="all-chapters" data-component="AllChapters" class="px-5 md:px-14 py-24 md:py-32 bg-obsidian text-porcelain">
     <p class="eyebrow mb-10" style="color:var(--umber);">All Chapters — 2026</p>
     <div class="max-w-4xl">
       <div class="chronicle-row" style="border-color:rgba(251,250,246,0.14);" data-fade>
         <p class="chronicle-num" style="color:var(--umber);">01</p>
-        <div><p class="chronicle-title" style="color:var(--paper);">Miss Ethiopia — National Pageant</p><p class="chronicle-meta" style="color:rgba(251,250,246,0.55);">Ethiopia · 2026</p></div>
+        <div><p class="chronicle-title" style="color:var(--porcelain);">Miss Ethiopia — National Pageant</p><p class="chronicle-meta" style="color:rgba(251,250,246,0.55);">Ethiopia · 2026</p></div>
         <p class="chronicle-status">4th Runner-Up</p>
       </div>
       <div class="chronicle-row" style="border-color:rgba(251,250,246,0.14);" data-fade>
         <p class="chronicle-num" style="color:var(--umber);">02</p>
-        <div><p class="chronicle-title" style="color:var(--paper);">Miss Tourism Ethiopia</p><p class="chronicle-meta" style="color:rgba(251,250,246,0.55);">Ethiopia · August 2026</p></div>
+        <div><p class="chronicle-title" style="color:var(--porcelain);">Miss Tourism Ethiopia</p><p class="chronicle-meta" style="color:rgba(251,250,246,0.55);">Ethiopia · August 2026</p></div>
         <p class="chronicle-status">Reigning</p>
       </div>
       <div class="chronicle-row" style="border-color:rgba(251,250,246,0.14);" data-fade>
         <p class="chronicle-num" style="color:var(--umber);">03</p>
-        <div><p class="chronicle-title" style="color:var(--paper);">Miss Tourism Africa</p><p class="chronicle-meta" style="color:rgba(251,250,246,0.55);">Nigeria · September 2026</p></div>
+        <div><p class="chronicle-title" style="color:var(--porcelain);">Miss Tourism Africa</p><p class="chronicle-meta" style="color:rgba(251,250,246,0.55);">Nigeria · September 2026</p></div>
         <p class="chronicle-status">Representing Ethiopia</p>
       </div>
     </div>
