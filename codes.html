@@ -3,19 +3,24 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Codes — Hermela Ashenafi</title>
-<meta name="description" content="Rituals, dietary architecture, and the personal codes that govern her days." />
+<title>The Hermela Edit — Hermela Ashenafi</title>
+<meta name="description" content="Rituals, philosophy, fabrics, and the codes that govern her days — the full edit." />
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,400&family=Fraunces:opsz,wght@9..144,300..700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
 <script src="https://cdn.tailwindcss.com"></script>
 <script>
   tailwind.config = { theme: { extend: {
-    colors: { alabaster:"#F6F3EC", linen:"#EEE7D9", paper:"#FBFAF6", ink:"#161513", graphite:"#3A362F", umber:"#8B6F4E", sovereign:"#5B4636" },
+    colors: { alabaster:"var(--alabaster)", linen:"var(--linen)", paper:"var(--paper)", ink:"var(--ink)", graphite:"var(--graphite)", umber:"var(--umber)", sovereign:"var(--sovereign)", obsidian:"#161513", porcelain:"#FBFAF6" },
     fontFamily: { wordmark:["Cormorant Garamond","serif"], display:["Fraunces","serif"], body:["Inter","sans-serif"] },
   } } }
 </script>
 <link rel="stylesheet" href="assets/css/tokens.css">
+<style>
+  .edit-chapter { border-top: 1px solid var(--hairline); padding: 3.5rem 0; }
+  .edit-chapter:last-child { border-bottom: 1px solid var(--hairline); }
+  .edit-num { font-family: var(--font-wordmark); font-style: italic; font-size: 2rem; color: var(--umber); }
+</style>
 </head>
 <body data-nav-state="closed">
 
@@ -30,7 +35,10 @@
 
 <header id="site-nav">
   <a href="index.html" data-transition class="nav-word" data-magnetic data-cursor="link">Hermela</a>
-  <button id="nav-toggle" aria-label="Open menu" data-cursor="link"><span></span><span></span><span></span></button>
+  <div class="flex items-center gap-4">
+    <button class="theme-toggle" data-theme-toggle aria-label="Toggle light and dark mode" data-cursor="link"><span class="toggle-thumb"></span></button>
+    <button id="nav-toggle" aria-label="Open menu" data-cursor="link"><span></span><span></span><span></span></button>
+  </div>
 </header>
 
 <nav id="nav-overlay" aria-hidden="true">
@@ -40,36 +48,167 @@
   <a href="reign.html" data-page="reign.html" data-transition data-cursor="link" data-cursor-label="ENTER">04 Reign ↗</a>
   <a href="mind.html" data-page="mind.html" data-transition data-cursor="link" data-cursor-label="READ">05 Mind ↗</a>
   <a href="codes.html" data-page="codes.html" data-transition data-cursor="link" data-cursor-label="READ">06 Codes ↗</a>
-  <a href="contact.html" data-page="contact.html" data-transition data-cursor="link" data-cursor-label="BEGIN">07 Contact ↗</a>
+  <a href="academy.html" data-page="academy.html" data-transition data-cursor="link" data-cursor-label="LEARN">07 Academy ↗</a>
+  <a href="contact.html" data-page="contact.html" data-transition data-cursor="link" data-cursor-label="BEGIN">08 Contact ↗</a>
   <div class="nav-meta">Addis Ababa, Ethiopia — Miss Tourism Ethiopia 2026</div>
 </nav>
 
 <main>
 
-  <!-- ============ COMPONENT: CodesHero ============ -->
-  <section id="codes-hero" data-component="CodesHero" class="min-h-[70svh] flex flex-col justify-end px-5 md:px-14 pt-32 pb-14 bg-alabaster">
-    <p class="eyebrow mb-5" data-fade>06 — Codes</p>
+  <!-- ============ COMPONENT: EditHero ============ -->
+  <section id="codes-hero" data-component="EditHero" class="min-h-[70svh] flex flex-col justify-end px-5 md:px-14 pt-32 pb-14 bg-alabaster">
+    <p class="eyebrow mb-5" data-fade>06 — The Hermela Edit</p>
     <h1 class="h-display font-display" style="font-size:clamp(2.6rem,6.5vw,5rem);">
-      <span class="reveal-line block" data-reveal="words">Rituals &amp;</span>
-      <span class="reveal-line block italic" data-reveal="words" style="color:var(--umber);">commandments.</span>
+      <span class="reveal-line block" data-reveal="words">Rituals,</span>
+      <span class="reveal-line block italic" data-reveal="words" style="color:var(--umber);">codified.</span>
     </h1>
-    <!-- ============ COMPONENT: MetaChipRow ============ -->
     <div class="chip-row mt-7" data-fade>
       <div class="chip"><span class="chip-label">Ritual</span><span class="chip-value">Morning Movement</span></div>
       <div class="chip"><span class="chip-label">Diet</span><span class="chip-value">Rigorous · Cultural</span></div>
       <div class="chip"><span class="chip-label">Style Law</span><span class="chip-value">Sovereign Structure</span></div>
+      <div class="chip"><span class="chip-label">Fabric</span><span class="chip-value">Structured × Fluid</span></div>
     </div>
+    <p class="copy mt-8 text-lg max-w-2xl" data-fade>
+      An intimate window into the philosophy, rituals, and aesthetic universe of a woman
+      who treats her own life with the same intention she brings to a project plan.
+    </p>
   </section>
 
+  <div class="px-5 md:px-14 bg-alabaster">
+    <div class="max-w-4xl mx-auto">
+
+      <!-- 01 — Morning Ritual (real, from survey) -->
+      <div class="edit-chapter grid md:grid-cols-[100px_1fr] gap-8" data-fade>
+        <p class="edit-num">01</p>
+        <div>
+          <p class="eyebrow mb-3">Morning Ritual</p>
+          <h2 class="font-display text-2xl md:text-3xl mb-4">The First Hour Belongs to Her.</h2>
+          <p class="copy">
+            Every morning begins with movement. She dances to reconnect with herself, awaken
+            her energy, and start the day feeling present before stepping into the
+            expectations of the outside world — followed by reflection, to set her
+            intentions and remind herself of what truly matters. Mornings are not about
+            productivity; they are about connection, before she gives her energy to
+            everything else.
+          </p>
+        </div>
+      </div>
+
+      <!-- 02 — Movement & Discipline (STUDIO PROPOSAL) -->
+      <!-- STUDIO PROPOSAL — pending Hermela's review; consistent with her stated dance ritual -->
+      <div class="edit-chapter grid md:grid-cols-[100px_1fr] gap-8" data-fade>
+        <p class="edit-num">02</p>
+        <div>
+          <p class="eyebrow mb-3">Movement & Discipline</p>
+          <h2 class="font-display text-2xl md:text-3xl mb-4">The Body as Instrument, Not Ornament.</h2>
+          <p class="copy">
+            Dance carries the emotional register; strength work carries the structural one.
+            Movement is never punishment here — it's upkeep on the instrument that carries
+            everything else she does, treated with the same discipline as a project timeline.
+          </p>
+        </div>
+      </div>
+
+      <!-- 03 — Dietary Architecture (real, from survey) -->
+      <div class="edit-chapter grid md:grid-cols-[100px_1fr] gap-8" data-fade>
+        <p class="edit-num">03</p>
+        <div>
+          <p class="eyebrow mb-3">Dietary Architecture</p>
+          <h2 class="font-display text-2xl md:text-3xl mb-4">Fuel and Ritual, Both.</h2>
+          <div class="grid md:grid-cols-2 gap-8 mt-6">
+            <div><p class="font-display text-lg mb-2">Rigorous & Functional.</p><p class="copy text-sm">Nourishment as premium fuel for a high-performance cognitive and physical routine.</p></div>
+            <div><p class="font-display text-lg mb-2" style="color:var(--sovereign);">Cultural & Ritualistic.</p><p class="copy text-sm">Food as an experiential art form, tied to community, preparation, and conversation.</p></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 04 — Personal Philosophy (real, cross-linked from Mind) -->
+      <div class="edit-chapter grid md:grid-cols-[100px_1fr] gap-8" data-fade>
+        <p class="edit-num">04</p>
+        <div>
+          <p class="eyebrow mb-3">Personal Philosophy</p>
+          <h2 class="font-display text-2xl md:text-3xl mb-4">Beauty Is Not External Validation.</h2>
+          <p class="copy">
+            True beauty is not about becoming someone else's idea of perfection — it is about
+            embracing who you are and having the courage to define your own. Read the full
+            essay on <a href="mind.html" data-transition class="underline underline-offset-4">The Mind</a>.
+          </p>
+        </div>
+      </div>
+
+      <!-- 05 — Signature Fabrics (STUDIO PROPOSAL) -->
+      <!-- STUDIO PROPOSAL — pending Hermela's review; consistent with her stated structural/fluid juxtaposition -->
+      <div class="edit-chapter grid md:grid-cols-[100px_1fr] gap-8" data-fade>
+        <p class="edit-num">05</p>
+        <div>
+          <p class="eyebrow mb-3">Signature Fabrics</p>
+          <h2 class="font-display text-2xl md:text-3xl mb-4">The Touch That Defines Her.</h2>
+          <ul class="copy space-y-2">
+            <li><strong>Structured wool</strong> — for when the room needs to know she's arrived.</li>
+            <li><strong>Matte silk</strong> — the fluid counterweight, always against the skin.</li>
+            <li><strong>Fine Ethiopian cotton</strong> — heritage worn, not just referenced.</li>
+            <li><strong>Crepe</strong> — the fabric of quiet confidence.</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- 06 — The Accessory Edit (STUDIO PROPOSAL) -->
+      <!-- STUDIO PROPOSAL — pending Hermela's review -->
+      <div class="edit-chapter grid md:grid-cols-[100px_1fr] gap-8" data-fade>
+        <p class="edit-num">06</p>
+        <div>
+          <p class="eyebrow mb-3">The Accessory Edit</p>
+          <h2 class="font-display text-2xl md:text-3xl mb-4">One Statement. Always.</h2>
+          <p class="copy">
+            The rule is absolute: one statement piece per look. Never compete with yourself
+            — a sculptural earring or a commanding bag, never both. The accessory should
+            feel inevitable, as if the outfit was architected around it.
+          </p>
+        </div>
+      </div>
+
+      <!-- 07 — Wardrobe Commandments (real, lives on Portfolio — linked, not duplicated) -->
+      <div class="edit-chapter grid md:grid-cols-[100px_1fr] gap-8" data-fade>
+        <p class="edit-num">07</p>
+        <div>
+          <p class="eyebrow mb-3">Wardrobe Commandments</p>
+          <h2 class="font-display text-2xl md:text-3xl mb-4">The Three Laws of Her Closet.</h2>
+          <p class="copy">
+            Every outfit tells a story. Dress with intention. Know your silhouette and wear
+            it with confidence. Full commandments live on
+            <a href="portfolio.html#commandments" data-transition class="underline underline-offset-4">The Portfolio</a>.
+          </p>
+        </div>
+      </div>
+
+      <!-- 08 — Wellness Rituals (STUDIO PROPOSAL) -->
+      <!-- STUDIO PROPOSAL — pending Hermela's review; consistent with her stated neuroplasticity/self-reflection curiosity -->
+      <div class="edit-chapter grid md:grid-cols-[100px_1fr] gap-8" data-fade>
+        <p class="edit-num">08</p>
+        <div>
+          <p class="eyebrow mb-3">Wellness Rituals</p>
+          <h2 class="font-display text-2xl md:text-3xl mb-4">The Invisible Foundation.</h2>
+          <ul class="copy space-y-2">
+            <li>Journaling before bed — the same reflection that opens her mornings, closing the loop</li>
+            <li>A weekly digital detox, in service of the mental sovereignty she protects each morning</li>
+            <li>Reading across philosophy, psychology, and neuroscience — feeding the curiosity described on <a href="mind.html" data-transition class="underline underline-offset-4">The Mind</a></li>
+            <li>Guitar and voice practice, unhurried</li>
+          </ul>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
   <!-- ============ COMPONENT: GlamourDefinition ============ -->
-  <section id="glamour" data-component="GlamourDefinition" class="px-5 md:px-14 py-24 md:py-32 bg-ink text-paper">
+  <section id="glamour" data-component="GlamourDefinition" class="px-5 md:px-14 py-24 md:py-32 bg-obsidian text-porcelain mt-10">
     <div class="max-w-4xl mx-auto grid md:grid-cols-[1fr_1.3fr] gap-14 items-center">
       <div data-fade data-lightbox="https://images.unsplash.com/photo-1441123694162-e54a981ceba5?q=80&w=1400&auto=format&fit=crop" data-cursor="view" data-cursor-label="VIEW">
         <img src="https://images.unsplash.com/photo-1441123694162-e54a981ceba5?q=80&w=900&auto=format&fit=crop" alt="Architectural shoulder silhouette, sculptural fashion" class="w-full h-[440px] object-cover grayscale-[0.3]" />
       </div>
       <div>
         <p class="eyebrow mb-5" style="color:var(--umber);">Glamour, Defined</p>
-        <h2 class="font-display text-3xl md:text-4xl mb-6" style="color:var(--paper);">Sovereign Structure.</h2>
+        <h2 class="font-display text-3xl md:text-4xl mb-6" style="color:var(--porcelain);">Sovereign Structure.</h2>
         <p class="text-base md:text-lg leading-relaxed" style="color:rgba(251,250,246,0.78); max-width:56ch;" data-fade>
           Power silhouettes, architectural shoulders, and bold, commanding pieces that
           anchor a room. This is her true elegance — not an absence of presence, but the
@@ -77,35 +216,6 @@
         </p>
       </div>
     </div>
-  </section>
-
-  <!-- ============ COMPONENT: DietaryArchitecture (numbered category chips) ============ -->
-  <section id="dietary" data-component="DietaryArchitecture" class="px-5 md:px-14 py-24 md:py-32 bg-linen">
-    <p class="eyebrow mb-10 max-w-4xl mx-auto">Dietary Architecture</p>
-    <div class="max-w-3xl">
-      <div class="category-chip" data-fade>
-        <div><p class="category-title">Rigorous & Functional.</p><p class="copy text-sm mt-1">Nourishment as premium fuel for a high-performance cognitive and physical routine.</p></div>
-        <p class="category-num">Category 01</p>
-      </div>
-      <div class="category-chip" data-fade>
-        <div><p class="category-title" style="color:var(--sovereign);">Cultural & Ritualistic.</p><p class="copy text-sm mt-1">Food as an experiential art form, tied to community, preparation, and conversation.</p></div>
-        <p class="category-num">Category 02</p>
-      </div>
-    </div>
-  </section>
-
-  <!-- ============ COMPONENT: MorningCodeFull ============ -->
-  <section id="morning-full" data-component="MorningCodeFull" class="px-5 md:px-14 py-28 md:py-40 bg-alabaster text-center">
-    <p class="eyebrow mb-8">The Morning Code</p>
-    <p class="font-display" data-variable-scroll style="font-size:clamp(1.7rem,4vw,3rem); line-height:1.4; max-width:52ch; margin:0 auto; font-variation-settings:'wght' 300;">
-      Every morning begins with movement. I dance to reconnect with myself, awaken my
-      energy, and start the day feeling present before I step into the expectations of
-      the outside world.
-    </p>
-    <p class="copy mt-10 max-w-xl mx-auto" data-fade>
-      Mornings are not just about productivity; they are about creating a moment of
-      connection with myself before I give my energy to everything else.
-    </p>
   </section>
 
   <!-- ============ COMPONENT: ClosingCTA ============ -->
@@ -118,7 +228,7 @@
 </main>
 
 <footer class="footer-minimal">
-  <p>© 2026 Hermela Ashenafi Assefa · Codes</p>
+  <p>© 2026 Hermela Ashenafi Assefa · The Edit</p>
   <a href="index.html" data-transition data-magnetic data-cursor="link">← Return Home</a>
 </footer>
 
