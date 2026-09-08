@@ -17,6 +17,12 @@
   --hairline: rgba(22, 21, 19, 0.14);
   --shadow-warm: rgba(91, 70, 54, 0.10);
 
+  /* Fixed, non-inverting — deliberate dark "punctuation" bands (footer, milestone
+     strips, chronicle rows) per blueprint §0's shadow-within-light philosophy.
+     These never change with the light/dark toggle, in either theme. */
+  --obsidian: #161513;
+  --porcelain: #FBFAF6;
+
   /* --- TYPE --- */
   --font-wordmark: "Cormorant Garamond", "Cormorant SC", serif;
   --font-display: "Fraunces", serif;
@@ -28,6 +34,20 @@
   --dur-enter: 0.7s;
   --dur-hover: 0.25s;
 }
+
+/* --- Dark theme — opt-in via toggle, never the default brand state (see blueprint §8.3) --- */
+:root[data-theme="dark"] {
+  --alabaster: #141311;
+  --linen: #1C1A17;
+  --paper: #211E1A;
+  --ink: #F3F0E9;
+  --graphite: #C9C3B6;
+  --hairline: rgba(243, 240, 233, 0.14);
+  --shadow-warm: rgba(0, 0, 0, 0.35);
+}
+
+html { transition: background 0.4s ease; }
+body { transition: background-color 0.4s ease, color 0.4s ease; }
 
 * { box-sizing: border-box; }
 
@@ -175,7 +195,7 @@ body[data-nav-state="open"] #nav-overlay { clip-path: circle(150% at calc(100% -
 #nav-overlay .nav-current { color: var(--umber); }
 
 /* --- Footer ----------------------------------------------------------------- */
-#site-footer { background: var(--ink); color: var(--paper); }
+#site-footer { background: var(--obsidian); color: var(--porcelain); }
 #site-footer .footer-word { font-family: var(--font-wordmark); font-size: clamp(2.5rem, 8vw, 6rem); color: var(--paper); }
 #site-footer a { color: rgba(251,250,246,0.72); text-decoration: none; transition: color 0.25s; }
 #site-footer a:hover { color: var(--paper); }
@@ -198,7 +218,7 @@ body[data-nav-state="open"] #nav-overlay { clip-path: circle(150% at calc(100% -
 
 /* --- Curtain transition -------------------------------------------------------- */
 #curtain {
-  position: fixed; inset: 0; z-index: 995; background: var(--ink);
+  position: fixed; inset: 0; z-index: 995; background: var(--obsidian);
   clip-path: circle(0% at var(--curtain-x, 50%) var(--curtain-y, 50%));
   pointer-events: none;
 }
@@ -292,6 +312,22 @@ body[data-motion="reduced"] .marquee-track { animation: none; }
 .footer-minimal a { color: var(--ink); text-decoration: none; font-size: 0.85rem; letter-spacing: 0.02em; }
 .footer-minimal a:hover { color: var(--umber); }
 .footer-minimal p { font-size: 0.78rem; color: var(--graphite); }
+
+/* --- Theme toggle (pill switch, sun/moon) ---------------------------------------------- */
+.theme-toggle {
+  position: relative; width: 52px; height: 28px; border-radius: 999px;
+  border: 1px solid var(--hairline); background: var(--linen);
+  cursor: none; flex-shrink: 0; transition: background 0.3s;
+}
+.theme-toggle .toggle-thumb {
+  position: absolute; top: 2px; left: 2px; width: 22px; height: 22px; border-radius: 50%;
+  background: var(--ink); display: flex; align-items: center; justify-content: center;
+  font-size: 0.65rem; transition: transform 0.4s var(--ease-magnetic), background 0.3s;
+  transform: translateX(0);
+}
+:root[data-theme="dark"] .theme-toggle .toggle-thumb { transform: translateX(24px); }
+.theme-toggle .toggle-thumb::before { content: "☀"; color: var(--paper); }
+:root[data-theme="dark"] .theme-toggle .toggle-thumb::before { content: "☾"; }
 
 @media (max-width: 860px) {
   .archive-grid { grid-template-columns: repeat(2, 1fr); }
