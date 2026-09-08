@@ -435,6 +435,24 @@
     }
   });
 
+  /* ------------------------------------------------------------------------
+     20. THEME TOGGLE — light/dark, persisted, OS-preference default
+     ------------------------------------------------------------------------ */
+  (function () {
+    const stored = localStorage.getItem("hermela-theme");
+    const prefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
+    const initial = stored || (prefersDark ? "dark" : "light");
+    document.documentElement.setAttribute("data-theme", initial);
+    document.querySelectorAll("[data-theme-toggle]").forEach((btn) => {
+      btn.addEventListener("click", () => {
+        const current = document.documentElement.getAttribute("data-theme");
+        const next = current === "dark" ? "light" : "dark";
+        document.documentElement.setAttribute("data-theme", next);
+        localStorage.setItem("hermela-theme", next);
+      });
+    });
+  })();
+
   /* Refresh ScrollTrigger once fonts/images settle */
   window.addEventListener("load", () => { if (hasGSAP && window.ScrollTrigger) ScrollTrigger.refresh(); });
 })();
