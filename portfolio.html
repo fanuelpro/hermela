@@ -11,7 +11,7 @@
 <script src="https://cdn.tailwindcss.com"></script>
 <script>
   tailwind.config = { theme: { extend: {
-    colors: { alabaster:"#F6F3EC", linen:"#EEE7D9", paper:"#FBFAF6", ink:"#161513", graphite:"#3A362F", umber:"#8B6F4E", sovereign:"#5B4636" },
+    colors: { alabaster:"var(--alabaster)", linen:"var(--linen)", paper:"var(--paper)", ink:"var(--ink)", graphite:"var(--graphite)", umber:"var(--umber)", sovereign:"var(--sovereign)", obsidian:"#161513", porcelain:"#FBFAF6" },
     fontFamily: { wordmark:["Cormorant Garamond","serif"], display:["Fraunces","serif"], body:["Inter","sans-serif"] },
   } } }
 </script>
@@ -33,7 +33,10 @@
 
 <header id="site-nav">
   <a href="index.html" data-transition class="nav-word" data-magnetic data-cursor="link">Hermela</a>
-  <button id="nav-toggle" aria-label="Open menu" data-cursor="link"><span></span><span></span><span></span></button>
+  <div class="flex items-center gap-4">
+    <button class="theme-toggle" data-theme-toggle aria-label="Toggle light and dark mode" data-cursor="link"><span class="toggle-thumb"></span></button>
+    <button id="nav-toggle" aria-label="Open menu" data-cursor="link"><span></span><span></span><span></span></button>
+  </div>
 </header>
 
 <nav id="nav-overlay" aria-hidden="true">
@@ -43,7 +46,8 @@
   <a href="reign.html" data-page="reign.html" data-transition data-cursor="link" data-cursor-label="ENTER">04 Reign ↗</a>
   <a href="mind.html" data-page="mind.html" data-transition data-cursor="link" data-cursor-label="READ">05 Mind ↗</a>
   <a href="codes.html" data-page="codes.html" data-transition data-cursor="link" data-cursor-label="READ">06 Codes ↗</a>
-  <a href="contact.html" data-page="contact.html" data-transition data-cursor="link" data-cursor-label="BEGIN">07 Contact ↗</a>
+  <a href="academy.html" data-page="academy.html" data-transition data-cursor="link" data-cursor-label="LEARN">07 Academy ↗</a>
+  <a href="contact.html" data-page="contact.html" data-transition data-cursor="link" data-cursor-label="BEGIN">08 Contact ↗</a>
   <div class="nav-meta">Addis Ababa, Ethiopia — Miss Tourism Ethiopia 2026</div>
 </nav>
 
@@ -80,9 +84,9 @@
   </section>
 
   <!-- ============ COMPONENT: PhilosophyQuote ============ -->
-  <section id="philosophy-quote" data-component="PhilosophyQuote" class="px-5 md:px-14 py-24 md:py-32 bg-ink text-center">
+  <section id="philosophy-quote" data-component="PhilosophyQuote" class="px-5 md:px-14 py-24 md:py-32 bg-obsidian text-center">
     <p class="eyebrow mb-6" style="color:var(--umber);" data-fade>Editorial Philosophy</p>
-    <p class="font-display italic max-w-3xl mx-auto" style="font-size:clamp(1.7rem,4vw,2.7rem); color:var(--paper);" data-fade>
+    <p class="font-display italic max-w-3xl mx-auto" style="font-size:clamp(1.7rem,4vw,2.7rem); color:var(--porcelain);" data-fade>
       "A curated juxtaposition of both structural and fluid elements."
     </p>
     <p class="mt-8 max-w-xl mx-auto text-base md:text-lg" style="color:rgba(251,250,246,0.72);" data-fade>
@@ -91,7 +95,28 @@
     </p>
   </section>
 
-  <!-- ============ COMPONENT: VideoTriptych ============ -->
+  <!-- ============ COMPONENT: SelectedWorks (commission-style masonry, category+year tags) ============ -->
+  <!-- STUDIO PROPOSAL — placeholder commissions pending Hermela's actual campaign history -->
+  <section id="selected-works" data-component="SelectedWorks" class="px-5 md:px-14 py-24 md:py-32 bg-alabaster">
+    <div class="flex items-end justify-between mb-10" data-fade>
+      <h2 class="font-display text-3xl md:text-4xl">Selected Works.</h2>
+      <a href="contact.html" data-transition data-magnetic data-cursor="link" class="text-sm underline underline-offset-4">Commission Work</a>
+    </div>
+    <div class="grid md:grid-cols-3 gap-6">
+      <figure data-fade data-lightbox="https://images.unsplash.com/photo-1509967419530-da38b4704bc6?q=80&w=1400&auto=format&fit=crop" data-cursor="view" data-cursor-label="VIEW">
+        <img src="https://images.unsplash.com/photo-1509967419530-da38b4704bc6?q=80&w=800&auto=format&fit=crop" alt="Tourism campaign placeholder" class="w-full h-72 object-cover grayscale-[0.1]" />
+        <figcaption class="mt-3"><span class="font-display text-lg block">Tourism Campaign</span><span class="eyebrow">Ambassador · 2026</span></figcaption>
+      </figure>
+      <figure data-fade data-lightbox="https://images.unsplash.com/photo-1483985988355-763728e1935b?q=80&w=1400&auto=format&fit=crop" data-cursor="view" data-cursor-label="VIEW">
+        <img src="https://images.unsplash.com/photo-1483985988355-763728e1935b?q=80&w=800&auto=format&fit=crop" alt="Runway placeholder" class="w-full h-72 object-cover grayscale-[0.1]" />
+        <figcaption class="mt-3"><span class="font-display text-lg block">Runway Presentation</span><span class="eyebrow">Runway · 2026</span></figcaption>
+      </figure>
+      <figure data-fade data-lightbox="https://images.unsplash.com/photo-1490114538077-0a7f8cb49891?q=80&w=1400&auto=format&fit=crop" data-cursor="view" data-cursor-label="VIEW">
+        <img src="https://images.unsplash.com/photo-1490114538077-0a7f8cb49891?q=80&w=800&auto=format&fit=crop" alt="Editorial placeholder" class="w-full h-72 object-cover grayscale-[0.1]" />
+        <figcaption class="mt-3"><span class="font-display text-lg block">Editorial Story</span><span class="eyebrow">Campaign · 2026</span></figcaption>
+      </figure>
+    </div>
+  </section>
   <section id="video-triptych" data-component="VideoTriptych" class="px-5 md:px-14 py-16 bg-alabaster">
     <div class="grid md:grid-cols-3 gap-4">
       <div class="video-slot h-64 md:h-80" data-video-slot="portfolio-reel-1" data-fade>
@@ -152,6 +177,34 @@
     </div>
   </section>
 
+  <!-- ============ COMPONENT: DigitalsCompCard ============ -->
+  <!-- Measurement fields are structurally present but intentionally left "To be confirmed" —
+       fabricating specific body measurements for a real person is outside the creative-
+       freedom authorization; see blueprint.md §8.1. -->
+  <section id="digitals" data-component="DigitalsCompCard" class="px-5 md:px-14 py-24 md:py-32 bg-linen">
+    <p class="eyebrow mb-10">Comp Card & Digitals</p>
+    <div class="max-w-5xl mx-auto grid md:grid-cols-[1fr_1.2fr] gap-14">
+      <div class="grid grid-cols-2 gap-3" data-fade>
+        <figure data-lightbox="https://images.unsplash.com/photo-1509967419530-da38b4704bc6?q=80&w=1200&auto=format&fit=crop" data-cursor="view" data-cursor-label="VIEW"><img src="https://images.unsplash.com/photo-1509967419530-da38b4704bc6?q=80&w=500&auto=format&fit=crop" alt="Digital 01" class="w-full h-48 object-cover grayscale-[0.1]" /></figure>
+        <figure data-lightbox="https://images.unsplash.com/photo-1483985988355-763728e1935b?q=80&w=1200&auto=format&fit=crop" data-cursor="view" data-cursor-label="VIEW"><img src="https://images.unsplash.com/photo-1483985988355-763728e1935b?q=80&w=500&auto=format&fit=crop" alt="Digital 02" class="w-full h-48 object-cover grayscale-[0.1]" /></figure>
+        <figure data-lightbox="https://images.unsplash.com/photo-1490114538077-0a7f8cb49891?q=80&w=1200&auto=format&fit=crop" data-cursor="view" data-cursor-label="VIEW"><img src="https://images.unsplash.com/photo-1490114538077-0a7f8cb49891?q=80&w=500&auto=format&fit=crop" alt="Digital 03" class="w-full h-48 object-cover grayscale-[0.1]" /></figure>
+        <figure data-lightbox="https://images.unsplash.com/photo-1441123694162-e54a981ceba5?q=80&w=1200&auto=format&fit=crop" data-cursor="view" data-cursor-label="VIEW"><img src="https://images.unsplash.com/photo-1441123694162-e54a981ceba5?q=80&w=500&auto=format&fit=crop" alt="Digital 04" class="w-full h-48 object-cover grayscale-[0.1]" /></figure>
+      </div>
+      <div data-fade>
+        <h3 class="font-display text-2xl md:text-3xl mb-6">Measurements & Details</h3>
+        <div class="space-y-3 text-sm">
+          <div class="flex justify-between border-b pb-2" style="border-color:var(--hairline);"><span style="color:var(--graphite);">Height</span><span>To be confirmed</span></div>
+          <div class="flex justify-between border-b pb-2" style="border-color:var(--hairline);"><span style="color:var(--graphite);">Bust · Waist · Hips</span><span>To be confirmed</span></div>
+          <div class="flex justify-between border-b pb-2" style="border-color:var(--hairline);"><span style="color:var(--graphite);">Shoe</span><span>To be confirmed</span></div>
+          <div class="flex justify-between border-b pb-2" style="border-color:var(--hairline);"><span style="color:var(--graphite);">Hair · Eyes</span><span>To be confirmed</span></div>
+          <div class="flex justify-between border-b pb-2" style="border-color:var(--hairline);"><span style="color:var(--graphite);">Experience</span><span>Runway · Editorial · Pageantry</span></div>
+          <div class="flex justify-between pb-2"><span style="color:var(--graphite);">Based</span><span>Addis Ababa, Ethiopia</span></div>
+        </div>
+        <a href="contact.html" data-transition data-magnetic data-cursor="link" class="btn-primary mt-8">Request Full Comp Card</a>
+      </div>
+    </div>
+  </section>
+
   <!-- ============ COMPONENT: WardrobeCommandments (numbered category chips) ============ -->
   <section id="commandments" data-component="WardrobeCommandments" class="px-5 md:px-14 py-28 md:py-36 bg-linen">
     <p class="eyebrow mb-10">The Wardrobe Commandments</p>
@@ -172,9 +225,9 @@
   </section>
 
   <!-- ============ COMPONENT: ClosingCTA ============ -->
-  <section id="closing-cta" class="px-5 md:px-14 py-24 md:py-32 bg-ink text-paper text-center">
+  <section id="closing-cta" class="px-5 md:px-14 py-24 md:py-32 bg-obsidian text-porcelain text-center">
     <p class="eyebrow mb-6" style="color:var(--umber);">Bookings & Inquiries</p>
-    <h2 class="font-display text-3xl md:text-5xl mb-8" style="color:var(--paper);">Ready to create something iconic?</h2>
+    <h2 class="font-display text-3xl md:text-5xl mb-8" style="color:var(--porcelain);">Ready to create something iconic?</h2>
     <a href="contact.html" data-transition data-magnetic data-cursor="link" class="btn-primary on-dark">Book Hermela</a>
   </section>
 
