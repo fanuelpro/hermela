@@ -179,17 +179,20 @@ body[data-nav-state="open"] #nav-toggle span:nth-child(3) { transform: translate
 
 #nav-overlay {
   position: fixed; inset: 0; background: var(--alabaster); z-index: 890;
-  display: flex; flex-direction: column; justify-content: center; padding: clamp(1.5rem,6vw,6rem);
+  display: flex; flex-direction: column; justify-content: flex-start;
+  padding: clamp(6.5rem, 14vh, 8rem) clamp(1.5rem,6vw,4rem) clamp(2rem,6vw,3rem);
+  overflow-y: auto; -webkit-overflow-scrolling: touch;
   clip-path: circle(0% at calc(100% - 3.2rem) 3.2rem);
   transition: clip-path 0.8s var(--ease-reveal);
 }
 body[data-nav-state="open"] #nav-overlay { clip-path: circle(150% at calc(100% - 3.2rem) 3.2rem); }
 #nav-overlay a {
-  font-family: var(--font-display); font-weight: 480; font-size: clamp(2.4rem, 7vw, 5rem);
-  color: var(--ink); text-decoration: none; line-height: 1.1; display: block;
-  border-top: 1px solid var(--hairline); padding: 0.35em 0; transition: color 0.3s, padding-left 0.3s var(--ease-reveal);
+  font-family: var(--font-display); font-weight: 480; font-size: clamp(1.6rem, 4.2vw, 2.65rem);
+  color: var(--ink); text-decoration: none; line-height: 1.15; display: block;
+  border-top: 1px solid var(--hairline); padding: 0.42em 0; transition: color 0.3s, padding-left 0.3s var(--ease-reveal);
 }
-#nav-overlay a:last-of-type { border-bottom: 1px solid var(--hairline); }
+#site-nav .nav-word { transition: opacity 0.3s; }
+body[data-nav-state="open"] #site-nav .nav-word { opacity: 0; pointer-events: none; }
 #nav-overlay a:hover { color: var(--umber); padding-left: 0.4em; }
 #nav-overlay .nav-meta { font-family: var(--font-body); font-size: 0.85rem; color: var(--graphite); margin-top: 2.5rem; }
 #nav-overlay .nav-current { color: var(--umber); }
@@ -213,8 +216,14 @@ body[data-nav-state="open"] #nav-overlay { clip-path: circle(150% at calc(100% -
 .btn-primary.on-dark:hover { background: var(--paper); color: var(--ink); }
 
 /* --- Odometer ----------------------------------------------------------------- */
-.odometer-digit { display: inline-block; overflow: hidden; height: 1em; vertical-align: top; }
-.odometer-digit-inner { display: flex; flex-direction: column; will-change: transform; }
+/* line-height:1 is required here — without it, each digit's rendered box height
+   doesn't exactly equal 1em (font metrics/inherited line-height drift), which is
+   what caused the reel to land mid-digit instead of flush. Every digit span must
+   share the exact same line-height as the wrapper for the em-based transform math
+   to land pixel-perfect. */
+.odometer-digit { display: inline-block; overflow: hidden; height: 1em; line-height: 1; vertical-align: top; }
+.odometer-digit-inner { display: flex; flex-direction: column; will-change: transform; line-height: 1; }
+.odometer-digit-inner span { display: block; height: 1em; line-height: 1; }
 
 /* --- Curtain transition -------------------------------------------------------- */
 #curtain {
