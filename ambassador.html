@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Ambassador — Hermela Ashenafi</title>
+<meta name="description" content="Ambassadorship & Advocacy — mental health, African Union women's initiatives, and STEM empowerment for girls." />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,400&family=Fraunces:opsz,wght@9..144,300..700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+  tailwind.config = { theme: { extend: {
+    colors: { alabaster:"var(--alabaster)", linen:"var(--linen)", paper:"var(--paper)", ink:"var(--ink)", graphite:"var(--graphite)", umber:"var(--umber)", sovereign:"var(--sovereign)", obsidian:"#161513", porcelain:"#FBFAF6" },
+    fontFamily: { wordmark:["Cormorant Garamond","serif"], display:["Fraunces","serif"], body:["Inter","sans-serif"] },
+  } } }
+</script>
+<link rel="stylesheet" href="assets/css/tokens.css">
+</head>
+<body data-nav-state="closed">
+
+<!-- The Mental Health Advocacy section below adapts Hermela's own Instagram post about her
+     Gergesenon Association film — condensed and paraphrased into magazine-length copy with
+     short pull-quotes, per client authorization. The African Union and STEM sections are
+     STUDIO PROPOSALS — crafted concepts pending confirmation of real project scope. -->
+
+<div id="preloader"><span class="preloader-word font-wordmark">Hermela</span><span class="preloader-count" data-preloader-count>0%</span></div>
+<div id="film-grain" aria-hidden="true"></div>
+<div id="custom-cursor" data-state="default" aria-hidden="true"></div>
+<div id="curtain" aria-hidden="true"></div>
+<div id="lightbox" data-open="false">
+  <button class="lightbox-close" data-lightbox-close data-cursor="link">CLOSE ✕</button>
+  <img src="" alt="Expanded view" />
+</div>
+
+<header id="site-nav">
+  <a href="index.html" data-transition class="nav-word" data-magnetic data-cursor="link">Hermela</a>
+  <div class="flex items-center gap-4">
+    <button class="theme-toggle" data-theme-toggle aria-label="Toggle light and dark mode" data-cursor="link"><span class="toggle-thumb"></span></button>
+    <button id="nav-toggle" aria-label="Open menu" data-cursor="link"><span></span><span></span><span></span></button>
+  </div>
+</header>
+
+<nav id="nav-overlay" aria-hidden="true">
+  <a href="index.html" data-page="index.html" data-transition data-cursor="link" data-cursor-label="ENTER">01 Home ↗</a>
+  <a href="identity.html" data-page="identity.html" data-transition data-cursor="link" data-cursor-label="READ">02 Identity ↗</a>
+  <a href="portfolio.html" data-page="portfolio.html" data-transition data-cursor="link" data-cursor-label="VIEW">03 Portfolio ↗</a>
+  <a href="reign.html" data-page="reign.html" data-transition data-cursor="link" data-cursor-label="ENTER">04 Reign ↗</a>
+  <a href="ambassador.html" data-page="ambassador.html" data-transition data-cursor="link" data-cursor-label="IMPACT">05 Ambassador ↗</a>
+  <a href="mind.html" data-page="mind.html" data-transition data-cursor="link" data-cursor-label="READ">06 Mind ↗</a>
+  <a href="codes.html" data-page="codes.html" data-transition data-cursor="link" data-cursor-label="READ">07 Codes ↗</a>
+  <a href="academy.html" data-page="academy.html" data-transition data-cursor="link" data-cursor-label="LEARN">08 Academy ↗</a>
+  <a href="contact.html" data-page="contact.html" data-transition data-cursor="link" data-cursor-label="BEGIN">09 Contact ↗</a>
+  <div class="nav-meta">Addis Ababa, Ethiopia — Miss Tourism Ethiopia 2026</div>
+</nav>
+
+<main>
+
+  <!-- ============ COMPONENT: AmbassadorHero ============ -->
+  <section id="ambassador-hero" data-component="AmbassadorHero" class="relative min-h-[85svh] flex flex-col justify-end px-5 md:px-14 pt-32 pb-14 bg-obsidian text-porcelain overflow-hidden">
+    <div class="absolute inset-0 opacity-20" data-parallax-scene>
+      <div data-parallax-layer="0.3" class="h-full">
+        <img src="https://images.unsplash.com/photo-1509099836639-18ba1795216d?q=80&w=1600&auto=format&fit=crop" alt="" class="w-full h-[130%] object-cover grayscale" />
+      </div>
+    </div>
+    <div class="relative z-10">
+      <p class="eyebrow mb-6" style="color:var(--umber);" data-fade>Beyond the Crown</p>
+      <h1 class="font-wordmark italic" style="font-size:clamp(3rem,9vw,7rem); color:var(--porcelain);">
+        <span class="reveal-line block" data-reveal="chars">A Voice, Lent Forward.</span>
+      </h1>
+      <div class="chip-row on-dark mt-7" data-fade>
+        <div class="chip"><span class="chip-label">Focus</span><span class="chip-value">Mental Health</span></div>
+        <div class="chip"><span class="chip-label">Continental</span><span class="chip-value">African Union — Women</span></div>
+        <div class="chip"><span class="chip-label">Legacy</span><span class="chip-value">STEM for Girls</span></div>
+      </div>
+      <p class="copy mt-8 max-w-xl" style="color:rgba(251,250,246,0.75);" data-fade>
+        A title is a platform, not a purpose. Since becoming Miss Tourism Ethiopia, she
+        has treated her ambassadorship as a working portfolio of its own — three
+        initiatives, each pointed at something she cared about long before there was a
+        sash attached to saying so.
+      </p>
+    </div>
+  </section>
+
+  <!-- ============ COMPONENT: SpheresOfImpact ============ -->
+  <section id="spheres" data-component="SpheresOfImpact" class="px-5 md:px-14 py-24 md:py-32 bg-alabaster">
+    <p class="eyebrow mb-10">Spheres of Impact</p>
+    <div class="grid md:grid-cols-3 gap-px bg-ink/10 max-w-6xl">
+      <a href="#mental-health" class="group bg-alabaster p-10 flex flex-col justify-between min-h-[280px] hover:bg-linen transition-colors" data-fade>
+        <span class="eyebrow">01 — Advocacy</span>
+        <div><h3 class="font-display text-2xl md:text-3xl mb-3">Mental Health.</h3><p class="copy text-sm">In partnership with the Gergesenon Association.</p></div>
+      </a>
+      <a href="#african-union" class="group bg-alabaster p-10 flex flex-col justify-between min-h-[280px] hover:bg-linen transition-colors" data-fade>
+        <span class="eyebrow">02 — Continental</span>
+        <div><h3 class="font-display text-2xl md:text-3xl mb-3">Women & the AU.</h3><p class="copy text-sm">A seat at the continental table.</p></div>
+      </a>
+      <a href="#stem-girls" class="group bg-alabaster p-10 flex flex-col justify-between min-h-[280px] hover:bg-linen transition-colors" data-fade>
+        <span class="eyebrow">03 — Legacy</span>
+        <div><h3 class="font-display text-2xl md:text-3xl mb-3">STEM for Girls.</h3><p class="copy text-sm">Code as a second native tongue.</p></div>
+      </a>
+    </div>
+  </section>
+
+  <!-- ============ COMPONENT: MentalHealthFeature (real — adapted from her Instagram) ============ -->
+  <section id="mental-health" data-component="MentalHealthFeature" class="px-5 md:px-14 py-24 md:py-32 bg-linen">
+    <div class="max-w-4xl mx-auto">
+      <p class="eyebrow mb-4">Featured Mission — Mental Health Advocacy</p>
+      <h2 class="font-display text-3xl md:text-5xl mb-10">The Film That Almost Didn't Get Made.</h2>
+
+      <div class="grid md:grid-cols-2 gap-12 items-start mb-12">
+        <div data-fade data-lightbox="https://images.unsplash.com/photo-1489533119213-66a5cd877091?q=80&w=1400&auto=format&fit=crop" data-cursor="view" data-cursor-label="VIEW">
+          <img src="https://images.unsplash.com/photo-1489533119213-66a5cd877091?q=80&w=1000&auto=format&fit=crop" alt="Placeholder — Gergesenon Association advocacy film, behind the scenes" class="w-full h-[420px] object-cover grayscale-[0.15]" />
+        </div>
+        <div data-fade>
+          <p class="copy mb-6">
+            Long before Gergesenon — before any camera or competition category — she was
+            already drawn to the parts of being human that don't announce themselves: the
+            battles no one applauds, the stories people hide behind a smile. When it came
+            time to turn that instinct into an advocacy film for the Gergesenon
+            Association's mental health initiative, she froze at the very first step.
+          </p>
+          <blockquote class="font-display italic text-lg" style="color:var(--sovereign);">
+            "Awareness isn't the accumulation of answers. It's the willingness to let
+            reality replace certainty."
+          </blockquote>
+        </div>
+      </div>
+
+      <div class="grid md:grid-cols-2 gap-12 items-start mb-12">
+        <div data-fade class="md:order-2" data-lightbox="https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?q=80&w=1400&auto=format&fit=crop" data-cursor="view" data-cursor-label="VIEW">
+          <img src="https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?q=80&w=1000&auto=format&fit=crop" alt="Placeholder — late-night editing, the process behind the film" class="w-full h-[420px] object-cover grayscale-[0.15]" />
+        </div>
+        <div data-fade class="md:order-1">
+          <p class="copy mb-6">
+            What followed was research most competitors skip entirely — conversations
+            with experts, organizations, researchers, volunteers, and people with lived
+            experience, each one dismantling an assumption she didn't know she held.
+            Sleepless nights, endless rewrites, hours on the road, and more than once, an
+            hour of sleep on an office bench before a full day of filming.
+          </p>
+          <blockquote class="font-display italic text-lg" style="color:var(--sovereign);">
+            "The camera documented an advocacy video. The process documented a
+            transformation."
+          </blockquote>
+        </div>
+      </div>
+
+      <div class="border-t pt-10" style="border-color:var(--hairline);" data-fade>
+        <p class="copy mb-6">
+          The finished film is public. The commitment behind it isn't finished at all —
+          Gergesenon, she says, taught her that healing is never an individual
+          achievement. It's built by communities willing to keep showing up for one
+          another.
+        </p>
+        <blockquote class="font-display italic text-xl md:text-2xl" style="color:var(--sovereign);">
+          "This competition gave me a platform, but it didn't give me my purpose. It
+          simply amplified one that was already growing quietly within me."
+        </blockquote>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ COMPONENT: AfricanUnionFeature (STUDIO PROPOSAL) ============ -->
+  <!-- STUDIO PROPOSAL — pending confirmation of real project scope -->
+  <section id="african-union" data-component="AfricanUnionFeature" class="px-5 md:px-14 py-24 md:py-32 bg-obsidian text-porcelain">
+    <div class="max-w-4xl mx-auto grid md:grid-cols-2 gap-14 items-center">
+      <div>
+        <p class="eyebrow mb-4" style="color:var(--umber);">Ambassadorship — African Union</p>
+        <h2 class="font-display text-3xl md:text-4xl mb-6" style="color:var(--porcelain);">A Seat at the Continental Table.</h2>
+        <p class="mb-6" style="color:rgba(251,250,246,0.78);">
+          As part of her ambassadorial responsibilities, she is developing engagement
+          with African Union initiatives focused on women's economic and educational
+          empowerment — advocating for policy conversations that too often happen
+          without the women they're meant to serve in the room.
+        </p>
+        <ul class="space-y-2 text-sm" style="color:rgba(251,250,246,0.7);">
+          <li>✦ Continental forums on women's economic participation</li>
+          <li>✦ Youth delegate programming alongside AU gender initiatives</li>
+          <li>✦ Cross-border advocacy tied to her Miss Tourism Africa platform</li>
+        </ul>
+      </div>
+      <div data-fade data-lightbox="https://images.unsplash.com/photo-1531482615713-2afd69097998?q=80&w=1400&auto=format&fit=crop" data-cursor="view" data-cursor-label="VIEW">
+        <img src="https://images.unsplash.com/photo-1531482615713-2afd69097998?q=80&w=1000&auto=format&fit=crop" alt="Placeholder — African Union engagement, women's empowerment forum" class="w-full h-[440px] object-cover grayscale-[0.2]" />
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ COMPONENT: STEMFeature (STUDIO PROPOSAL) ============ -->
+  <!-- STUDIO PROPOSAL — pending confirmation of real project scope -->
+  <section id="stem-girls" data-component="STEMFeature" class="px-5 md:px-14 py-24 md:py-32 bg-alabaster">
+    <div class="max-w-4xl mx-auto grid md:grid-cols-2 gap-14 items-center">
+      <div data-fade data-lightbox="https://images.unsplash.com/photo-1596496181848-3091d4878b24?q=80&w=1400&auto=format&fit=crop" data-cursor="view" data-cursor-label="VIEW">
+        <img src="https://images.unsplash.com/photo-1596496181848-3091d4878b24?q=80&w=1000&auto=format&fit=crop" alt="Placeholder — STEM workshop with Ethiopian secondary school girls" class="w-full h-[440px] object-cover grayscale-[0.15]" />
+      </div>
+      <div>
+        <p class="eyebrow mb-4">Ambassadorship — STEM Empowerment</p>
+        <h2 class="font-display text-3xl md:text-4xl mb-6">Code as a Second Native Tongue.</h2>
+        <p class="copy mb-6">
+          Drawing directly from her own path through a computer science degree, into a
+          career most Ethiopian girls are never shown as possible, she is building
+          <strong>"Girls Who Build"</strong> — a hands-on STEM and engineering exposure
+          initiative for secondary school girls across Ethiopia, using her own
+          trajectory as the proof of concept.
+        </p>
+        <ul class="space-y-2 text-sm copy">
+          <li>✦ Hands-on coding and engineering workshops in partner schools</li>
+          <li>✦ Mentorship pairing university CS students with secondary schoolers</li>
+          <li>✦ A public case study: her own path, documented step by step</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ COMPONENT: PartnershipCategories ============ -->
+  <section id="partner" data-component="PartnershipCategories" class="px-5 md:px-14 py-24 md:py-32 bg-linen">
+    <p class="eyebrow mb-10">Ways to Partner</p>
+    <div class="max-w-4xl">
+      <div class="process-row" data-fade>
+        <p class="process-num">I</p>
+        <div><p class="process-title">Advocacy Campaigns.</p><p class="copy">Mental health and wellbeing partnerships aligned with the Gergesenon initiative.</p></div>
+      </div>
+      <div class="process-row" data-fade>
+        <p class="process-num">II</p>
+        <div><p class="process-title">Speaking & Panels.</p><p class="copy">Youth leadership, STEM, and women's empowerment forums, continent-wide.</p></div>
+      </div>
+      <div class="process-row" data-fade>
+        <p class="process-num">III</p>
+        <div><p class="process-title">Cultural & Tourism Diplomacy.</p><p class="copy">Brand partnerships aligned with her Miss Tourism Ethiopia and Africa platforms.</p></div>
+      </div>
+      <div class="process-row" data-fade>
+        <p class="process-num">IV</p>
+        <div><p class="process-title">Corporate Social Responsibility.</p><p class="copy">Collaborations extending the reach of her three ambassadorship initiatives.</p></div>
+      </div>
+    </div>
+    <a href="contact.html" data-transition data-magnetic data-cursor="link" class="btn-primary mt-10 inline-flex">Propose a Partnership</a>
+  </section>
+
+</main>
+
+<footer class="footer-minimal">
+  <p>© 2026 Hermela Ashenafi Assefa · Ambassador</p>
+  <div class="flex items-center gap-5">
+    <a href="https://www.instagram.com/vetusmeam__?stkn=MWh3dW5xdTdqb2dtZw==" target="_blank" rel="noopener" class="text-sm" data-cursor="link">Instagram</a>
+    <a href="https://www.tiktok.com/@velvet_paradox_?_r=1&_t=ZS-99ZVLAPXbUm" target="_blank" rel="noopener" class="text-sm" data-cursor="link">TikTok</a>
+  </div>
+  <a href="index.html" data-transition data-magnetic data-cursor="link">← Return Home</a>
+</footer>
+
+<script src="https://unpkg.com/lenis@1.1.18/dist/lenis.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/Flip.min.js"></script>
+<script src="assets/js/main.js"></script>
+</body>
+</html>
