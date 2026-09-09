@@ -50,10 +50,11 @@
   <a href="identity.html" data-page="identity.html" data-transition data-cursor="link" data-cursor-label="READ">02 Identity ↗</a>
   <a href="portfolio.html" data-page="portfolio.html" data-transition data-cursor="link" data-cursor-label="VIEW">03 Portfolio ↗</a>
   <a href="reign.html" data-page="reign.html" data-transition data-cursor="link" data-cursor-label="ENTER">04 Reign ↗</a>
-  <a href="mind.html" data-page="mind.html" data-transition data-cursor="link" data-cursor-label="READ">05 Mind ↗</a>
-  <a href="codes.html" data-page="codes.html" data-transition data-cursor="link" data-cursor-label="READ">06 Codes ↗</a>
-  <a href="academy.html" data-page="academy.html" data-transition data-cursor="link" data-cursor-label="LEARN">07 Academy ↗</a>
-  <a href="contact.html" data-page="contact.html" data-transition data-cursor="link" data-cursor-label="BEGIN">08 Contact ↗</a>
+  <a href="ambassador.html" data-page="ambassador.html" data-transition data-cursor="link" data-cursor-label="IMPACT">05 Ambassador ↗</a>
+  <a href="mind.html" data-page="mind.html" data-transition data-cursor="link" data-cursor-label="READ">06 Mind ↗</a>
+  <a href="codes.html" data-page="codes.html" data-transition data-cursor="link" data-cursor-label="READ">07 Codes ↗</a>
+  <a href="academy.html" data-page="academy.html" data-transition data-cursor="link" data-cursor-label="LEARN">08 Academy ↗</a>
+  <a href="contact.html" data-page="contact.html" data-transition data-cursor="link" data-cursor-label="BEGIN">09 Contact ↗</a>
   <div class="nav-meta">Addis Ababa, Ethiopia — Miss Tourism Ethiopia 2026</div>
 </nav>
 
@@ -68,34 +69,28 @@
       </div>
       <div data-parallax-layer="0.4" class="absolute inset-0 flex items-center justify-center">
         <img data-cursor="view" data-cursor-label="HERMELA"
-             src="https://lh3.googleusercontent.com/d/1yQQHhBdnc0OOqEjeTUx3c_Amlj4vdshp"
+             src="https://images.unsplash.com/photo-1509967419530-da38b4704bc6?q=80&w=1400&auto=format&fit=crop"
              alt="Editorial portrait, dark high-fashion portraiture" class="h-[78vh] md:h-[86vh] object-cover object-top grayscale-[0.15]" style="mask-image: linear-gradient(to bottom, black 78%, transparent 100%);" />
       </div>
+      <!-- Fixed dark scrim, independent of light/dark theme — the hero sits on a dark-toned
+           photograph, so its text stays fixed-light (porcelain) for contrast regardless of
+           which site theme is active. Without this, light mode was unreadable here. -->
+      <div class="absolute inset-0" style="background: linear-gradient(to top, rgba(20,19,17,0.82) 0%, rgba(20,19,17,0.4) 40%, transparent 68%);"></div>
     </div>
 
-    <div class="relative z-10 w-full px-5 md:px-14 pb-8 md:pb-10">
-      <p class="eyebrow mb-4" data-fade>Miss Tourism Ethiopia · 2026</p>
-      <h1 class="font-wordmark text-ink leading-[0.92]" style="font-size:clamp(3.2rem,13vw,10.5rem);">
+    <div class="relative z-10 w-full px-5 md:px-14 pb-10 md:pb-14">
+      <p class="eyebrow mb-4" data-fade style="color:var(--umber);">Miss Tourism Ethiopia · 2026</p>
+      <h1 class="font-wordmark leading-[0.92]" style="font-size:clamp(3.2rem,13vw,10.5rem); color:var(--porcelain);">
         <span class="reveal-line block" data-reveal="chars">Hermela</span>
         <span class="reveal-line block italic font-light" data-reveal="chars" style="color:var(--umber);">Ashenafi</span>
       </h1>
 
-      <!-- ============ COMPONENT: MetaChipRow ============ -->
-      <div class="chip-row mt-8" data-fade>
-        <div class="chip"><span class="chip-label">Field</span><span class="chip-value">Computer Science</span></div>
-        <div class="chip"><span class="chip-label">Role</span><span class="chip-value">Project Manager</span></div>
-        <div class="chip"><span class="chip-label">Craft</span><span class="chip-value">Model · Digital Creator</span></div>
-        <div class="chip"><span class="chip-label">Title</span><span class="chip-value">Miss Tourism Ethiopia</span></div>
-        <div class="chip"><span class="chip-label">Based</span><span class="chip-value">Addis Ababa</span></div>
-        <div class="chip"><span class="chip-label">Instagram</span><span class="chip-value">100K+ · growing daily</span></div>
-      </div>
-
-      <div class="mt-8 md:mt-10 flex flex-col md:flex-row md:items-end md:justify-between gap-6 border-t border-ink/10 pt-6">
-        <p class="copy text-base md:text-lg" data-fade>
-          I want them to feel curiosity first — the sense that there is more to discover
-          beyond the first impression. A story of continuous evolution.
+      <div class="mt-8 md:mt-10 flex flex-col md:flex-row md:items-end md:justify-between gap-6 border-t pt-6" style="border-color:rgba(251,250,246,0.2);">
+        <p class="text-base md:text-lg max-w-xl" style="color:rgba(251,250,246,0.85);" data-fade>
+          An engineer's mind in a couture frame — carrying Ethiopia's story onto the
+          continental stage, one deliberate step at a time.
         </p>
-        <a href="mind.html" data-transition data-magnetic data-cursor="link" class="btn-primary shrink-0">Enter Her World</a>
+        <a href="mind.html" data-transition data-magnetic data-cursor="link" class="btn-primary on-dark shrink-0">Enter Her World</a>
       </div>
     </div>
   </section>
@@ -103,20 +98,26 @@
   <!-- ============ COMPONENT: CredentialsMarquee ============ -->
   <section id="marquee" data-component="CredentialsMarquee" class="marquee bg-alabaster">
     <div class="marquee-track">
-      <span><em>Field</em>Computer Science, BSc</span>
-      <span><em>Role</em>Project Manager</span>
-      <span><em>Placement</em>4th Runner-Up, Miss Ethiopia 2026</span>
-      <span><em>Title</em>Reigning Miss Tourism Ethiopia</span>
-      <span><em>Forward</em>Miss Tourism Africa, Nigeria — Sep 2026</span>
-      <span><em>Practice</em>Digital Creator</span>
-      <span><em>Community</em>100K+ Instagram — growing daily</span>
-      <span><em>Field</em>Computer Science, BSc</span>
-      <span><em>Role</em>Project Manager</span>
-      <span><em>Placement</em>4th Runner-Up, Miss Ethiopia 2026</span>
-      <span><em>Title</em>Reigning Miss Tourism Ethiopia</span>
-      <span><em>Forward</em>Miss Tourism Africa, Nigeria — Sep 2026</span>
-      <span><em>Practice</em>Digital Creator</span>
-      <span><em>Community</em>100K+ Instagram — growing daily</span>
+      <span>Computer Science, BSc</span>
+      <span>Project Manager</span>
+      <span>4th Runner-Up, Miss International Ethiopia</span>
+      <span>Reigning Miss Tourism Ethiopia</span>
+      <span>Miss Tourism Africa, Nigeria — Sep 2026</span>
+      <span>Digital Creator</span>
+      <span>100K+ Instagram, growing daily</span>
+      <span>Guitar &amp; Voice, self-taught</span>
+      <span>Dancer at heart</span>
+      <span>Neuroplasticity curious</span>
+      <span>Computer Science, BSc</span>
+      <span>Project Manager</span>
+      <span>4th Runner-Up, Miss International Ethiopia</span>
+      <span>Reigning Miss Tourism Ethiopia</span>
+      <span>Miss Tourism Africa, Nigeria — Sep 2026</span>
+      <span>Digital Creator</span>
+      <span>100K+ Instagram, growing daily</span>
+      <span>Guitar &amp; Voice, self-taught</span>
+      <span>Dancer at heart</span>
+      <span>Neuroplasticity curious</span>
     </div>
   </section>
 
@@ -124,31 +125,31 @@
   <section id="milestones" data-component="MilestoneStrip" class="bg-obsidian text-porcelain py-16 md:py-20 px-5 md:px-14">
     <div class="grid grid-cols-2 md:grid-cols-4 gap-10 md:gap-6 max-w-6xl mx-auto">
       <div data-fade>
-        <div class="font-display text-4xl md:text-6xl" data-odometer="0004">0000</div>
-        <p class="eyebrow mt-3" style="color:rgba(251,250,246,0.6);">4th Runner-Up<br/>Miss Ethiopia</p>
+        <div class="font-display text-4xl md:text-6xl" data-odometer="4th">4th</div>
+        <p class="eyebrow mt-3" style="color:rgba(251,250,246,0.6);">Miss International<br/>Ethiopia</p>
       </div>
       <div data-fade>
-        <div class="font-display text-4xl md:text-6xl" data-odometer="2026">0000</div>
+        <div class="font-display text-4xl md:text-6xl" data-odometer="1st">1st</div>
         <p class="eyebrow mt-3" style="color:rgba(251,250,246,0.6);">Miss Tourism<br/>Ethiopia, Reigning</p>
       </div>
       <div data-fade>
-        <div class="font-display text-4xl md:text-6xl" data-odometer="0009">0000</div>
-        <p class="eyebrow mt-3" style="color:rgba(251,250,246,0.6);">September<br/>Nigeria Bound</p>
+        <div class="font-display text-4xl md:text-6xl" data-odometer="9/2026">9/2026</div>
+        <p class="eyebrow mt-3" style="color:rgba(251,250,246,0.6);">Miss Tourism Africa<br/>Nigeria</p>
       </div>
-      <div data-fade>
-        <div class="font-display text-4xl md:text-6xl" data-odometer="0001">0000</div>
-        <p class="eyebrow mt-3" style="color:rgba(251,250,246,0.6);">Nation<br/>Represented</p>
-      </div>
+      <a href="ambassador.html" data-transition data-fade class="block hover:opacity-80 transition-opacity">
+        <div class="font-display text-4xl md:text-6xl" data-odometer="3">3</div>
+        <p class="eyebrow mt-3" style="color:rgba(251,250,246,0.6);">Ambassadorship<br/>Initiatives ↗</p>
+      </a>
     </div>
   </section>
 
   <!-- ============ COMPONENT: ThresholdStatement ============ -->
   <section id="statement" data-component="ThresholdStatement" class="px-5 md:px-14 py-28 md:py-40 bg-alabaster">
     <div class="max-w-4xl mx-auto text-center">
-      <p class="eyebrow mb-6" data-fade>On Influence</p>
+      <p class="eyebrow mb-6" data-fade>The Throughline</p>
       <h2 class="h-display font-display" style="font-size:clamp(1.9rem,4.6vw,3.4rem);">
-        <span class="reveal-line block" data-reveal="words">Influence is a tool best used to empower others,</span>
-        <span class="reveal-line block" data-reveal="words">challenge perspectives, and create meaningful change.</span>
+        <span class="reveal-line block" data-reveal="words">A scientist's rigor. A queen's poise.</span>
+        <span class="reveal-line block" data-reveal="words">Neither ever asked the other to shrink.</span>
       </h2>
     </div>
   </section>
@@ -166,7 +167,7 @@
       <a href="portfolio.html" data-transition data-cursor="view" data-cursor-label="VIEW" class="group bg-alabaster p-10 md:p-12 flex flex-col justify-between min-h-[380px] hover:bg-linen transition-colors duration-300" data-fade>
         <span class="eyebrow">02 / 03 — The Form</span>
         <div>
-          <h3 class="font-display text-3xl md:text-4xl mb-4">Sovereign<br/>structure.</h3>
+          <h3 class="font-display text-3xl md:text-4xl mb-4">Precision,<br/>worn.</h3>
           <p class="copy text-sm">A visual grammar built on architectural silhouettes and quiet intention.</p>
         </div>
       </a>
@@ -174,7 +175,7 @@
         <span class="eyebrow">03 / 03 — The Reign</span>
         <div>
           <h3 class="font-display text-3xl md:text-4xl mb-4">Ethiopia,<br/>carried forward.</h3>
-          <p class="copy text-sm">From Miss Ethiopia to Miss Tourism Africa — the chronicle of a crown in motion.</p>
+          <p class="copy text-sm">From Miss International Ethiopia to Miss Tourism Africa — the chronicle of a crown in motion.</p>
         </div>
       </a>
     </div>
@@ -237,8 +238,8 @@
         <p class="eyebrow mb-4" style="color:rgba(251,250,246,0.45);">Protocol</p>
         <ul class="space-y-2 text-sm">
           <li><a href="contact.html" data-transition>Contact</a></li>
-          <li><a href="#" data-cursor="link">Instagram</a></li>
-          <li><a href="#" data-cursor="link">TikTok</a></li>
+          <li><a href="https://www.instagram.com/vetusmeam__?stkn=MWh3dW5xdTdqb2dtZw==" target="_blank" rel="noopener" data-cursor="link">Instagram</a></li>
+          <li><a href="https://www.tiktok.com/@velvet_paradox_?_r=1&_t=ZS-99ZVLAPXbUm" target="_blank" rel="noopener" data-cursor="link">TikTok</a></li>
         </ul>
       </div>
     </div>
