@@ -62,7 +62,8 @@
         class="w-full h-full object-cover opacity-[0.16] grayscale transition-all duration-700 cursor-pointer"
         onclick="this.classList.toggle('grayscale'); this.classList.toggle('opacity-[0.16]'); this.classList.toggle('opacity-100');"
       >
-        <source src="https://drive.google.com/uc?export=download&id=19xoRE8FZvhOOkLKDywbyPMfQXkRJWzn6" type="video/mp4" />
+        <!-- Replaced URL with the local file path provided -->
+        <source src="assets/images/hermelaidentityvideo.mp4" type="video/mp4" />
       </video>
     </div>
     <div class="relative z-10 max-w-2xl">
@@ -89,9 +90,6 @@
   </section>
 
   <!-- ============ COMPONENT: MagazineProfile ============ -->
-  <!-- Born/raised Addis Ababa, age, and St Mary's University are client-supplied facts.
-       Character/belief/values/worldview prose is a STUDIO PROPOSAL — pending Hermela's
-       review — consistent with her disclosed survey answers throughout. -->
   <section id="profile" data-component="MagazineProfile" class="px-5 md:px-14 py-24 md:py-32 bg-alabaster">
     <div class="max-w-3xl mx-auto">
       <p class="eyebrow mb-6" data-fade>The Profile</p>
@@ -181,40 +179,54 @@
     </div>
   </section>
 
-  <!-- ============ COMPONENT: SelectedMoments (masonry gallery, the four pillars in practice) ============ -->
+  <!-- ============ COMPONENT: SelectedMoments (Structured Bento Grid) ============ -->
   <section id="selected-moments" data-component="SelectedMoments" class="px-5 md:px-14 py-24 md:py-32 bg-alabaster">
     <div class="flex items-end justify-between mb-10" data-fade>
       <h2 class="font-display text-3xl md:text-4xl">Selected Moments.</h2>
       <p class="text-sm" style="color:var(--graphite);">The four pillars, in practice</p>
     </div>
-    <div class="archive-grid grid grid-cols-2 md:grid-cols-4 gap-4" style="grid-auto-rows: 150px;">
-      <figure class="col-span-2 row-span-2 relative w-full h-full overflow-hidden" data-lightbox="https://lh3.googleusercontent.com/d/1FLwk7lgJO9RTVI8TY6hdYlGShSG1swGC" data-cursor="view" data-cursor-label="VIEW">
-        <img src="https://lh3.googleusercontent.com/d/1FLwk7lgJO9RTVI8TY6hdYlGShSG1swGC" alt="Digital creation practice" class="absolute inset-0 w-full h-full object-cover grayscale-[0.15]" />
+    
+    <!-- Implemented precise responsive auto-rows (200px mobile, 280px desktop) to prevent tight cropping -->
+    <div class="archive-grid grid grid-cols-2 md:grid-cols-4 gap-4 auto-rows-[200px] md:auto-rows-[280px]">
+      
+      <!-- Fig 1: Hero Anchor (Takes up large top-left space) -->
+      <figure class="col-span-2 md:col-span-2 row-span-2 md:row-span-2 relative w-full h-full overflow-hidden" data-lightbox="https://lh3.googleusercontent.com/d/1FLwk7lgJO9RTVI8TY6hdYlGShSG1swGC" data-cursor="view" data-cursor-label="VIEW">
+        <img src="https://lh3.googleusercontent.com/d/1FLwk7lgJO9RTVI8TY6hdYlGShSG1swGC" alt="Digital creation practice" class="absolute inset-0 w-full h-full object-cover object-center grayscale-[0.15]" />
       </figure>
-      <figure class="col-span-1 row-span-1 relative w-full h-full overflow-hidden" data-lightbox="https://lh3.googleusercontent.com/d/1D04RKIuwC6_hW7kA6cMXFJuB8UW9E_Xx" data-cursor="view" data-cursor-label="VIEW">
-        <img src="https://lh3.googleusercontent.com/d/1D04RKIuwC6_hW7kA6cMXFJuB8UW9E_Xx" alt="Structured, project-managed thinking" class="absolute inset-0 w-full h-full object-cover grayscale-[0.15]" />
+
+      <!-- Fig 2: Standard Unit -->
+      <figure class="col-span-1 md:col-span-1 row-span-1 md:row-span-1 relative w-full h-full overflow-hidden" data-lightbox="https://lh3.googleusercontent.com/d/1D04RKIuwC6_hW7kA6cMXFJuB8UW9E_Xx" data-cursor="view" data-cursor-label="VIEW">
+        <img src="https://lh3.googleusercontent.com/d/1D04RKIuwC6_hW7kA6cMXFJuB8UW9E_Xx" alt="Structured, project-managed thinking" class="absolute inset-0 w-full h-full object-cover object-center grayscale-[0.15]" />
       </figure>
-      <figure class="col-span-1 row-span-1 relative w-full h-full overflow-hidden" data-lightbox="https://lh3.googleusercontent.com/d/1pOp6U_dwX_QtiQfj9uKxTHG4nVwHOZhf" data-cursor="view" data-cursor-label="VIEW">
-        <img src="https://lh3.googleusercontent.com/d/1pOp6U_dwX_QtiQfj9uKxTHG4nVwHOZhf" alt="Modeling practice" class="absolute inset-0 w-full h-full object-cover grayscale-[0.15]" />
+
+      <!-- Fig 3: Standard Unit -->
+      <figure class="col-span-1 md:col-span-1 row-span-1 md:row-span-1 relative w-full h-full overflow-hidden" data-lightbox="https://lh3.googleusercontent.com/d/1pOp6U_dwX_QtiQfj9uKxTHG4nVwHOZhf" data-cursor="view" data-cursor-label="VIEW">
+        <img src="https://lh3.googleusercontent.com/d/1pOp6U_dwX_QtiQfj9uKxTHG4nVwHOZhf" alt="Modeling practice" class="absolute inset-0 w-full h-full object-cover object-center grayscale-[0.15]" />
       </figure>
-      <figure class="col-span-2 row-span-1 relative w-full h-full overflow-hidden" data-lightbox="https://lh3.googleusercontent.com/d/1gNSbk3m3q4lZJvm-6FdaK_1MSZtlb4Ss" data-cursor="view" data-cursor-label="VIEW">
-        <img src="https://lh3.googleusercontent.com/d/1gNSbk3m3q4lZJvm-6FdaK_1MSZtlb4Ss" alt="Sovereign structure, in motion" class="absolute inset-0 w-full h-full object-cover grayscale-[0.15]" />
+
+      <!-- Fig 4: Wide Unit -->
+      <figure class="col-span-2 md:col-span-2 row-span-1 md:row-span-1 relative w-full h-full overflow-hidden" data-lightbox="https://lh3.googleusercontent.com/d/1gNSbk3m3q4lZJvm-6FdaK_1MSZtlb4Ss" data-cursor="view" data-cursor-label="VIEW">
+        <img src="https://lh3.googleusercontent.com/d/1gNSbk3m3q4lZJvm-6FdaK_1MSZtlb4Ss" alt="Sovereign structure, in motion" class="absolute inset-0 w-full h-full object-cover object-center grayscale-[0.15]" />
       </figure>
-      <figure class="col-span-1 row-span-1 relative w-full h-full overflow-hidden" data-lightbox="https://lh3.googleusercontent.com/d/1hXdjDywyfqYsuvWH-X5Q84sVoFh4b7Fb" data-cursor="view" data-cursor-label="VIEW">
-        <img src="https://lh3.googleusercontent.com/d/1hXdjDywyfqYsuvWH-X5Q84sVoFh4b7Fb" alt="The synthesis" class="absolute inset-0 w-full h-full object-cover grayscale-[0.15]" />
+
+      <!-- Fig 5: Standard Unit -->
+      <figure class="col-span-1 md:col-span-1 row-span-1 md:row-span-1 relative w-full h-full overflow-hidden" data-lightbox="https://lh3.googleusercontent.com/d/1hXdjDywyfqYsuvWH-X5Q84sVoFh4b7Fb" data-cursor="view" data-cursor-label="VIEW">
+        <img src="https://lh3.googleusercontent.com/d/1hXdjDywyfqYsuvWH-X5Q84sVoFh4b7Fb" alt="The synthesis" class="absolute inset-0 w-full h-full object-cover object-center grayscale-[0.15]" />
       </figure>
       
-      <!-- New symmetric row additions to perfectly complete the 4-column structure -->
-      <figure class="col-span-2 row-span-1 relative w-full h-full overflow-hidden" data-lightbox="https://lh3.googleusercontent.com/d/1mcsNHyh5VaXg7HcTbcKqX_7N3tK9sE-j" data-cursor="view" data-cursor-label="VIEW">
-        <img src="https://lh3.googleusercontent.com/d/1mcsNHyh5VaXg7HcTbcKqX_7N3tK9sE-j" alt="Placeholder for symmetrical alignment" class="absolute inset-0 w-full h-full object-cover grayscale-[0.15]" />
+      <!-- Fig 6: Wide Desktop / Standard Mobile -->
+      <figure class="col-span-1 md:col-span-2 row-span-1 md:row-span-1 relative w-full h-full overflow-hidden" data-lightbox="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=2000&auto=format&fit=crop" data-cursor="view" data-cursor-label="VIEW">
+        <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=2000&auto=format&fit=crop" alt="Placeholder for symmetrical alignment" class="absolute inset-0 w-full h-full object-cover object-center grayscale-[0.15]" />
       </figure>
-      <figure class="col-span-1 row-span-1 relative w-full h-full overflow-hidden" data-lightbox="https://lh3.googleusercontent.com/d/1p6DWUKJavraFJex0ERBQEOfyvXdi8QdC" data-cursor="view" data-cursor-label="VIEW">
-        <img src="https://lh3.googleusercontent.com/d/1p6DWUKJavraFJex0ERBQEOfyvXdi8QdC" alt="Placeholder for symmetrical alignment" class="absolute inset-0 w-full h-full object-cover grayscale-[0.15]" />
+
+      <!-- Fig 7: Standard Desktop / Wide Mobile -->
+      <figure class="col-span-2 md:col-span-1 row-span-1 md:row-span-1 relative w-full h-full overflow-hidden" data-lightbox="https://images.unsplash.com/photo-1600861194802-a2b11076bcd8?q=80&w=1000&auto=format&fit=crop" data-cursor="view" data-cursor-label="VIEW">
+        <img src="https://images.unsplash.com/photo-1600861194802-a2b11076bcd8?q=80&w=1000&auto=format&fit=crop" alt="Placeholder for symmetrical alignment" class="absolute inset-0 w-full h-full object-cover object-center grayscale-[0.15]" />
       </figure>
     </div>
   </section>
 
-  <!-- ============ COMPONENT: ProfessionalSnapshot (fact panel, no fabricated data) ============ -->
+  <!-- ============ COMPONENT: ProfessionalSnapshot ============ -->
   <section id="snapshot" data-component="ProfessionalSnapshot" class="px-5 md:px-14 py-20 bg-linen">
     <div class="max-w-4xl mx-auto grid md:grid-cols-4 gap-8 text-sm">
       <div data-fade><p class="eyebrow mb-2">Field</p><p class="font-display text-lg">Computer Science, BSc</p></div>
