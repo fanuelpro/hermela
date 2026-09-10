@@ -349,8 +349,6 @@ body[data-motion="reduced"] .marquee-track { animation: none; }
 .chip-value { font-size: 0.88rem; color: var(--graphite); }
 .chip-row.on-dark .chip-label { color: var(--umber); }
 .chip-row.on-dark .chip-value { color: rgba(251,250,246,0.8); }
-
-/* --- Roman-numeral process block --------------------------------------------------- */
 .process-row { display: grid; grid-template-columns: 4rem 1fr; gap: 1.5rem; padding: 2rem 0; border-top: 1px solid var(--hairline); }
 .process-row:last-child { border-bottom: 1px solid var(--hairline); }
 .process-row .process-num { font-family: var(--font-wordmark); font-style: italic; font-size: 1.6rem; color: var(--umber); }
@@ -361,3 +359,44 @@ body[data-motion="reduced"] .marquee-track { animation: none; }
 .category-chip:last-child { border-bottom: 1px solid var(--hairline); }
 .category-chip .category-title { font-family: var(--font-display); font-size: clamp(1.05rem,2vw,1.35rem); }
 .category-chip .category-num { font-size: 0.72rem; letter-spacing: 0.1em; color: var(--umber); white-space: nowrap; }
+
+/* ==========================================================================
+   V5 ADDITIONS — client-review pass 2: crossfade hero, swipe rails,
+   click-to-reveal-color, upgraded video component
+   ========================================================================== */
+
+/* --- Crossfading multi-image hero background ---------------------------------- */
+.hero-crossfade { position: absolute; inset: 0; }
+.hero-crossfade img {
+  position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover;
+  opacity: 0; transition: opacity 1.8s ease;
+}
+.hero-crossfade img.is-active { opacity: 1; }
+body[data-motion="reduced"] .hero-crossfade img { transition: none; }
+body[data-motion="reduced"] .hero-crossfade img:first-child { opacity: 1; }
+
+/* --- Click-to-reveal full color (hero images default to a graded/dark treatment) --- */
+[data-reveal-color] { filter: grayscale(var(--reveal-gs, 0.15)) brightness(0.94); transition: filter 0.7s ease; }
+[data-reveal-color].is-revealed { filter: grayscale(0) brightness(1); }
+[data-reveal-scrim] { transition: opacity 0.7s ease; }
+[data-reveal-scrim].is-revealed { opacity: 0.15; }
+
+/* --- Swipeable photo rail (native scroll-snap, touch-friendly) ------------------- */
+.swipe-rail {
+  display: flex; gap: 0.75rem; overflow-x: auto; scroll-snap-type: x mandatory;
+  -webkit-overflow-scrolling: touch; scroll-behavior: smooth;
+}
+.swipe-rail > * { scroll-snap-align: start; flex-shrink: 0; }
+.swipe-rail::-webkit-scrollbar { display: none; }
+.swipe-rail { scrollbar-width: none; }
+.swipe-hint { font-size: 0.72rem; letter-spacing: 0.08em; color: var(--graphite); text-align: right; margin-top: 0.5rem; }
+
+/* --- Upgraded video-slot: real <video> when data-video-src present -------------- */
+.video-slot video { width: 100%; height: 100%; object-fit: cover; display: block; }
+.video-slot .mute-toggle {
+  position: absolute; bottom: 12px; right: 12px; z-index: 2;
+  width: 36px; height: 36px; border-radius: 50%;
+  background: rgba(20,19,17,0.55); color: var(--porcelain);
+  display: flex; align-items: center; justify-content: center; font-size: 0.8rem;
+  border: none; cursor: none;
+}
