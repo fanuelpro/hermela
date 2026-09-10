@@ -61,25 +61,23 @@
 <main>
 
   <!-- ============ COMPONENT: Hero ============ -->
+  <!-- ============ COMPONENT: Hero (crossfading multi-image background, Selamawit-referenced) ============ -->
   <section id="hero" data-component="Hero" class="relative min-h-[100svh] flex items-end overflow-hidden bg-alabaster">
-    <div data-parallax-scene class="absolute inset-0">
-      <div data-parallax-layer="0.15" class="absolute inset-0">
-        <img src="https://images.unsplash.com/photo-1483985988355-763728e1935b?q=80&w=1600&auto=format&fit=crop"
-             alt="" class="w-full h-[130%] object-cover object-top opacity-[0.14]" style="filter: blur(6px) grayscale(0.3);" />
+    <div class="absolute inset-0" data-reveal-color data-cursor="drag" data-cursor-label="REVEAL">
+      <div class="hero-crossfade" data-hero-crossfade>
+        <!-- STUDIO PLACEHOLDER — swap each src for a real Hermela photo. Add or remove
+             <img> tags freely; the crossfade JS auto-detects however many are present. -->
+        <img class="is-active" src="https://images.unsplash.com/photo-1509967419530-da38b4704bc6?q=80&w=1600&auto=format&fit=crop" alt="Hermela Ashenafi — editorial portrait" />
+        <img src="https://images.unsplash.com/photo-1483985988355-763728e1935b?q=80&w=1600&auto=format&fit=crop" alt="Hermela Ashenafi — architectural silhouette" />
+        <img src="https://images.unsplash.com/photo-1524504388940-b1c1722653e1?q=80&w=1600&auto=format&fit=crop" alt="Hermela Ashenafi — editorial close" />
+        <img src="https://images.unsplash.com/photo-1490114538077-0a7f8cb49891?q=80&w=1600&auto=format&fit=crop" alt="Hermela Ashenafi — portrait study" />
       </div>
-      <div data-parallax-layer="0.4" class="absolute inset-0 flex items-center justify-center">
-        <img data-cursor="view" data-cursor-label="HERMELA"
-             src="https://images.unsplash.com/photo-1509967419530-da38b4704bc6?q=80&w=1400&auto=format&fit=crop"
-             alt="Editorial portrait, dark high-fashion portraiture" class="h-[78vh] md:h-[86vh] object-cover object-top grayscale-[0.15]" style="mask-image: linear-gradient(to bottom, black 78%, transparent 100%);" />
-      </div>
-      <!-- Fixed dark scrim, independent of light/dark theme — the hero sits on a dark-toned
-           photograph, so its text stays fixed-light (porcelain) for contrast regardless of
-           which site theme is active. Without this, light mode was unreadable here. -->
-      <div class="absolute inset-0" style="background: linear-gradient(to top, rgba(20,19,17,0.82) 0%, rgba(20,19,17,0.4) 40%, transparent 68%);"></div>
     </div>
+    <!-- Fixed dark scrim, independent of light/dark theme — click the hero to reveal full color. -->
+    <div class="absolute inset-0" data-reveal-scrim style="background: linear-gradient(to top, rgba(20,19,17,0.82) 0%, rgba(20,19,17,0.4) 40%, transparent 68%); pointer-events:none;"></div>
 
     <div class="relative z-10 w-full px-5 md:px-14 pb-10 md:pb-14">
-      <p class="eyebrow mb-4" data-fade style="color:var(--umber);">Miss Tourism Ethiopia · 2026</p>
+      <p class="eyebrow mb-4" data-fade style="color:var(--umber);">Addis Ababa · Ethiopia · The Continent</p>
       <h1 class="font-wordmark leading-[0.92]" style="font-size:clamp(3.2rem,13vw,10.5rem); color:var(--porcelain);">
         <span class="reveal-line block" data-reveal="chars">Hermela</span>
         <span class="reveal-line block italic font-light" data-reveal="chars" style="color:var(--umber);">Ashenafi</span>
@@ -91,6 +89,41 @@
           continental stage, one deliberate step at a time.
         </p>
         <a href="mind.html" data-transition data-magnetic data-cursor="link" class="btn-primary on-dark shrink-0">Enter Her World</a>
+      </div>
+
+      <!-- ============ COMPONENT: HeroStatRow ============ -->
+      <div class="grid grid-cols-3 gap-6 mt-10 pt-8 border-t" style="border-color:rgba(251,250,246,0.2);" data-fade>
+        <div><span class="font-display text-2xl md:text-3xl block" style="color:var(--porcelain);">100K+</span><span class="text-xs" style="color:rgba(251,250,246,0.6);">Instagram</span></div>
+        <div><span class="font-display text-2xl md:text-3xl block" style="color:var(--porcelain);">4th</span><span class="text-xs" style="color:rgba(251,250,246,0.6);">Miss International Ethiopia</span></div>
+        <div><span class="font-display text-2xl md:text-3xl block" style="color:var(--porcelain);">Reigning</span><span class="text-xs" style="color:rgba(251,250,246,0.6);">Miss Tourism Ethiopia</span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ COMPONENT: HerStory (portrait + bio teaser + fact chips + quote) ============ -->
+  <section id="her-story" data-component="HerStory" class="px-5 md:px-14 py-24 md:py-32 bg-alabaster">
+    <div class="max-w-5xl mx-auto grid md:grid-cols-[1fr_1.3fr] gap-14 items-center">
+      <div data-fade data-lightbox="https://images.unsplash.com/photo-1524504388940-b1c1722653e1?q=80&w=1400&auto=format&fit=crop" data-cursor="view" data-cursor-label="VIEW">
+        <img src="https://images.unsplash.com/photo-1524504388940-b1c1722653e1?q=80&w=900&auto=format&fit=crop" alt="Hermela Ashenafi portrait" class="w-full h-[480px] object-cover grayscale-[0.1]" />
+      </div>
+      <div data-fade>
+        <p class="eyebrow mb-4">The Story</p>
+        <h2 class="font-display text-3xl md:text-4xl mb-6">Born From Discipline.<br/><em class="italic" style="color:var(--umber);">Built for the World Stage.</em></h2>
+        <p class="copy mb-8">
+          Hermela Ashenafi Assefa is not simply a titleholder — she is a computer
+          scientist who happens to also be one. Born and raised in Addis Ababa, she
+          carries her country's story the way she was trained to carry a project: with a
+          plan, a timeline, and no room for shortcuts.
+        </p>
+        <div class="grid grid-cols-3 gap-6 mb-8 text-sm">
+          <div><p class="eyebrow mb-1">Based In</p><p class="font-display text-lg">Addis Ababa</p></div>
+          <div><p class="eyebrow mb-1">Reach</p><p class="font-display text-lg">Africa · Global</p></div>
+          <div><p class="eyebrow mb-1">Speciality</p><p class="font-display text-lg">Editorial · Runway</p></div>
+        </div>
+        <blockquote class="font-display italic text-lg" style="color:var(--sovereign);">
+          "She doesn't just wear the crown — she audits it first."
+        </blockquote>
+        <a href="identity.html" data-transition data-magnetic data-cursor="link" class="btn-primary mt-8 inline-flex">Read Her Full Story</a>
       </div>
     </div>
   </section>
