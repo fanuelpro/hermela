@@ -453,6 +453,97 @@
     });
   })();
 
+  /* ------------------------------------------------------------------------
+     21. CROSSFADING HERO — cycles [data-hero-crossfade] images every ~4.2s
+     ------------------------------------------------------------------------ */
+  document.querySelectorAll("[data-hero-crossfade]").forEach((scene) => {
+    const imgs = scene.querySelectorAll("img");
+    if (imgs.length < 2) return;
+    let i = 0;
+    imgs[0].classList.add("is-active");
+    if (REDUCED) return;
+    setInterval(() => {
+      imgs[i].classList.remove("is-active");
+      i = (i + 1) % imgs.length;
+      imgs[i].classList.add("is-active");
+    }, 4200);
+  });
+
+  /* ------------------------------------------------------------------------
+     22. CLICK-TO-REVEAL-COLOR — hero images default graded, click reveals full color
+     ------------------------------------------------------------------------ */
+  document.querySelectorAll("[data-reveal-color]").forEach((el) => {
+    el.addEventListener("click", () => {
+      el.classList.toggle("is-revealed");
+      const scrim = el.closest("[data-parallax-scene], section")?.querySelector("[data-reveal-scrim]");
+      if (scrim) scrim.classList.toggle("is-revealed");
+    });
+  });
+
+  /* ------------------------------------------------------------------------
+     23. AUTO-ADVANCING SWIPE RAIL — [data-auto-scroll-rail], pauses on interaction
+     ------------------------------------------------------------------------ */
+  document.querySelectorAll("[data-auto-scroll-rail]").forEach((rail) => {
+    if (REDUCED) return;
+    let paused = false;
+    let resumeTimer = null;
+    const pause = () => {
+      paused = true;
+      clearTimeout(resumeTimer);
+      resumeTimer = setTimeout(() => { paused = false; }, 4000);
+    };
+    ["touchstart", "mousedown", "wheel"].forEach((evt) => rail.addEventListener(evt, pause, { passive: true }));
+    setInterval(() => {
+      if (paused) return;
+      const child = rail.querySelector(":scope > *");
+      if (!child) return;
+      const step = child.getBoundingClientRect().width + 12;
+      const atEnd = rail.scrollLeft + rail.clientWidth >= rail.scrollWidth - 4;
+      rail.scrollTo({ left: atEnd ? 0 : rail.scrollLeft + step, behavior: "smooth" });
+    }, 3000);
+  });
+
+  /* ------------------------------------------------------------------------
+     24. UPGRADED VIDEO-SLOT — real <video> when [data-video-src] present.
+     Autoplay, loop, muted by default; mute toggle button; click expands to
+     fullscreen and unmutes. Falls back to the existing image+play-icon
+     treatment (already handled in markup) when no source is provided.
+     ------------------------------------------------------------------------ */
+  document.querySelectorAll("[data-video-src]").forEach((slot) => {
+    const src = slot.getAttribute("data-video-src");
+    if (!src) return;
+    const img = slot.querySelector("img");
+    const playIcon = slot.querySelector(".play-affordance");
+    const video = document.createElement("video");
+    video.src = src;
+    video.autoplay = true;
+    video.loop = true;
+    video.muted = true;
+    video.playsInline = true;
+    video.setAttribute("aria-label", img ? img.alt : "Video");
+    if (img) img.replaceWith(video); else slot.prepend(video);
+    if (playIcon) playIcon.remove();
+
+    const muteBtn = document.createElement("button");
+    muteBtn.className = "mute-toggle";
+    muteBtn.type = "button";
+    muteBtn.setAttribute("aria-label", "Toggle sound");
+    muteBtn.textContent = "🔇";
+    muteBtn.addEventListener("click", (e) => {
+      e.stopPropagation();
+      video.muted = !video.muted;
+      muteBtn.textContent = video.muted ? "🔇" : "🔊";
+    });
+    slot.appendChild(muteBtn);
+
+    video.addEventListener("click", () => {
+      video.muted = false;
+      muteBtn.textContent = "🔊";
+      if (video.requestFullscreen) video.requestFullscreen();
+      else if (video.webkitEnterFullscreen) video.webkitEnterFullscreen();
+    });
+  });
+
   /* Refresh ScrollTrigger once fonts/images settle */
   window.addEventListener("load", () => { if (hasGSAP && window.ScrollTrigger) ScrollTrigger.refresh(); });
 })();
