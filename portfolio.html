@@ -80,8 +80,8 @@
   <!-- ============ COMPONENT: DisplacementHero (SVG-filter WebGL-style hover) ============ -->
   <section class="relative min-h-[80svh] flex items-center justify-center bg-linen overflow-hidden px-5">
     <img id="displacement-hero" data-cursor="drag" data-cursor-label="DRAG"
-         src="https://images.unsplash.com/photo-1524504388940-b1c1722653e1?q=80&w=1200&auto=format&fit=crop"
-         alt="High-fashion editorial portrait in architectural setting" class="h-[68vh] object-cover grayscale-[0.1]" />
+         src="https://lh3.googleusercontent.com/d/1C4w4RAVIAMEm8X1x-CdRAH7JKDoPXsYD"
+         alt="High-fashion editorial portrait in architectural setting" class="w-full h-[75vh] object-cover object-center grayscale-[0.1]" />
   </section>
 
   <!-- ============ COMPONENT: PhilosophyQuote ============ -->
@@ -97,40 +97,44 @@
   </section>
 
   <!-- ============ COMPONENT: SelectedWorks (commission-style masonry, category+year tags) ============ -->
-  <!-- STUDIO PROPOSAL — placeholder commissions pending Hermela's actual campaign history -->
   <section id="selected-works" data-component="SelectedWorks" class="px-5 md:px-14 py-24 md:py-32 bg-alabaster">
     <div class="flex items-end justify-between mb-10" data-fade>
       <h2 class="font-display text-3xl md:text-4xl">Selected Works.</h2>
       <a href="contact.html" data-transition data-magnetic data-cursor="link" class="text-sm underline underline-offset-4">Commission Work</a>
     </div>
     <div class="grid md:grid-cols-3 gap-6">
-      <figure data-fade data-lightbox="https://images.unsplash.com/photo-1509967419530-da38b4704bc6?q=80&w=1400&auto=format&fit=crop" data-cursor="view" data-cursor-label="VIEW">
-        <img src="https://images.unsplash.com/photo-1509967419530-da38b4704bc6?q=80&w=800&auto=format&fit=crop" alt="Tourism campaign placeholder" class="w-full h-72 object-cover grayscale-[0.1]" />
+      <figure data-fade data-lightbox="https://lh3.googleusercontent.com/d/1hXdjDywyfqYsuvWH-X5Q84sVoFh4b7Fb" data-cursor="view" data-cursor-label="VIEW">
+        <img src="https://lh3.googleusercontent.com/d/1hXdjDywyfqYsuvWH-X5Q84sVoFh4b7Fb" alt="Tourism Campaign" class="w-full h-80 object-cover object-center grayscale-[0.1]" />
         <figcaption class="mt-3"><span class="font-display text-lg block">Tourism Campaign</span><span class="eyebrow">Ambassador · 2026</span></figcaption>
       </figure>
-      <figure data-fade data-lightbox="https://images.unsplash.com/photo-1483985988355-763728e1935b?q=80&w=1400&auto=format&fit=crop" data-cursor="view" data-cursor-label="VIEW">
-        <img src="https://images.unsplash.com/photo-1483985988355-763728e1935b?q=80&w=800&auto=format&fit=crop" alt="Runway placeholder" class="w-full h-72 object-cover grayscale-[0.1]" />
+      <figure data-fade data-lightbox="https://lh3.googleusercontent.com/d/1L-GMsiJpPxEW_24tlXzzcoFLM0ayayCy" data-cursor="view" data-cursor-label="VIEW">
+        <img src="https://lh3.googleusercontent.com/d/1L-GMsiJpPxEW_24tlXzzcoFLM0ayayCy" alt="Runway Presentation" class="w-full h-80 object-cover object-center grayscale-[0.1]" />
         <figcaption class="mt-3"><span class="font-display text-lg block">Runway Presentation</span><span class="eyebrow">Runway · 2026</span></figcaption>
       </figure>
-      <figure data-fade data-lightbox="https://images.unsplash.com/photo-1490114538077-0a7f8cb49891?q=80&w=1400&auto=format&fit=crop" data-cursor="view" data-cursor-label="VIEW">
-        <img src="https://images.unsplash.com/photo-1490114538077-0a7f8cb49891?q=80&w=800&auto=format&fit=crop" alt="Editorial placeholder" class="w-full h-72 object-cover grayscale-[0.1]" />
+      <figure data-fade data-lightbox="https://lh3.googleusercontent.com/d/12a2g6wq6SXpqsj8zbPTqp4cRxFWjkvOy" data-cursor="view" data-cursor-label="VIEW">
+        <img src="https://lh3.googleusercontent.com/d/12a2g6wq6SXpqsj8zbPTqp4cRxFWjkvOy" alt="Editorial Story" class="w-full h-80 object-cover object-center grayscale-[0.1]" />
         <figcaption class="mt-3"><span class="font-display text-lg block">Editorial Story</span><span class="eyebrow">Campaign · 2026</span></figcaption>
       </figure>
     </div>
   </section>
+  
+  <!-- ============ COMPONENT: VideoTriptych ============ -->
   <section id="video-triptych" data-component="VideoTriptych" class="px-5 md:px-14 py-16 bg-alabaster">
     <div class="grid md:grid-cols-3 gap-4">
-      <div class="video-slot h-64 md:h-80" data-video-slot="portfolio-reel-1" data-fade>
-        <img src="https://images.unsplash.com/photo-1483985988355-763728e1935b?q=80&w=800&auto=format&fit=crop" alt="Motion reel placeholder 1" class="grayscale-[0.15]" />
-        <div class="play-affordance"><span data-cursor="drag" data-cursor-label="PLAY">▶</span></div>
+      <div class="video-slot h-72 md:h-[400px] relative overflow-hidden" data-video-slot="portfolio-reel-1" data-fade>
+        <video autoplay loop muted playsinline class="absolute inset-0 w-full h-full object-cover object-center grayscale-[0.15] cursor-pointer transition-all duration-700" onclick="this.classList.toggle('grayscale-[0.15]')">
+          <source src="assets/images/runway.mp4" type="video/mp4" />
+        </video>
       </div>
-      <div class="video-slot h-64 md:h-80" data-video-slot="portfolio-reel-2" data-fade>
-        <img src="https://images.unsplash.com/photo-1490114538077-0a7f8cb49891?q=80&w=800&auto=format&fit=crop" alt="Motion reel placeholder 2" class="grayscale-[0.15]" />
-        <div class="play-affordance"><span data-cursor="drag" data-cursor-label="PLAY">▶</span></div>
+      <div class="video-slot h-72 md:h-[400px] relative overflow-hidden" data-video-slot="portfolio-reel-2" data-fade>
+        <video autoplay loop muted playsinline class="absolute inset-0 w-full h-full object-cover object-center grayscale-[0.15] cursor-pointer transition-all duration-700" onclick="this.classList.toggle('grayscale-[0.15]')">
+          <source src="assets/images/dancing.mp4" type="video/mp4" />
+        </video>
       </div>
-      <div class="video-slot h-64 md:h-80" data-video-slot="portfolio-reel-3" data-fade>
-        <img src="https://images.unsplash.com/photo-1441123694162-e54a981ceba5?q=80&w=800&auto=format&fit=crop" alt="Motion reel placeholder 3" class="grayscale-[0.15]" />
-        <div class="play-affordance"><span data-cursor="drag" data-cursor-label="PLAY">▶</span></div>
+      <div class="video-slot h-72 md:h-[400px] relative overflow-hidden" data-video-slot="portfolio-reel-3" data-fade>
+        <video autoplay loop muted playsinline class="absolute inset-0 w-full h-full object-cover object-center grayscale-[0.15] cursor-pointer transition-all duration-700" onclick="this.classList.toggle('grayscale-[0.15]')">
+          <source src="assets/images/traditional.mp4" type="video/mp4" />
+        </video>
       </div>
     </div>
   </section>
@@ -140,24 +144,24 @@
     <p class="eyebrow mb-3">The Movement</p>
     <h2 class="font-display text-3xl md:text-4xl mb-8">A series in perpetual motion — form, grace, and intention.</h2>
     <div class="swipe-rail" data-auto-scroll-rail>
-      <figure class="w-[62vw] md:w-[26vw] h-[60vh]" data-lightbox="https://images.unsplash.com/photo-1509967419530-da38b4704bc6?q=80&w=1400&auto=format&fit=crop" data-cursor="view" data-cursor-label="VIEW">
-        <img src="https://images.unsplash.com/photo-1509967419530-da38b4704bc6?q=80&w=800&auto=format&fit=crop" alt="Movement I" class="w-full h-full object-cover grayscale-[0.1]" />
+      <figure class="w-[62vw] md:w-[26vw] h-[60vh]" data-lightbox="https://lh3.googleusercontent.com/d/1_agckJudUKVuG48kZGXGdBciyWun2NVY" data-cursor="view" data-cursor-label="VIEW">
+        <img src="https://lh3.googleusercontent.com/d/1_agckJudUKVuG48kZGXGdBciyWun2NVY" alt="Movement I" class="w-full h-full object-cover object-center grayscale-[0.1]" />
         <figcaption class="eyebrow mt-3">Movement I</figcaption>
       </figure>
-      <figure class="w-[62vw] md:w-[26vw] h-[60vh]" data-lightbox="https://images.unsplash.com/photo-1483985988355-763728e1935b?q=80&w=1400&auto=format&fit=crop" data-cursor="view" data-cursor-label="VIEW">
-        <img src="https://images.unsplash.com/photo-1483985988355-763728e1935b?q=80&w=800&auto=format&fit=crop" alt="Movement II" class="w-full h-full object-cover grayscale-[0.1]" />
+      <figure class="w-[62vw] md:w-[26vw] h-[60vh]" data-lightbox="https://lh3.googleusercontent.com/d/15IdOm2GEKpj70XiSUFj8-CXgTn9dQXiW" data-cursor="view" data-cursor-label="VIEW">
+        <img src="https://lh3.googleusercontent.com/d/15IdOm2GEKpj70XiSUFj8-CXgTn9dQXiW" alt="Movement II" class="w-full h-full object-cover object-center grayscale-[0.1]" />
         <figcaption class="eyebrow mt-3">Movement II</figcaption>
       </figure>
-      <figure class="w-[62vw] md:w-[26vw] h-[60vh]" data-lightbox="https://images.unsplash.com/photo-1490114538077-0a7f8cb49891?q=80&w=1400&auto=format&fit=crop" data-cursor="view" data-cursor-label="VIEW">
-        <img src="https://images.unsplash.com/photo-1490114538077-0a7f8cb49891?q=80&w=800&auto=format&fit=crop" alt="Movement III" class="w-full h-full object-cover grayscale-[0.1]" />
+      <figure class="w-[62vw] md:w-[26vw] h-[60vh]" data-lightbox="https://lh3.googleusercontent.com/d/1QGuNdRteQPMluu3QwJ86KIh5zEE5e2iU" data-cursor="view" data-cursor-label="VIEW">
+        <img src="https://lh3.googleusercontent.com/d/1QGuNdRteQPMluu3QwJ86KIh5zEE5e2iU" alt="Movement III" class="w-full h-full object-cover object-center grayscale-[0.1]" />
         <figcaption class="eyebrow mt-3">Movement III</figcaption>
       </figure>
-      <figure class="w-[62vw] md:w-[26vw] h-[60vh]" data-lightbox="https://images.unsplash.com/photo-1441123694162-e54a981ceba5?q=80&w=1400&auto=format&fit=crop" data-cursor="view" data-cursor-label="VIEW">
-        <img src="https://images.unsplash.com/photo-1441123694162-e54a981ceba5?q=80&w=800&auto=format&fit=crop" alt="Movement IV" class="w-full h-full object-cover grayscale-[0.1]" />
+      <figure class="w-[62vw] md:w-[26vw] h-[60vh]" data-lightbox="https://lh3.googleusercontent.com/d/1TYxq-YObPtt1iY2iNWezVW9BDr2BnmAR" data-cursor="view" data-cursor-label="VIEW">
+        <img src="https://lh3.googleusercontent.com/d/1TYxq-YObPtt1iY2iNWezVW9BDr2BnmAR" alt="Movement IV" class="w-full h-full object-cover object-center grayscale-[0.1]" />
         <figcaption class="eyebrow mt-3">Movement IV</figcaption>
       </figure>
-      <figure class="w-[62vw] md:w-[26vw] h-[60vh]" data-lightbox="https://images.unsplash.com/photo-1524504388940-b1c1722653e1?q=80&w=1400&auto=format&fit=crop" data-cursor="view" data-cursor-label="VIEW">
-        <img src="https://images.unsplash.com/photo-1524504388940-b1c1722653e1?q=80&w=800&auto=format&fit=crop" alt="Movement V" class="w-full h-full object-cover grayscale-[0.1]" />
+      <figure class="w-[62vw] md:w-[26vw] h-[60vh]" data-lightbox="https://lh3.googleusercontent.com/d/1vS2nRTPCsbfsR7VaxStW7tlORudGnnlg" data-cursor="view" data-cursor-label="VIEW">
+        <img src="https://lh3.googleusercontent.com/d/1vS2nRTPCsbfsR7VaxStW7tlORudGnnlg" alt="Movement V" class="w-full h-full object-cover object-center grayscale-[0.1]" />
         <figcaption class="eyebrow mt-3">Movement V</figcaption>
       </figure>
     </div>
@@ -168,23 +172,23 @@
   <section id="gallery" data-component="PinnedGallery" data-horizontal-scroll class="relative bg-alabaster overflow-hidden h-screen">
     <div data-horizontal-track class="flex h-full items-center gap-6 md:gap-10 px-5 md:px-14 no-scrollbar" style="width:max-content;">
       <figure class="shrink-0 w-[70vw] md:w-[32vw] h-[70vh]" data-velocity-skew>
-        <img data-lightbox="https://images.unsplash.com/photo-1483985988355-763728e1935b?q=80&w=1400&auto=format&fit=crop" data-cursor="view" data-cursor-label="VIEW" src="https://images.unsplash.com/photo-1483985988355-763728e1935b?q=80&w=1000&auto=format&fit=crop" alt="Look 01 — architectural tailoring" class="w-full h-full object-cover grayscale-[0.1]" />
+        <img data-lightbox="https://lh3.googleusercontent.com/d/1h_VuKMSh-sINijhAvO_ZmIvcxXJkW5-V" data-cursor="view" data-cursor-label="VIEW" src="https://lh3.googleusercontent.com/d/1h_VuKMSh-sINijhAvO_ZmIvcxXJkW5-V" alt="Look 01 — architectural tailoring" class="w-full h-full object-cover object-center grayscale-[0.1]" />
         <figcaption class="eyebrow mt-4">Look 01 — Structure</figcaption>
       </figure>
       <figure class="shrink-0 w-[60vw] md:w-[24vw] h-[55vh] self-end" data-velocity-skew>
-        <img data-lightbox="https://images.unsplash.com/photo-1490114538077-0a7f8cb49891?q=80&w=1400&auto=format&fit=crop" data-cursor="view" data-cursor-label="VIEW" src="https://images.unsplash.com/photo-1490114538077-0a7f8cb49891?q=80&w=900&auto=format&fit=crop" alt="Look 02 — draped fluid form" class="w-full h-full object-cover grayscale-[0.1]" />
+        <img data-lightbox="https://lh3.googleusercontent.com/d/1P12lbgZCh3jPcIXMmoZqP3ZNObSwTGiJ" data-cursor="view" data-cursor-label="VIEW" src="https://lh3.googleusercontent.com/d/1P12lbgZCh3jPcIXMmoZqP3ZNObSwTGiJ" alt="Look 02 — draped fluid form" class="w-full h-full object-cover object-center grayscale-[0.1]" />
         <figcaption class="eyebrow mt-4">Look 02 — Fluidity</figcaption>
       </figure>
       <figure class="shrink-0 w-[70vw] md:w-[34vw] h-[75vh]" data-velocity-skew>
-        <img data-lightbox="https://images.unsplash.com/photo-1509967419530-da38b4704bc6?q=80&w=1400&auto=format&fit=crop" data-cursor="view" data-cursor-label="VIEW" src="https://images.unsplash.com/photo-1509967419530-da38b4704bc6?q=80&w=1000&auto=format&fit=crop" alt="Look 03 — sovereign silhouette" class="w-full h-full object-cover grayscale-[0.1]" />
+        <img data-lightbox="https://lh3.googleusercontent.com/d/1ossQ1eEn-4M1bfWIyCxTFqE6tlNtMZeV" data-cursor="view" data-cursor-label="VIEW" src="https://lh3.googleusercontent.com/d/1ossQ1eEn-4M1bfWIyCxTFqE6tlNtMZeV" alt="Look 03 — sovereign silhouette" class="w-full h-full object-cover object-center grayscale-[0.1]" />
         <figcaption class="eyebrow mt-4">Look 03 — Sovereign</figcaption>
       </figure>
       <figure class="shrink-0 w-[55vw] md:w-[22vw] h-[48vh] self-start mt-20" data-velocity-skew>
-        <img data-lightbox="https://images.unsplash.com/photo-1441123694162-e54a981ceba5?q=80&w=1400&auto=format&fit=crop" data-cursor="view" data-cursor-label="VIEW" src="https://images.unsplash.com/photo-1441123694162-e54a981ceba5?q=80&w=900&auto=format&fit=crop" alt="Look 04 — minimal architectural line" class="w-full h-full object-cover grayscale-[0.1]" />
+        <img data-lightbox="https://lh3.googleusercontent.com/d/1LlHg2Woy1lGKYmvf0Vl11HX8KOFEy1Tf" data-cursor="view" data-cursor-label="VIEW" src="https://lh3.googleusercontent.com/d/1LlHg2Woy1lGKYmvf0Vl11HX8KOFEy1Tf" alt="Look 04 — minimal architectural line" class="w-full h-full object-cover object-center grayscale-[0.1]" />
         <figcaption class="eyebrow mt-4">Look 04 — Line</figcaption>
       </figure>
       <figure class="shrink-0 w-[70vw] md:w-[32vw] h-[68vh]" data-velocity-skew>
-        <img data-lightbox="https://images.unsplash.com/photo-1524504388940-b1c1722653e1?q=80&w=1400&auto=format&fit=crop" data-cursor="view" data-cursor-label="VIEW" src="https://images.unsplash.com/photo-1524504388940-b1c1722653e1?q=80&w=1000&auto=format&fit=crop" alt="Look 05 — editorial portrait" class="w-full h-full object-cover grayscale-[0.1]" />
+        <img data-lightbox="https://lh3.googleusercontent.com/d/19m9mzJ2YdT7-yJ-O_LojIp6RrtP_XZi1" data-cursor="view" data-cursor-label="VIEW" src="https://lh3.googleusercontent.com/d/19m9mzJ2YdT7-yJ-O_LojIp6RrtP_XZi1" alt="Look 05 — editorial portrait" class="w-full h-full object-cover object-center grayscale-[0.1]" />
         <figcaption class="eyebrow mt-4">Look 05 — Presence</figcaption>
       </figure>
       <div class="shrink-0 w-[50vw] md:w-[22vw] flex items-center pr-14">
@@ -196,27 +200,64 @@
   <!-- ============ COMPONENT: FullArchiveGrid (masonry + lightbox) ============ -->
   <section id="full-archive" data-component="FullArchiveGrid" class="px-5 md:px-14 py-24 md:py-32 bg-alabaster">
     <h2 class="font-display text-3xl md:text-4xl mb-10" data-fade>The Full Archive.</h2>
-    <div class="archive-grid" style="grid-auto-rows: 150px;">
-      <figure class="col-span-2 row-span-2" data-lightbox="https://images.unsplash.com/photo-1509967419530-da38b4704bc6?q=80&w=1400&auto=format&fit=crop" data-cursor="view" data-cursor-label="VIEW"><img src="https://images.unsplash.com/photo-1509967419530-da38b4704bc6?q=80&w=700&auto=format&fit=crop" alt="Archive 01" class="grayscale-[0.1]" /></figure>
-      <figure class="col-span-1 row-span-1" data-lightbox="https://images.unsplash.com/photo-1483985988355-763728e1935b?q=80&w=1200&auto=format&fit=crop" data-cursor="view" data-cursor-label="VIEW"><img src="https://images.unsplash.com/photo-1483985988355-763728e1935b?q=80&w=500&auto=format&fit=crop" alt="Archive 02" class="grayscale-[0.1]" /></figure>
-      <figure class="col-span-1 row-span-1" data-lightbox="https://images.unsplash.com/photo-1490114538077-0a7f8cb49891?q=80&w=1200&auto=format&fit=crop" data-cursor="view" data-cursor-label="VIEW"><img src="https://images.unsplash.com/photo-1490114538077-0a7f8cb49891?q=80&w=500&auto=format&fit=crop" alt="Archive 03" class="grayscale-[0.1]" /></figure>
-      <figure class="col-span-2 row-span-1" data-lightbox="https://images.unsplash.com/photo-1441123694162-e54a981ceba5?q=80&w=1400&auto=format&fit=crop" data-cursor="view" data-cursor-label="VIEW"><img src="https://images.unsplash.com/photo-1441123694162-e54a981ceba5?q=80&w=700&auto=format&fit=crop" alt="Archive 04" class="grayscale-[0.1]" /></figure>
-      <figure class="col-span-1 row-span-1" data-lightbox="https://images.unsplash.com/photo-1524504388940-b1c1722653e1?q=80&w=1200&auto=format&fit=crop" data-cursor="view" data-cursor-label="VIEW"><img src="https://images.unsplash.com/photo-1524504388940-b1c1722653e1?q=80&w=500&auto=format&fit=crop" alt="Archive 05" class="grayscale-[0.1]" /></figure>
-      <figure class="col-span-1 row-span-1" data-lightbox="https://images.unsplash.com/photo-1518199266791-5375a83190b7?q=80&w=1200&auto=format&fit=crop" data-cursor="view" data-cursor-label="VIEW"><img src="https://images.unsplash.com/photo-1518199266791-5375a83190b7?q=80&w=500&auto=format&fit=crop" alt="Archive 06" class="grayscale-[0.1]" /></figure>
-      <figure class="col-span-2 row-span-1" data-lightbox="https://images.unsplash.com/photo-1509967419530-da38b4704bc6?q=80&w=1400&auto=format&fit=crop" data-cursor="view" data-cursor-label="VIEW"><img src="https://images.unsplash.com/photo-1509967419530-da38b4704bc6?q=80&w=700&auto=format&fit=crop" alt="Archive 07" class="grayscale-[0.1]" /></figure>
+    
+    <!-- Bento Grid Engine applied for perfect responsive scaling and cropping -->
+    <div class="archive-grid grid grid-cols-2 md:grid-cols-4 gap-4 auto-rows-[200px] md:auto-rows-[280px]">
+      
+      <!-- Fig 1: Hero Square -->
+      <figure class="col-span-2 md:col-span-2 row-span-2 md:row-span-2 relative w-full h-full overflow-hidden" data-lightbox="https://lh3.googleusercontent.com/d/1jlk2I5rDPtzPZuVci5YBsxbBmyKv-2pD" data-cursor="view" data-cursor-label="VIEW">
+        <img src="https://lh3.googleusercontent.com/d/1jlk2I5rDPtzPZuVci5YBsxbBmyKv-2pD" alt="Archive 01" class="absolute inset-0 w-full h-full object-cover object-center grayscale-[0.1]" />
+      </figure>
+
+      <!-- Fig 2: Standard Unit -->
+      <figure class="col-span-1 md:col-span-1 row-span-1 md:row-span-1 relative w-full h-full overflow-hidden" data-lightbox="https://lh3.googleusercontent.com/d/1iqSnv8woPbZ8b1h0y53gtMz_rQBR8zFg" data-cursor="view" data-cursor-label="VIEW">
+        <img src="https://lh3.googleusercontent.com/d/1iqSnv8woPbZ8b1h0y53gtMz_rQBR8zFg" alt="Archive 02" class="absolute inset-0 w-full h-full object-cover object-center grayscale-[0.1]" />
+      </figure>
+
+      <!-- Fig 3: Standard Unit -->
+      <figure class="col-span-1 md:col-span-1 row-span-1 md:row-span-1 relative w-full h-full overflow-hidden" data-lightbox="https://lh3.googleusercontent.com/d/1p6DWUKJavraFJex0ERBQEOfyvXdi8QdC" data-cursor="view" data-cursor-label="VIEW">
+        <img src="https://lh3.googleusercontent.com/d/1p6DWUKJavraFJex0ERBQEOfyvXdi8QdC" alt="Archive 03" class="absolute inset-0 w-full h-full object-cover object-center grayscale-[0.1]" />
+      </figure>
+
+      <!-- Fig 4: Wide Unit -->
+      <figure class="col-span-2 md:col-span-2 row-span-1 md:row-span-1 relative w-full h-full overflow-hidden" data-lightbox="https://lh3.googleusercontent.com/d/1_DI_fmWA68l9h1G-IaANHYRKiF85Vcai" data-cursor="view" data-cursor-label="VIEW">
+        <img src="https://lh3.googleusercontent.com/d/1_DI_fmWA68l9h1G-IaANHYRKiF85Vcai" alt="Archive 04" class="absolute inset-0 w-full h-full object-cover object-center grayscale-[0.1]" />
+      </figure>
+
+      <!-- Fig 5: Standard Unit -->
+      <figure class="col-span-1 md:col-span-1 row-span-1 md:row-span-1 relative w-full h-full overflow-hidden" data-lightbox="https://lh3.googleusercontent.com/d/1_aHLTiILdNi-HFWQnbqzpLey3W6Af2-W" data-cursor="view" data-cursor-label="VIEW">
+        <img src="https://lh3.googleusercontent.com/d/1_aHLTiILdNi-HFWQnbqzpLey3W6Af2-W" alt="Archive 05" class="absolute inset-0 w-full h-full object-cover object-center grayscale-[0.1]" />
+      </figure>
+      
+      <!-- Fig 6: Wide Desktop / Standard Mobile -->
+      <figure class="col-span-1 md:col-span-2 row-span-1 md:row-span-1 relative w-full h-full overflow-hidden" data-lightbox="https://lh3.googleusercontent.com/d/1TOLAPgXGbHP4ssFLKxgw11yFN4vkzy-8" data-cursor="view" data-cursor-label="VIEW">
+        <img src="https://lh3.googleusercontent.com/d/1TOLAPgXGbHP4ssFLKxgw11yFN4vkzy-8" alt="Archive 06" class="absolute inset-0 w-full h-full object-cover object-center grayscale-[0.1]" />
+      </figure>
+
+      <!-- Fig 7: Standard Desktop / Wide Mobile -->
+      <figure class="col-span-2 md:col-span-1 row-span-1 md:row-span-1 relative w-full h-full overflow-hidden" data-lightbox="https://lh3.googleusercontent.com/d/1mcsNHyh5VaXg7HcTbcKqX_7N3tK9sE-j" data-cursor="view" data-cursor-label="VIEW">
+        <img src="https://lh3.googleusercontent.com/d/1mcsNHyh5VaXg7HcTbcKqX_7N3tK9sE-j" alt="Archive 07" class="absolute inset-0 w-full h-full object-cover object-center grayscale-[0.1]" />
+      </figure>
     </div>
   </section>
 
   <!-- ============ COMPONENT: DigitalsCompCard ============ -->
-  <!-- Measurement fields now populated with client-supplied specifications. -->
   <section id="digitals" data-component="DigitalsCompCard" class="px-5 md:px-14 py-24 md:py-32 bg-linen">
     <p class="eyebrow mb-10">Comp Card & Digitals</p>
     <div class="max-w-5xl mx-auto grid md:grid-cols-[1fr_1.2fr] gap-14">
       <div class="grid grid-cols-2 gap-3" data-fade>
-        <figure data-lightbox="https://images.unsplash.com/photo-1509967419530-da38b4704bc6?q=80&w=1200&auto=format&fit=crop" data-cursor="view" data-cursor-label="VIEW"><img src="https://images.unsplash.com/photo-1509967419530-da38b4704bc6?q=80&w=500&auto=format&fit=crop" alt="Digital 01" class="w-full h-48 object-cover grayscale-[0.1]" /></figure>
-        <figure data-lightbox="https://images.unsplash.com/photo-1483985988355-763728e1935b?q=80&w=1200&auto=format&fit=crop" data-cursor="view" data-cursor-label="VIEW"><img src="https://images.unsplash.com/photo-1483985988355-763728e1935b?q=80&w=500&auto=format&fit=crop" alt="Digital 02" class="w-full h-48 object-cover grayscale-[0.1]" /></figure>
-        <figure data-lightbox="https://images.unsplash.com/photo-1490114538077-0a7f8cb49891?q=80&w=1200&auto=format&fit=crop" data-cursor="view" data-cursor-label="VIEW"><img src="https://images.unsplash.com/photo-1490114538077-0a7f8cb49891?q=80&w=500&auto=format&fit=crop" alt="Digital 03" class="w-full h-48 object-cover grayscale-[0.1]" /></figure>
-        <figure data-lightbox="https://images.unsplash.com/photo-1441123694162-e54a981ceba5?q=80&w=1200&auto=format&fit=crop" data-cursor="view" data-cursor-label="VIEW"><img src="https://images.unsplash.com/photo-1441123694162-e54a981ceba5?q=80&w=500&auto=format&fit=crop" alt="Digital 04" class="w-full h-48 object-cover grayscale-[0.1]" /></figure>
+        <figure data-lightbox="https://lh3.googleusercontent.com/d/1HfvTpTiBY2Ks-RiIyCu4tNaf6B0YbuiT" data-cursor="view" data-cursor-label="VIEW">
+          <img src="https://lh3.googleusercontent.com/d/1HfvTpTiBY2Ks-RiIyCu4tNaf6B0YbuiT" alt="Digital 01" class="w-full h-56 md:h-64 object-cover object-center grayscale-[0.1]" />
+        </figure>
+        <figure data-lightbox="https://lh3.googleusercontent.com/d/1i2L2VH3c9-P76XUBIgMBnu_ZtESA1PhB" data-cursor="view" data-cursor-label="VIEW">
+          <img src="https://lh3.googleusercontent.com/d/1i2L2VH3c9-P76XUBIgMBnu_ZtESA1PhB" alt="Digital 02" class="w-full h-56 md:h-64 object-cover object-center grayscale-[0.1]" />
+        </figure>
+        <figure data-lightbox="https://lh3.googleusercontent.com/d/1gQro5s5CRkd7VC1DRQ5OU7Dun5lKMX-H" data-cursor="view" data-cursor-label="VIEW">
+          <img src="https://lh3.googleusercontent.com/d/1gQro5s5CRkd7VC1DRQ5OU7Dun5lKMX-H" alt="Digital 03" class="w-full h-56 md:h-64 object-cover object-center grayscale-[0.1]" />
+        </figure>
+        <figure data-lightbox="https://lh3.googleusercontent.com/d/18iIfwEGQmcPlBpQLcSzp4oy7CPB6sf6d" data-cursor="view" data-cursor-label="VIEW">
+          <img src="https://lh3.googleusercontent.com/d/18iIfwEGQmcPlBpQLcSzp4oy7CPB6sf6d" alt="Digital 04" class="w-full h-56 md:h-64 object-cover object-center grayscale-[0.1]" />
+        </figure>
       </div>
       <div data-fade>
         <h3 class="font-display text-2xl md:text-3xl mb-6">Measurements & Details</h3>
