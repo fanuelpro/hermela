@@ -53,7 +53,7 @@
 
   <!-- ============ COMPONENT: MindHero ============ -->
   <section id="mind-hero" data-component="MindHero" class="min-h-[75svh] flex flex-col justify-end px-5 md:px-14 pt-32 pb-14 bg-alabaster">
-    <p class="eyebrow mb-5" data-fade>05 — Mind</p>
+    <p class="eyebrow mb-5" data-fade>06 — Mind</p>
     <h1 class="h-display font-display" style="font-size:clamp(2.6rem,6.5vw,5rem);">
       <span class="reveal-line block" data-reveal="words">A field still</span>
       <span class="reveal-line block italic" data-reveal="words" style="color:var(--umber);">evolving.</span>
@@ -80,10 +80,8 @@
   <section id="beauty-manifesto" data-component="BeautyManifesto" class="px-5 md:px-14 py-24 md:py-32 bg-linen">
     <div class="max-w-3xl mx-auto">
       <p class="eyebrow mb-6">Challenging the Narrative — Beauty</p>
-      <p class="font-display" data-variable-scroll style="font-size:clamp(1.6rem,3.6vw,2.6rem); line-height:1.4; font-variation-settings:'wght' 300;">
-        "A widely accepted belief I challenge is that beauty has a fixed standard that people
-        must follow. Every person carries unique features, experiences, cultures, and
-        qualities that make them beautiful in their own way."
+      <p class="font-display" data-font-mosaic style="font-size:clamp(1.6rem,3.6vw,2.6rem); line-height:1.4;">
+        A widely accepted belief I challenge is that beauty has a fixed standard that people must follow. Every person carries unique features, experiences, cultures, and qualities that make them beautiful in their own way.
       </p>
       <p class="copy mt-8">
         "True beauty is not about becoming someone else's idea of perfection — it is about
@@ -143,37 +141,69 @@
     </div>
   </section>
 
-  <!-- ============ COMPONENT: IconTriad (perspective tilt cards) ============ -->
+  <!-- ============ COMPONENT: IconTriad (tarot-style flip cards, click to reveal) ============ -->
   <section id="icons" data-component="IconTriad" class="px-5 md:px-14 py-24 md:py-32 bg-alabaster">
-    <p class="eyebrow mb-10 max-w-4xl mx-auto">Humanity & Womanhood — Her Icons</p>
+    <p class="eyebrow mb-3 max-w-4xl mx-auto">Humanity & Womanhood — Her Icons</p>
+    <p class="copy max-w-2xl mb-10">Her nature grew intertwined with three thinkers long before she had language for why. Click each card to see how.</p>
     <div class="max-w-6xl mx-auto grid md:grid-cols-3 gap-8">
-      <div data-tilt class="relative bg-linen p-8 md:p-10 min-h-[420px] flex flex-col justify-between overflow-hidden shadow-warm" style="transform-style:preserve-3d;" data-fade>
-        <div data-tilt-highlight class="absolute inset-0 pointer-events-none"></div>
-        <p class="font-wordmark italic text-3xl">Maya Angelou</p>
-        <p class="copy text-sm">
-          She showed the world that even our difficult experiences can become sources of
-          wisdom and strength. Communication is not just about speaking — it is about
-          creating connection and making people feel seen.
-        </p>
+
+      <div class="tarot-card" data-tarot-card data-fade data-cursor="link" data-cursor-label="FLIP">
+        <div class="tarot-card-inner">
+          <div class="tarot-face tarot-front">
+            <svg viewBox="0 0 64 64"><path d="M32 6 C20 6 14 20 14 32 C14 46 22 56 32 58 C42 56 50 46 50 32 C50 20 44 6 32 6 Z M32 10 L32 54 M22 20 Q32 24 42 20 M20 34 Q32 40 44 34" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            <p class="font-wordmark italic text-3xl" style="color:var(--porcelain);">Maya Angelou</p>
+            <p class="tarot-hint">Click to Reveal</p>
+          </div>
+          <div class="tarot-face tarot-back">
+            <p class="eyebrow mb-3" style="color:var(--umber);">The Voice</p>
+            <p class="copy text-sm">
+              Angelou taught that even the hardest experiences can become sources of
+              wisdom. That belief is coded into how Hermela speaks about her own path —
+              never smoothing over the difficulty, always turning it into something that
+              helps someone else feel seen.
+            </p>
+          </div>
+        </div>
       </div>
-      <div data-tilt class="relative bg-linen p-8 md:p-10 min-h-[420px] flex flex-col justify-between overflow-hidden shadow-warm" style="transform-style:preserve-3d;" data-fade>
-        <div data-tilt-highlight class="absolute inset-0 pointer-events-none"></div>
-        <p class="font-wordmark italic text-3xl">Cleopatra</p>
-        <p class="copy text-sm">
-          She represents the harmony between femininity and intelligence — not defined
-          only by beauty, but by knowledge, confidence, leadership, and the ability to
-          navigate a complex world.
-        </p>
+
+      <div class="tarot-card" data-tarot-card data-fade data-cursor="link" data-cursor-label="FLIP">
+        <div class="tarot-card-inner">
+          <div class="tarot-face tarot-front">
+            <svg viewBox="0 0 64 64"><path d="M32 8 L38 20 L52 22 L42 32 L45 46 L32 39 L19 46 L22 32 L12 22 L26 20 Z" stroke-linejoin="round"/><path d="M32 39 L32 56 M24 56 L40 56" stroke-linecap="round"/></svg>
+            <p class="font-wordmark italic text-3xl" style="color:var(--porcelain);">Cleopatra</p>
+            <p class="tarot-hint">Click to Reveal</p>
+          </div>
+          <div class="tarot-face tarot-back">
+            <p class="eyebrow mb-3" style="color:var(--sovereign);">The Sovereign</p>
+            <p class="copy text-sm">
+              Cleopatra proved that femininity and intellect were never in competition.
+              That's the exact tension Hermela refuses to resolve in her own life — a
+              crown in one hand, a computer science degree in the other, neither one
+              asked to apologize for the other.
+            </p>
+          </div>
+        </div>
       </div>
-      <div data-tilt class="relative bg-linen p-8 md:p-10 min-h-[420px] flex flex-col justify-between overflow-hidden shadow-warm" style="transform-style:preserve-3d;" data-fade>
-        <div data-tilt-highlight class="absolute inset-0 pointer-events-none"></div>
-        <p class="font-wordmark italic text-3xl">Carl Jung</p>
-        <p class="copy text-sm">
-          His exploration of self-awareness and personal transformation reminds her that
-          true growth begins with understanding ourselves — our emotions, experiences, and
-          inner world.
-        </p>
+
+      <div class="tarot-card" data-tarot-card data-fade data-cursor="link" data-cursor-label="FLIP">
+        <div class="tarot-card-inner">
+          <div class="tarot-face tarot-front">
+            <svg viewBox="0 0 64 64"><path d="M32 10 C42 10 50 18 50 28 C50 36 44 40 40 44 C36 48 36 52 36 54 L28 54 C28 52 28 48 24 44 C20 40 14 36 14 28 C14 18 22 10 32 10 Z"/><circle cx="32" cy="27" r="6"/></svg>
+            <p class="font-wordmark italic text-3xl" style="color:var(--porcelain);">Carl Jung</p>
+            <p class="tarot-hint">Click to Reveal</p>
+          </div>
+          <div class="tarot-face tarot-back">
+            <p class="eyebrow mb-3" style="color:var(--umber);">The Self</p>
+            <p class="copy text-sm">
+              Jung believed growth begins with understanding what's underneath. It's the
+              same instinct that pulled Hermela toward neuroplasticity and psychology —
+              the conviction that a person is never finished becoming, only ever mid-way
+              through the work.
+            </p>
+          </div>
+        </div>
       </div>
+
     </div>
     <p class="font-display italic text-center mt-16 max-w-2xl mx-auto" style="font-size:clamp(1.3rem,2.6vw,1.7rem); color:var(--sovereign);" data-fade>
       Together, they represent a woman with a strong voice, a curious mind, and the
