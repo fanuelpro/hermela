@@ -544,6 +544,40 @@
     });
   });
 
+  /* ------------------------------------------------------------------------
+     25. TAROT FLIP CARDS — click [data-tarot-card] to flip and reveal the back
+     ------------------------------------------------------------------------ */
+  document.querySelectorAll("[data-tarot-card]").forEach((card) => {
+    card.addEventListener("click", () => card.classList.toggle("is-flipped"));
+  });
+
+  /* ------------------------------------------------------------------------
+     26. FONT-MOSAIC QUOTE — [data-font-mosaic] splits into words, each word
+     rotating through the site's own type system (serif/display/body, various
+     weights and italics) rather than one uniform style — used once, on Mind,
+     as a deliberate echo of "beauty has no single standard."
+     ------------------------------------------------------------------------ */
+  const mosaicStyles = [
+    "font-family:var(--font-wordmark); font-style:italic; font-weight:500;",
+    "font-family:var(--font-display); font-weight:700;",
+    "font-family:var(--font-body); font-weight:400;",
+    "font-family:var(--font-display); font-style:italic; font-weight:300;",
+    "font-family:var(--font-wordmark); font-weight:600;",
+    "font-family:var(--font-display); font-weight:400; font-style:italic;",
+  ];
+  document.querySelectorAll("[data-font-mosaic]").forEach((el) => {
+    const text = el.textContent.trim();
+    el.textContent = "";
+    text.split(/\s+/).forEach((word, i) => {
+      const span = document.createElement("span");
+      span.className = "font-mosaic-word";
+      span.setAttribute("style", mosaicStyles[i % mosaicStyles.length]);
+      span.textContent = word;
+      el.appendChild(span);
+      el.appendChild(document.createTextNode(" "));
+    });
+  });
+
   /* Refresh ScrollTrigger once fonts/images settle */
   window.addEventListener("load", () => { if (hasGSAP && window.ScrollTrigger) ScrollTrigger.refresh(); });
 })();
