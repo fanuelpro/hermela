@@ -400,3 +400,28 @@ body[data-motion="reduced"] .hero-crossfade img:first-child { opacity: 1; }
   display: flex; align-items: center; justify-content: center; font-size: 0.8rem;
   border: none; cursor: none;
 }
+
+/* ==========================================================================
+   V6 ADDITIONS — client-review pass 3: tarot-style flip cards, font-mosaic quote
+   ========================================================================== */
+
+/* --- Tarot-style flip card (click to reveal) ------------------------------------ */
+.tarot-card { perspective: 1600px; height: 460px; cursor: none; }
+.tarot-card-inner {
+  position: relative; width: 100%; height: 100%; transform-style: preserve-3d;
+  transition: transform 0.9s cubic-bezier(0.4, 0.1, 0.2, 1);
+}
+.tarot-card.is-flipped .tarot-card-inner { transform: rotateY(180deg); }
+.tarot-face {
+  position: absolute; inset: 0; backface-visibility: hidden; -webkit-backface-visibility: hidden;
+  display: flex; flex-direction: column; align-items: center; justify-content: center;
+  padding: 2.5rem 2rem; text-align: center; border: 1px solid var(--umber);
+}
+.tarot-front { background: var(--obsidian); color: var(--porcelain); }
+.tarot-front svg { width: 58px; height: 58px; stroke: var(--umber); fill: none; stroke-width: 1.2; margin-bottom: 1.75rem; }
+.tarot-back { background: var(--linen); color: var(--ink); transform: rotateY(180deg); border-color: var(--hairline); }
+.tarot-hint { font-size: 0.68rem; letter-spacing: 0.12em; color: var(--umber); margin-top: 1.75rem; text-transform: uppercase; }
+body[data-motion="reduced"] .tarot-card-inner { transition: none; }
+
+/* --- Font-mosaic quote (each word its own typographic character) ---------------- */
+.font-mosaic-word { display: inline-block; margin: 0 0.14em; }
