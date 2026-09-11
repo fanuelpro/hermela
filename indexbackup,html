@@ -60,17 +60,14 @@
 
 <main>
 
-  <!-- ============ COMPONENT: Hero ============ -->
   <!-- ============ COMPONENT: Hero (crossfading multi-image background, Selamawit-referenced) ============ -->
   <section id="hero" data-component="Hero" class="relative min-h-[100svh] flex items-end overflow-hidden bg-alabaster">
     <div class="absolute inset-0" data-reveal-color data-cursor="drag" data-cursor-label="REVEAL">
       <div class="hero-crossfade" data-hero-crossfade>
-        <!-- STUDIO PLACEHOLDER — swap each src for a real Hermela photo. Add or remove
-             <img> tags freely; the crossfade JS auto-detects however many are present. -->
-        <img class="is-active" src="https://lh3.googleusercontent.com/d/1yQQHhBdnc0OOqEjeTUx3c_Amlj4vdshp" alt="Hermela Ashenafi — editorial portrait" />
-        <img src="https://lh3.googleusercontent.com/d/1C4w4RAVIAMEm8X1x-CdRAH7JKDoPXsYD" alt="Hermela Ashenafi — architectural silhouette" />
-        <img src="https://lh3.googleusercontent.com/d/18iIfwEGQmcPlBpQLcSzp4oy7CPB6sf6d" alt="Hermela Ashenafi — editorial close" />
-        <img src="https://lh3.googleusercontent.com/d/1Da7ofr1KQd7b5I8YWpAPuZDw0oFMLduQ" alt="Hermela Ashenafi — portrait study" />
+        <img class="is-active" src="https://lh3.googleusercontent.com/d/1d02XmiEtdPMPWmj32E9r5taaS3MaZbrA" alt="Hermela Ashenafi — editorial portrait" />
+        <img src="https://lh3.googleusercontent.com/d/1QzRUXePSOkxNFHmzwIpioYbw7S-9jhxG" alt="Hermela Ashenafi — architectural silhouette" />
+        <img src="https://lh3.googleusercontent.com/d/1GGzeUJgZ1AXUA1cvxi30hBtBpsMWkKVk" alt="Hermela Ashenafi — editorial close" />
+        <img src="https://lh3.googleusercontent.com/d/1FE-PJYp-BPl-ScbVAsBpE0NlT3nh0u_z" alt="Hermela Ashenafi — portrait study" />
       </div>
     </div>
     <!-- Fixed dark scrim, independent of light/dark theme — click the hero to reveal full color. -->
@@ -93,7 +90,7 @@
 
       <!-- ============ COMPONENT: HeroStatRow ============ -->
       <div class="grid grid-cols-3 gap-6 mt-10 pt-8 border-t" style="border-color:rgba(251,250,246,0.2);" data-fade>
-        <div><span class="font-display text-2xl md:text-3xl block" style="color:var(--porcelain);">10K+</span><span class="text-xs" style="color:rgba(251,250,246,0.6);">Social Channels</span></div>
+        <div><span class="font-display text-2xl md:text-3xl block" style="color:var(--porcelain);">100K+</span><span class="text-xs" style="color:rgba(251,250,246,0.6);">Instagram</span></div>
         <div><span class="font-display text-2xl md:text-3xl block" style="color:var(--porcelain);">4th</span><span class="text-xs" style="color:rgba(251,250,246,0.6);">Miss International Ethiopia</span></div>
         <div><span class="font-display text-2xl md:text-3xl block" style="color:var(--porcelain);">Reigning</span><span class="text-xs" style="color:rgba(251,250,246,0.6);">Miss Tourism Ethiopia</span></div>
       </div>
@@ -103,8 +100,8 @@
   <!-- ============ COMPONENT: HerStory (portrait + bio teaser + fact chips + quote) ============ -->
   <section id="her-story" data-component="HerStory" class="px-5 md:px-14 py-24 md:py-32 bg-alabaster">
     <div class="max-w-5xl mx-auto grid md:grid-cols-[1fr_1.3fr] gap-14 items-center">
-      <div data-fade data-lightbox="https://lh3.googleusercontent.com/d/169C2njQvAfDahgaEtQXqePVXy0VJddxG" alt="Hermela Ashenafi portrait" data-cursor="view" data-cursor-label="VIEW">
-        <img src="https://lh3.googleusercontent.com/d/169C2njQvAfDahgaEtQXqePVXy0VJddxG" alt="Hermela Ashenafi portrait" class="w-full h-[480px] object-cover grayscale-[0.1]" />
+      <div data-fade data-lightbox="https://lh3.googleusercontent.com/d/1wk3aQZdOmqGe6Y9JUmGs3OKFlfnFN9fH" data-cursor="view" data-cursor-label="VIEW">
+        <img src="https://lh3.googleusercontent.com/d/1wk3aQZdOmqGe6Y9JUmGs3OKFlfnFN9fH" alt="Hermela Ashenafi portrait" class="w-full h-[480px] object-cover object-center grayscale-[0.1]" />
       </div>
       <div data-fade>
         <p class="eyebrow mb-4">The Story</p>
@@ -137,7 +134,7 @@
       <span>Reigning Miss Tourism Ethiopia</span>
       <span>Miss Tourism Africa, Nigeria — Sep 2026</span>
       <span>Digital Creator</span>
-      <span>10K+ Social followers, growing daily</span>
+      <span>100K+ Instagram, growing daily</span>
       <span>Guitar &amp; Voice, self-taught</span>
       <span>Dancer at heart</span>
       <span>Neuroplasticity curious</span>
@@ -222,20 +219,20 @@
         <a href="portfolio.html" data-transition data-magnetic data-cursor="link" class="text-sm underline underline-offset-4">Full Portfolio</a>
       </div>
       <div class="archive-grid" style="grid-auto-rows: 160px;">
-        <figure class="col-span-3 row-span-2" data-lightbox="https://lh3.googleusercontent.com/d/18iIfwEGQmcPlBpQLcSzp4oy7CPB6sf6d" data-cursor="view" data-cursor-label="VIEW">
-          <img src="https://lh3.googleusercontent.com/d/18iIfwEGQmcPlBpQLcSzp4oy7CPB6sf6d" alt="Hermela — Editorial" class="grayscale-[0.1]" />
+        <figure class="col-span-3 row-span-2" data-lightbox="https://lh3.googleusercontent.com/d/1O3clcjR8cH6PNW5pB64L7cyQrp_PQvRE" data-cursor="view" data-cursor-label="VIEW">
+          <img src="https://lh3.googleusercontent.com/d/1O3clcjR8cH6PNW5pB64L7cyQrp_PQvRE" alt="Hermela — Editorial" class="w-full h-full object-cover object-center grayscale-[0.1]" />
         </figure>
-        <figure class="col-span-2 row-span-1" data-lightbox="https://lh3.googleusercontent.com/d/1h_VuKMSh-sINijhAvO_ZmIvcxXJkW5-V" data-cursor="view" data-cursor-label="VIEW">
-          <img src="https://lh3.googleusercontent.com/d/1h_VuKMSh-sINijhAvO_ZmIvcxXJkW5-V" alt="Hermela — Portrait" class="grayscale-[0.1]" />
+        <figure class="col-span-2 row-span-1" data-lightbox="https://lh3.googleusercontent.com/d/10hE7Ee_4asbfjkE_yfrnphrY0vlhE8vK" data-cursor="view" data-cursor-label="VIEW">
+          <img src="https://lh3.googleusercontent.com/d/10hE7Ee_4asbfjkE_yfrnphrY0vlhE8vK" alt="Hermela — Portrait" class="w-full h-full object-cover object-center grayscale-[0.1]" />
         </figure>
-        <figure class="col-span-1 row-span-1" data-lightbox="https://lh3.googleusercontent.com/d/1Makj_uvAcFdwPe1I7OpSfyHHS3I6M0Ds" data-cursor="view" data-cursor-label="VIEW">
-          <img src="https://lh3.googleusercontent.com/d/1Makj_uvAcFdwPe1I7OpSfyHHS3I6M0Ds" alt="Hermela — Detail" class="grayscale-[0.1]" />
+        <figure class="col-span-1 row-span-1" data-lightbox="https://lh3.googleusercontent.com/d/1_CBSK3_R_6OK--VkIbwYplAtrrfi7A1r" data-cursor="view" data-cursor-label="VIEW">
+          <img src="https://lh3.googleusercontent.com/d/1_CBSK3_R_6OK--VkIbwYplAtrrfi7A1r" alt="Hermela — Detail" class="w-full h-full object-cover object-center grayscale-[0.1]" />
         </figure>
-        <figure class="col-span-2 row-span-1" data-lightbox="https://lh3.googleusercontent.com/d/1_agckJudUKVuG48kZGXGdBciyWun2NVY" data-cursor="view" data-cursor-label="VIEW">
-          <img src="https://lh3.googleusercontent.com/d/1_agckJudUKVuG48kZGXGdBciyWun2NVY" alt="Hermela — Sovereign" class="grayscale-[0.1]" />
+        <figure class="col-span-2 row-span-1" data-lightbox="https://lh3.googleusercontent.com/d/1jlk2I5rDPtzPZuVci5YBsxbBmyKv-2pD" data-cursor="view" data-cursor-label="VIEW">
+          <img src="https://lh3.googleusercontent.com/d/1jlk2I5rDPtzPZuVci5YBsxbBmyKv-2pD" alt="Hermela — Sovereign" class="w-full h-full object-cover object-center grayscale-[0.1]" />
         </figure>
         <figure class="col-span-1 row-span-1" data-lightbox="https://lh3.googleusercontent.com/d/1iqSnv8woPbZ8b1h0y53gtMz_rQBR8zFg" data-cursor="view" data-cursor-label="VIEW">
-          <img src="https://lh3.googleusercontent.com/d/1iqSnv8woPbZ8b1h0y53gtMz_rQBR8zFg" alt="Hermela — Structure" class="grayscale-[0.1]" />
+          <img src="https://lh3.googleusercontent.com/d/1iqSnv8woPbZ8b1h0y53gtMz_rQBR8zFg" alt="Hermela — Structure" class="w-full h-full object-cover object-center grayscale-[0.1]" />
         </figure>
       </div>
     </div>
