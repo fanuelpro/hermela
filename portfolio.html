@@ -122,17 +122,17 @@
   <section id="video-triptych" data-component="VideoTriptych" class="px-5 md:px-14 py-16 bg-alabaster">
     <div class="grid md:grid-cols-3 gap-4">
       <div class="video-slot h-72 md:h-[400px] relative overflow-hidden" data-video-slot="portfolio-reel-1" data-fade>
-        <video autoplay loop muted playsinline class="absolute inset-0 w-full h-full object-cover object-center grayscale-[0.15] cursor-pointer transition-all duration-700" onclick="this.classList.toggle('grayscale-[0.15]')">
+        <video autoplay loop muted playsinline preload="metadata" class="absolute inset-0 w-full h-full object-cover object-center grayscale-[0.15] cursor-pointer transition-all duration-700" onclick="this.paused ? this.play() : this.pause(); this.classList.toggle('grayscale-[0.15]')">
           <source src="assets/images/runway.mp4" type="video/mp4" />
         </video>
       </div>
       <div class="video-slot h-72 md:h-[400px] relative overflow-hidden" data-video-slot="portfolio-reel-2" data-fade>
-        <video autoplay loop muted playsinline class="absolute inset-0 w-full h-full object-cover object-center grayscale-[0.15] cursor-pointer transition-all duration-700" onclick="this.classList.toggle('grayscale-[0.15]')">
+        <video autoplay loop muted playsinline preload="metadata" class="absolute inset-0 w-full h-full object-cover object-center grayscale-[0.15] cursor-pointer transition-all duration-700" onclick="this.paused ? this.play() : this.pause(); this.classList.toggle('grayscale-[0.15]')">
           <source src="assets/images/dancing.mp4" type="video/mp4" />
         </video>
       </div>
       <div class="video-slot h-72 md:h-[400px] relative overflow-hidden" data-video-slot="portfolio-reel-3" data-fade>
-        <video autoplay loop muted playsinline class="absolute inset-0 w-full h-full object-cover object-center grayscale-[0.15] cursor-pointer transition-all duration-700" onclick="this.classList.toggle('grayscale-[0.15]')">
+        <video autoplay loop muted playsinline preload="metadata" class="absolute inset-0 w-full h-full object-cover object-center grayscale-[0.15] cursor-pointer transition-all duration-700" onclick="this.paused ? this.play() : this.pause(); this.classList.toggle('grayscale-[0.15]')">
           <source src="assets/images/traditional.mp4" type="video/mp4" />
         </video>
       </div>
