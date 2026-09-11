@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Hermela Ashenafi — Miss Tourism Ethiopia</title>
+<meta name="description" content="Hermela Ashenafi Assefa. Computer scientist, project manager, model. Reigning Miss Tourism Ethiopia, representing Ethiopia at Miss Tourism Africa." />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,400&family=Fraunces:opsz,wght@9..144,300..700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+  tailwind.config = { theme: { extend: {
+    colors: { alabaster:"var(--alabaster)", linen:"var(--linen)", paper:"var(--paper)", ink:"var(--ink)", graphite:"var(--graphite)", umber:"var(--umber)", sovereign:"var(--sovereign)", obsidian:"#161513", porcelain:"#FBFAF6" },
+    fontFamily: { wordmark:["Cormorant Garamond","serif"], display:["Fraunces","serif"], body:["Inter","sans-serif"] },
+  } } }
+</script>
+<link rel="stylesheet" href="assets/css/tokens.css">
+</head>
+<body data-nav-state="closed">
+
+<!-- ============ COMPONENT: Preloader ============ -->
+<div id="preloader">
+  <span class="preloader-word font-wordmark">Hermela</span>
+  <span class="preloader-count" data-preloader-count>0%</span>
+</div>
+
+<div id="film-grain" aria-hidden="true"></div>
+<div id="custom-cursor" data-state="default" aria-hidden="true"></div>
+<div id="curtain" aria-hidden="true"></div>
+
+<!-- ============ COMPONENT: Lightbox ============ -->
+<div id="lightbox" data-open="false">
+  <button class="lightbox-close" data-lightbox-close data-cursor="link">CLOSE ✕</button>
+  <img src="" alt="Expanded view" />
+</div>
+
+<header id="site-nav">
+  <a href="index.html" class="nav-word" data-magnetic data-cursor="link">Hermela</a>
+  <div class="flex items-center gap-4">
+    <button class="theme-toggle" data-theme-toggle aria-label="Toggle light and dark mode" data-cursor="link"><span class="toggle-thumb"></span></button>
+    <button id="nav-toggle" aria-label="Open menu" data-cursor="link">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</header>
+
+<nav id="nav-overlay" aria-hidden="true">
+  <a href="index.html" data-page="index.html" data-transition data-cursor="link" data-cursor-label="ENTER">01 Home ↗</a>
+  <a href="identity.html" data-page="identity.html" data-transition data-cursor="link" data-cursor-label="READ">02 Identity ↗</a>
+  <a href="portfolio.html" data-page="portfolio.html" data-transition data-cursor="link" data-cursor-label="VIEW">03 Portfolio ↗</a>
+  <a href="reign.html" data-page="reign.html" data-transition data-cursor="link" data-cursor-label="ENTER">04 Reign ↗</a>
+  <a href="ambassador.html" data-page="ambassador.html" data-transition data-cursor="link" data-cursor-label="IMPACT">05 Ambassador ↗</a>
+  <a href="mind.html" data-page="mind.html" data-transition data-cursor="link" data-cursor-label="READ">06 Mind ↗</a>
+  <a href="codes.html" data-page="codes.html" data-transition data-cursor="link" data-cursor-label="READ">07 Codes ↗</a>
+  <a href="academy.html" data-page="academy.html" data-transition data-cursor="link" data-cursor-label="LEARN">08 Academy ↗</a>
+  <a href="contact.html" data-page="contact.html" data-transition data-cursor="link" data-cursor-label="BEGIN">09 Contact ↗</a>
+  <div class="nav-meta">Addis Ababa, Ethiopia — Miss Tourism Ethiopia 2026</div>
+</nav>
+
+<main>
+
+  <!-- ============ COMPONENT: Hero ============ -->
+  <!-- ============ COMPONENT: Hero (crossfading multi-image background, Selamawit-referenced) ============ -->
+  <section id="hero" data-component="Hero" class="relative min-h-[100svh] flex items-end overflow-hidden bg-alabaster">
+    <div class="absolute inset-0" data-reveal-color data-cursor="drag" data-cursor-label="REVEAL">
+      <div class="hero-crossfade" data-hero-crossfade>
+        <!-- STUDIO PLACEHOLDER — swap each src for a real Hermela photo. Add or remove
+             <img> tags freely; the crossfade JS auto-detects however many are present. -->
+        <img class="is-active" src="https://lh3.googleusercontent.com/d/1yQQHhBdnc0OOqEjeTUx3c_Amlj4vdshp" alt="Hermela Ashenafi — editorial portrait" />
+        <img src="https://lh3.googleusercontent.com/d/1C4w4RAVIAMEm8X1x-CdRAH7JKDoPXsYD" alt="Hermela Ashenafi — architectural silhouette" />
+        <img src="https://lh3.googleusercontent.com/d/18iIfwEGQmcPlBpQLcSzp4oy7CPB6sf6d" alt="Hermela Ashenafi — editorial close" />
+        <img src="https://lh3.googleusercontent.com/d/1Da7ofr1KQd7b5I8YWpAPuZDw0oFMLduQ" alt="Hermela Ashenafi — portrait study" />
+      </div>
+    </div>
+    <!-- Fixed dark scrim, independent of light/dark theme — click the hero to reveal full color. -->
+    <div class="absolute inset-0" data-reveal-scrim style="background: linear-gradient(to top, rgba(20,19,17,0.82) 0%, rgba(20,19,17,0.4) 40%, transparent 68%); pointer-events:none;"></div>
+
+    <div class="relative z-10 w-full px-5 md:px-14 pb-10 md:pb-14">
+      <p class="eyebrow mb-4" data-fade style="color:var(--umber);">Addis Ababa · Ethiopia · The Continent</p>
+      <h1 class="font-wordmark leading-[0.92]" style="font-size:clamp(3.2rem,13vw,10.5rem); color:var(--porcelain);">
+        <span class="reveal-line block" data-reveal="chars">Hermela</span>
+        <span class="reveal-line block italic font-light" data-reveal="chars" style="color:var(--umber);">Ashenafi</span>
+      </h1>
+
+      <div class="mt-8 md:mt-10 flex flex-col md:flex-row md:items-end md:justify-between gap-6 border-t pt-6" style="border-color:rgba(251,250,246,0.2);">
+        <p class="text-base md:text-lg max-w-xl" style="color:rgba(251,250,246,0.85);" data-fade>
+          An engineer's mind in a couture frame — carrying Ethiopia's story onto the
+          continental stage, one deliberate step at a time.
+        </p>
+        <a href="mind.html" data-transition data-magnetic data-cursor="link" class="btn-primary on-dark shrink-0">Enter Her World</a>
+      </div>
+
+      <!-- ============ COMPONENT: HeroStatRow ============ -->
+      <div class="grid grid-cols-3 gap-6 mt-10 pt-8 border-t" style="border-color:rgba(251,250,246,0.2);" data-fade>
+        <div><span class="font-display text-2xl md:text-3xl block" style="color:var(--porcelain);">10K+</span><span class="text-xs" style="color:rgba(251,250,246,0.6);">Social Channels</span></div>
+        <div><span class="font-display text-2xl md:text-3xl block" style="color:var(--porcelain);">4th</span><span class="text-xs" style="color:rgba(251,250,246,0.6);">Miss International Ethiopia</span></div>
+        <div><span class="font-display text-2xl md:text-3xl block" style="color:var(--porcelain);">Reigning</span><span class="text-xs" style="color:rgba(251,250,246,0.6);">Miss Tourism Ethiopia</span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ COMPONENT: HerStory (portrait + bio teaser + fact chips + quote) ============ -->
+  <section id="her-story" data-component="HerStory" class="px-5 md:px-14 py-24 md:py-32 bg-alabaster">
+    <div class="max-w-5xl mx-auto grid md:grid-cols-[1fr_1.3fr] gap-14 items-center">
+      <div data-fade data-lightbox="https://lh3.googleusercontent.com/d/169C2njQvAfDahgaEtQXqePVXy0VJddxG" alt="Hermela Ashenafi portrait" data-cursor="view" data-cursor-label="VIEW">
+        <img src="https://lh3.googleusercontent.com/d/169C2njQvAfDahgaEtQXqePVXy0VJddxG" alt="Hermela Ashenafi portrait" class="w-full h-[480px] object-cover grayscale-[0.1]" />
+      </div>
+      <div data-fade>
+        <p class="eyebrow mb-4">The Story</p>
+        <h2 class="font-display text-3xl md:text-4xl mb-6">Born From Discipline.<br/><em class="italic" style="color:var(--umber);">Built for the World Stage.</em></h2>
+        <p class="copy mb-8">
+          Hermela Ashenafi Assefa is not simply a titleholder — she is a computer
+          scientist who happens to also be one. Born and raised in Addis Ababa, she
+          carries her country's story the way she was trained to carry a project: with a
+          plan, a timeline, and no room for shortcuts.
+        </p>
+        <div class="grid grid-cols-3 gap-6 mb-8 text-sm">
+          <div><p class="eyebrow mb-1">Based In</p><p class="font-display text-lg">Addis Ababa</p></div>
+          <div><p class="eyebrow mb-1">Reach</p><p class="font-display text-lg">Africa · Global</p></div>
+          <div><p class="eyebrow mb-1">Speciality</p><p class="font-display text-lg">Editorial · Runway</p></div>
+        </div>
+        <blockquote class="font-display italic text-lg" style="color:var(--sovereign);">
+          "She doesn't just wear the crown — she audits it first."
+        </blockquote>
+        <a href="identity.html" data-transition data-magnetic data-cursor="link" class="btn-primary mt-8 inline-flex">Read Her Full Story</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ COMPONENT: CredentialsMarquee ============ -->
+  <section id="marquee" data-component="CredentialsMarquee" class="marquee bg-alabaster">
+    <div class="marquee-track">
+      <span>Computer Science, BSc</span>
+      <span>Project Manager</span>
+      <span>4th Runner-Up, Miss International Ethiopia</span>
+      <span>Reigning Miss Tourism Ethiopia</span>
+      <span>Miss Tourism Africa, Nigeria — Sep 2026</span>
+      <span>Digital Creator</span>
+      <span>10K+ Social followers, growing daily</span>
+      <span>Guitar &amp; Voice, self-taught</span>
+      <span>Dancer at heart</span>
+      <span>Neuroplasticity curious</span>
+      <span>Computer Science, BSc</span>
+      <span>Project Manager</span>
+      <span>4th Runner-Up, Miss International Ethiopia</span>
+      <span>Reigning Miss Tourism Ethiopia</span>
+      <span>Miss Tourism Africa, Nigeria — Sep 2026</span>
+      <span>Digital Creator</span>
+      <span>100K+ Instagram, growing daily</span>
+      <span>Guitar &amp; Voice, self-taught</span>
+      <span>Dancer at heart</span>
+      <span>Neuroplasticity curious</span>
+    </div>
+  </section>
+
+  <!-- ============ COMPONENT: MilestoneStrip ============ -->
+  <section id="milestones" data-component="MilestoneStrip" class="bg-obsidian text-porcelain py-16 md:py-20 px-5 md:px-14">
+    <div class="grid grid-cols-2 md:grid-cols-4 gap-10 md:gap-6 max-w-6xl mx-auto">
+      <div data-fade>
+        <div class="font-display text-4xl md:text-6xl" data-odometer="4th">4th</div>
+        <p class="eyebrow mt-3" style="color:rgba(251,250,246,0.6);">Miss International<br/>Ethiopia</p>
+      </div>
+      <div data-fade>
+        <div class="font-display text-4xl md:text-6xl" data-odometer="1st">1st</div>
+        <p class="eyebrow mt-3" style="color:rgba(251,250,246,0.6);">Miss Tourism<br/>Ethiopia, Reigning</p>
+      </div>
+      <div data-fade>
+        <div class="font-display text-4xl md:text-6xl" data-odometer="9/2026">9/2026</div>
+        <p class="eyebrow mt-3" style="color:rgba(251,250,246,0.6);">Miss Tourism Africa<br/>Nigeria</p>
+      </div>
+      <a href="ambassador.html" data-transition data-fade class="block hover:opacity-80 transition-opacity">
+        <div class="font-display text-4xl md:text-6xl" data-odometer="3">3</div>
+        <p class="eyebrow mt-3" style="color:rgba(251,250,246,0.6);">Ambassadorship<br/>Initiatives ↗</p>
+      </a>
+    </div>
+  </section>
+
+  <!-- ============ COMPONENT: ThresholdStatement ============ -->
+  <section id="statement" data-component="ThresholdStatement" class="px-5 md:px-14 py-28 md:py-40 bg-alabaster">
+    <div class="max-w-4xl mx-auto text-center">
+      <p class="eyebrow mb-6" data-fade>The Throughline</p>
+      <h2 class="h-display font-display" style="font-size:clamp(1.9rem,4.6vw,3.4rem);">
+        <span class="reveal-line block" data-reveal="words">A scientist's rigor. A queen's poise.</span>
+        <span class="reveal-line block" data-reveal="words">Neither ever asked the other to shrink.</span>
+      </h2>
+    </div>
+  </section>
+
+  <!-- ============ COMPONENT: ExploreTriad (numbered 01/03–03/03) ============ -->
+  <section id="explore" data-component="ExploreTriad" class="px-5 md:px-14 pb-24 bg-alabaster">
+    <div class="max-w-6xl mx-auto grid md:grid-cols-3 gap-px bg-ink/10">
+      <a href="mind.html" data-transition data-cursor="view" data-cursor-label="READ" class="group bg-alabaster p-10 md:p-12 flex flex-col justify-between min-h-[380px] hover:bg-linen transition-colors duration-300" data-fade>
+        <span class="eyebrow">01 / 03 — The Mind</span>
+        <div>
+          <h3 class="font-display text-3xl md:text-4xl mb-4">A field still<br/>evolving.</h3>
+          <p class="copy text-sm">Philosophy, neuroscience, and a definition of beauty she refuses to borrow.</p>
+        </div>
+      </a>
+      <a href="portfolio.html" data-transition data-cursor="view" data-cursor-label="VIEW" class="group bg-alabaster p-10 md:p-12 flex flex-col justify-between min-h-[380px] hover:bg-linen transition-colors duration-300" data-fade>
+        <span class="eyebrow">02 / 03 — The Form</span>
+        <div>
+          <h3 class="font-display text-3xl md:text-4xl mb-4">Precision,<br/>worn.</h3>
+          <p class="copy text-sm">A visual grammar built on architectural silhouettes and quiet intention.</p>
+        </div>
+      </a>
+      <a href="reign.html" data-transition data-cursor="view" data-cursor-label="ENTER" class="group bg-alabaster p-10 md:p-12 flex flex-col justify-between min-h-[380px] hover:bg-linen transition-colors duration-300" data-fade>
+        <span class="eyebrow">03 / 03 — The Reign</span>
+        <div>
+          <h3 class="font-display text-3xl md:text-4xl mb-4">Ethiopia,<br/>carried forward.</h3>
+          <p class="copy text-sm">From Miss International Ethiopia to Miss Tourism Africa — the chronicle of a crown in motion.</p>
+        </div>
+      </a>
+    </div>
+  </section>
+
+  <!-- ============ COMPONENT: ArchivePreview (masonry + lightbox) ============ -->
+  <section id="archive" data-component="ArchivePreview" class="px-5 md:px-14 pb-28 md:pb-40 bg-alabaster">
+    <div class="max-w-6xl mx-auto">
+      <div class="flex items-end justify-between mb-8" data-fade>
+        <h2 class="font-display text-3xl md:text-4xl">The Archive.</h2>
+        <a href="portfolio.html" data-transition data-magnetic data-cursor="link" class="text-sm underline underline-offset-4">Full Portfolio</a>
+      </div>
+      <div class="archive-grid" style="grid-auto-rows: 160px;">
+        <figure class="col-span-3 row-span-2" data-lightbox="https://lh3.googleusercontent.com/d/18iIfwEGQmcPlBpQLcSzp4oy7CPB6sf6d" data-cursor="view" data-cursor-label="VIEW">
+          <img src="https://lh3.googleusercontent.com/d/18iIfwEGQmcPlBpQLcSzp4oy7CPB6sf6d" alt="Hermela — Editorial" class="grayscale-[0.1]" />
+        </figure>
+        <figure class="col-span-2 row-span-1" data-lightbox="https://lh3.googleusercontent.com/d/1h_VuKMSh-sINijhAvO_ZmIvcxXJkW5-V" data-cursor="view" data-cursor-label="VIEW">
+          <img src="https://lh3.googleusercontent.com/d/1h_VuKMSh-sINijhAvO_ZmIvcxXJkW5-V" alt="Hermela — Portrait" class="grayscale-[0.1]" />
+        </figure>
+        <figure class="col-span-1 row-span-1" data-lightbox="https://lh3.googleusercontent.com/d/1Makj_uvAcFdwPe1I7OpSfyHHS3I6M0Ds" data-cursor="view" data-cursor-label="VIEW">
+          <img src="https://lh3.googleusercontent.com/d/1Makj_uvAcFdwPe1I7OpSfyHHS3I6M0Ds" alt="Hermela — Detail" class="grayscale-[0.1]" />
+        </figure>
+        <figure class="col-span-2 row-span-1" data-lightbox="https://lh3.googleusercontent.com/d/1_agckJudUKVuG48kZGXGdBciyWun2NVY" data-cursor="view" data-cursor-label="VIEW">
+          <img src="https://lh3.googleusercontent.com/d/1_agckJudUKVuG48kZGXGdBciyWun2NVY" alt="Hermela — Sovereign" class="grayscale-[0.1]" />
+        </figure>
+        <figure class="col-span-1 row-span-1" data-lightbox="https://lh3.googleusercontent.com/d/1iqSnv8woPbZ8b1h0y53gtMz_rQBR8zFg" data-cursor="view" data-cursor-label="VIEW">
+          <img src="https://lh3.googleusercontent.com/d/1iqSnv8woPbZ8b1h0y53gtMz_rQBR8zFg" alt="Hermela — Structure" class="grayscale-[0.1]" />
+        </figure>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<!-- ============ COMPONENT: MegaFooter (Home only) ============ -->
+<footer id="site-footer" class="px-5 md:px-14 pt-24 pb-10">
+  <div class="max-w-6xl mx-auto">
+    <a href="contact.html" data-transition data-magnetic data-cursor="link" class="footer-word font-wordmark block mb-16 hover:opacity-80 transition-opacity">Let's build something.</a>
+    <div class="grid md:grid-cols-4 gap-10 border-t footer-hair pt-10">
+      <div>
+        <p class="font-wordmark text-2xl mb-3">Hermela</p>
+        <p class="text-sm" style="color:rgba(251,250,246,0.6);">Computer scientist. Project manager.<br/>Model. Miss Tourism Ethiopia.</p>
+      </div>
+      <div>
+        <p class="eyebrow mb-4" style="color:rgba(251,250,246,0.45);">Narrative</p>
+        <ul class="space-y-2 text-sm">
+          <li><a href="identity.html" data-transition>Identity</a></li>
+          <li><a href="mind.html" data-transition>Mind</a></li>
+          <li><a href="codes.html" data-transition>Codes</a></li>
+        </ul>
+      </div>
+      <div>
+        <p class="eyebrow mb-4" style="color:rgba(251,250,246,0.45);">World</p>
+        <ul class="space-y-2 text-sm">
+          <li><a href="portfolio.html" data-transition>Portfolio</a></li>
+          <li><a href="reign.html" data-transition>Reign</a></li>
+        </ul>
+      </div>
+      <div>
+        <p class="eyebrow mb-4" style="color:rgba(251,250,246,0.45);">Protocol</p>
+        <ul class="space-y-2 text-sm">
+          <li><a href="contact.html" data-transition>Contact</a></li>
+          <li><a href="https://www.instagram.com/vetusmeam__?stkn=MWh3dW5xdTdqb2dtZw==" target="_blank" rel="noopener" data-cursor="link">Instagram</a></li>
+          <li><a href="https://www.tiktok.com/@velvet_paradox_?_r=1&_t=ZS-99ZVLAPXbUm" target="_blank" rel="noopener" data-cursor="link">TikTok</a></li>
+        </ul>
+      </div>
+    </div>
+    <p class="text-xs mt-14" style="color:rgba(251,250,246,0.4);">© 2026 Hermela Ashenafi Assefa. Intrigue, depth, and continuous evolution. Photography shown is placeholder editorial reference pending her production shoot — see photography-brief.md.</p>
+  </div>
+</footer>
+
+<script src="https://unpkg.com/lenis@1.1.18/dist/lenis.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/Flip.min.js"></script>
+<script src="assets/js/main.js"></script>
+</body>
+</html>
