@@ -109,10 +109,13 @@
       <h2 class="font-display text-3xl md:text-5xl mb-10">The Film That Almost Didn't Get Made.</h2>
 
       <div class="grid md:grid-cols-2 gap-12 items-start mb-12">
-        <div data-fade data-cursor="view" data-cursor-label="PLAY">
+        <div data-fade class="relative group cursor-pointer" data-cursor="link" data-cursor-label="SOUND" onclick="const v = this.querySelector('video'); v.muted = !v.muted; const b = this.querySelector('.mute-btn'); b.textContent = v.muted ? 'UNMUTE' : 'MUTE'; b.style.opacity = '1';">
           <video class="w-full h-[420px] object-cover object-center grayscale-[0.15]" autoplay loop muted playsinline>
             <source src="assets/images/Ambassadorship.mp4" type="video/mp4">
           </video>
+          <div class="mute-btn absolute bottom-5 right-5 bg-obsidian text-porcelain text-[10px] font-body tracking-[0.2em] px-4 py-2 uppercase opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none">
+            UNMUTE
+          </div>
         </div>
         <div data-fade>
           <p class="copy mb-6">
